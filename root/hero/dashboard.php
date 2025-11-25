@@ -1,7 +1,7 @@
 <?php
 $page_title = "Dashboard - IslandShield Security";
-require_once 'database/config.php';
-require_once 'database/auth.php';
+require_once __DIR__ . '/../databse/config.php';
+require_once __DIR__ . '/../databse/auth.php';
 
 requireLogin();
 
@@ -12,7 +12,7 @@ $stmt = $pdo->prepare("SELECT * FROM service_requests WHERE user_id = ? ORDER BY
 $stmt->execute([$_SESSION['user_id']]);
 $requests = $stmt->fetchAll();
 
-require_once 'functions/header.php';
+require_once __DIR__ . '/../functions/header.php';
 ?>
 
 <div class="dashboard-page py-5">
@@ -133,4 +133,4 @@ require_once 'functions/header.php';
     </div>
 </div>
 
-<?php require_once 'functions/footer.php'; ?>
+<?php require_once __DIR__ . '/../functions/footer.php'; ?>
