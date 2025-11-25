@@ -2,6 +2,7 @@
 require_once __DIR__ . '/../database/config.php';
 require_once __DIR__ . '/../database/auth.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

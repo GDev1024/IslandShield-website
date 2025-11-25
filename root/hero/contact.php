@@ -1,7 +1,7 @@
 <?php
 $page_title = "Contact Us - IslandShield Security";
-require_once __DIR__ . 'IslandShield\root\database\config.php';
-require_once __DIR__ . 'IslandShield\root\database\auth.php';
+require_once __DIR__ . '/../database/config.php';
+require_once __DIR__ . '/../database/auth.php';
 
 $success = '';
 $error = '';
@@ -132,4 +132,4 @@ require_once __DIR__ . '/../functions/header.php';
     </div>
 </section>
 
-<?php require_once 'functions/footer.php'; ?>
+<?php require_once __DIR__ . '/../functions/footer.php'; ?>
