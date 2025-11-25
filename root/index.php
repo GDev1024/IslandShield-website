@@ -1,6 +1,6 @@
 <?php
 $page_title = "Home - IslandShield Security Services";
-require_once 'functions/header.php';
+require_once '/functions/header.php';
 ?>
 
 <!-- Hero Section with Video Background -->

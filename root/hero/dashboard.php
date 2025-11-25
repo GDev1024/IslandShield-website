@@ -1,7 +1,7 @@
 <?php
 $page_title = "Dashboard - IslandShield Security";
-require_once __DIR__ . '/../database/config.php';
-require_once __DIR__ . '/../database/auth.php';
+require_once __DIR__ . 'IslandShield\root\database\config.php';
+require_once __DIR__ . 'IslandShield\root\database\auth.php';
 
 requireLogin();
 
