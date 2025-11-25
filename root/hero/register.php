@@ -1,6 +1,6 @@
 <?php
 $page_title = "Register - IslandShield Security";
-require_once 'database/db.php';
+require_once 'database/config.php';
 require_once 'database/auth.php';
 
 if (isLoggedIn()) {
