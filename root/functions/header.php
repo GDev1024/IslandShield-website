@@ -69,7 +69,7 @@ require_once __DIR__ . '/../databse/auth.php';
                             <i class="fas fa-user"></i> Dashboard
                         </a>
                     <?php else: ?>
-                        <a href="login.php" class="btn btn-login">
+                        <a href="/login.php" class="btn btn-login">
                             <i class="fas fa-user"></i> Client Login
                         </a>
                     <?php endif; ?>
