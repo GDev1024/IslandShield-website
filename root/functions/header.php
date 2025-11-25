@@ -1,6 +1,6 @@
 <?php
-require_once 'database/config.php';
-require_once 'database/auth.php';
+require_once __DIR__ . '/../databse/config.php';
+require_once __DIR__ . '/../databse/auth.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
