@@ -4,7 +4,7 @@ require_once __DIR__ . '/../database/config.php';
 require_once __DIR__ . '/../database/auth.php';
 
 if (isLoggedIn()) {
-    header('Location: dashboard.php');
+    header('Location: ../hero/dashboard.php');
     exit();
 }
 
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['user_name'] = $user['name'];
             $_SESSION['user_role'] = $user['role'];
-            header('Location: dashboard.php');
+            header('Location: ../hero/dashboard.php');
             exit();
         } else {
             $error = 'Invalid email or password';
@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-require_once 'includes/header.php';
+require_once __DIR__ . '/header.php';
 ?>
 
 <div class="login-page">
@@ -81,7 +81,7 @@ require_once 'includes/header.php';
                     </form>
 
                     <div class="text-center">
-                        <p>Don't have an account? <a href="register.php">Register here</a></p>
+                        <p>Don't have an account? <a href="../hero/register.php">Register here</a></p>
                     </div>
                 </div>
             </div>
@@ -89,4 +89,4 @@ require_once 'includes/header.php';
     </div>
 </div>
 
-<?php require_once __DIR__ . '/../functions/footer.php'; ?>
+<?php require_once __DIR__ . '/footer.php'; ?>

@@ -1,10 +1,10 @@
 <?php
 $page_title = "Register - IslandShield Security";
-require_once 'database/config.php';
-require_once 'database/auth.php';
+require_once __DIR__ . '/../database/config.php';
+require_once __DIR__ . '/../database/auth.php';
 
 if (isLoggedIn()) {
-    header('Location: dashboard.php');
+    header('Location: ./dashboard.php');
     exit();
 }
 
@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-require_once 'functions/header.php';
+require_once __DIR__ . '/../functions/header.php';
 ?>
 
 <div class="login-page">
@@ -67,7 +67,7 @@ require_once 'functions/header.php';
                     <?php if ($success): ?>
                         <div class="alert alert-success" role="alert">
                             <i class="fas fa-check-circle me-2"></i><?php echo $success; ?>
-                            <a href="login.php" class="alert-link">Click here to login</a>
+                            <a href="../functions/login.php" class="alert-link">Click here to login</a>
                         </div>
                     <?php endif; ?>
 
@@ -111,7 +111,7 @@ require_once 'functions/header.php';
                     </form>
 
                     <div class="text-center">
-                        <p>Already have an account? <a href="login.php">Login here</a></p>
+                        <p>Already have an account? <a href="../functions/login.php">Login here</a></p>
                     </div>
                 </div>
             </div>
@@ -119,4 +119,4 @@ require_once 'functions/header.php';
     </div>
 </div>
 
-<?php require_once 'functions/footer.php'; ?>
+<?php require_once __DIR__ . '/../functions/footer.php'; ?>

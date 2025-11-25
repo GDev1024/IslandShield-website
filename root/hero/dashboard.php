@@ -1,7 +1,7 @@
 <?php
 $page_title = "Dashboard - IslandShield Security";
-require_once __DIR__ . '/../databse/config.php';
-require_once __DIR__ . '/../databse/auth.php';
+require_once __DIR__ . '/../database/config.php';
+require_once __DIR__ . '/../database/auth.php';
 
 requireLogin();
 
@@ -34,7 +34,7 @@ require_once __DIR__ . '/../functions/header.php';
                         <li><a href="#requests"><i class="fas fa-list me-2"></i>Service Requests</a></li>
                         <li><a href="#profile"><i class="fas fa-user me-2"></i>Profile</a></li>
                         <li><a href="#security"><i class="fas fa-lock me-2"></i>Security</a></li>
-                        <li><a href="logout.php"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                        <li><a href="../functions/logout.php"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
                     </ul>
                 </div>
             </div>

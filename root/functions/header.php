@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . '/../databse/config.php';
-require_once __DIR__ . '/../databse/auth.php';
+require_once __DIR__ . '/../database/config.php';
+require_once __DIR__ . '/../database/auth.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +21,7 @@ require_once __DIR__ . '/../databse/auth.php';
     <link href="https://fonts.googleapis.com/css2?family=Saira:wght@300;700&display=swap" rel="stylesheet">
     
     <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body>
 
@@ -65,11 +65,11 @@ require_once __DIR__ . '/../databse/auth.php';
                 </li>
                 <li class="nav-item ms-lg-3">
                     <?php if (isLoggedIn()): ?>
-                        <a href="dashboard.php" class="btn btn-login">
+                        <a href="hero/dashboard.php" class="btn btn-login">
                             <i class="fas fa-user"></i> Dashboard
                         </a>
                     <?php else: ?>
-                        <a href="/login.php" class="btn btn-login">
+                        <a href="functions/login.php" class="btn btn-login">
                             <i class="fas fa-user"></i> Client Login
                         </a>
                     <?php endif; ?>

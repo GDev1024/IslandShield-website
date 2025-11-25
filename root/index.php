@@ -17,10 +17,10 @@ require_once 'functions/header.php';
             <h1>Professional Security Solutions</h1>
             <p class="lead">Protecting what matters most with 24/7 surveillance, expert personnel, and cutting-edge technology</p>
             <div class="hero-buttons">
-                <a href="services.php" class="btn-hero-primary">
+                <a href="#services" class="btn-hero-primary">
                     <i class="fas fa-shield-alt me-2"></i>Our Services
                 </a>
-                <a href="contact.php" class="btn-hero-secondary">
+                <a href="hero/contact.php" class="btn-hero-secondary">
                     <i class="fas fa-phone me-2"></i>Get a Quote
                 </a>
             </div>
@@ -126,7 +126,7 @@ require_once 'functions/header.php';
         <h2>Ready to Secure Your Property?</h2>
         <p>Contact us today for a free security assessment and custom quote</p>
         <div class="hero-buttons">
-            <a href="contact.php" class="btn-hero-secondary">
+            <a href="hero/contact.php" class="btn-hero-secondary">
                 <i class="fas fa-envelope me-2"></i>Contact Us
             </a>
             <a href="tel:4735557233" class="btn-hero-primary" style="background: white; color: #3b82f6;">

@@ -1,7 +1,7 @@
 <?php
 $page_title = "Contact Us - IslandShield Security";
-require_once 'database/config.php';
-require_once 'database/auth.php';
+require_once __DIR__ . '/../database/config.php';
+require_once __DIR__ . '/../database/auth.php';
 
 $success = '';
 $error = '';
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-require_once 'functions/header.php';
+require_once __DIR__ . '/../functions/header.php';
 ?>
 
 <section class="contact-page py-5">
