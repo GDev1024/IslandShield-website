@@ -1,13 +1,13 @@
 <?php
 $page_title = "Home - IslandShield Security Services";
-require_once 'includes/header.php';
+require_once 'functions/header.php';
 ?>
 
 <!-- Hero Section with Video Background -->
 <section class="hero-section" id="home">
     <div class="hero-video-background">
         <video autoplay muted loop playsinline>
-            <source src="https://cdn.coverr.co/videos/coverr-security-camera-monitoring-room-4913/1080p.mp4" type="video/mp4">
+            <source src="assets/videos/islandshield_bg.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
@@ -136,4 +136,4 @@ require_once 'includes/header.php';
     </div>
 </section>
 
-<?php require_once '/footer.php'; ?>
+<?php require_once 'functions/footer.php'; ?>
