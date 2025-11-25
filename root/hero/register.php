@@ -1,10 +1,10 @@
-php<?php
+<?php
 $page_title = "Register - IslandShield Security";
 require_once __DIR__ . '/../database/config.php';
 require_once __DIR__ . '/../database/auth.php';
 
 if (isLoggedIn()) {
-    header('Location: ./dashboard.php');
+    header('Location: dashboard.php');
     exit();
 }
 

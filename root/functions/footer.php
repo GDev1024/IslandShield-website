@@ -15,19 +15,19 @@
             <div class="col-lg-2 col-md-6 mb-4">
                 <h5>Quick Links</h5>
                 <ul>
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="index.php#services">Services</a></li>
-                    <li><a href="hero/about.php">About Us</a></li>
-                    <li><a href="hero/contact.php">Contact</a></li>
+                    <li><a href="<?php echo dirname($_SERVER['PHP_SELF']) == '/root' ? '' : '../'; ?>index.php">Home</a></li>
+                    <li><a href="<?php echo dirname($_SERVER['PHP_SELF']) == '/root' ? '' : '../'; ?>index.php#services">Services</a></li>
+                    <li><a href="<?php echo dirname($_SERVER['PHP_SELF']) == '/root' ? 'hero/' : ''; ?>about.php">About Us</a></li>
+                    <li><a href="<?php echo dirname($_SERVER['PHP_SELF']) == '/root' ? 'hero/' : ''; ?>contact.php">Contact</a></li>
                 </ul>
             </div>
             <div class="col-lg-3 col-md-6 mb-4">
                 <h5>Services</h5>
                 <ul>
-                    <li><a href="index.php#services">CCTV Installation</a></li>
-                    <li><a href="index.php#services">Security Personnel</a></li>
-                    <li><a href="index.php#services">Event Security</a></li>
-                    <li><a href="index.php#services">Emergency Response</a></li>
+                    <li><a href="<?php echo dirname($_SERVER['PHP_SELF']) == '/root' ? '' : '../'; ?>index.php#services">CCTV Installation</a></li>
+                    <li><a href="<?php echo dirname($_SERVER['PHP_SELF']) == '/root' ? '' : '../'; ?>index.php#services">Security Personnel</a></li>
+                    <li><a href="<?php echo dirname($_SERVER['PHP_SELF']) == '/root' ? '' : '../'; ?>index.php#services">Event Security</a></li>
+                    <li><a href="<?php echo dirname($_SERVER['PHP_SELF']) == '/root' ? '' : '../'; ?>index.php#services">Emergency Response</a></li>
                 </ul>
             </div>
             <div class="col-lg-3 col-md-6 mb-4">
@@ -50,8 +50,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
 <!-- Custom JS -->
-<script src="assets/js/main.js"></script>
-<script src="assets/js/validation.js"></script>
-
-</body>
-</html>
+<script src="<?php echo dirname($_SERVER['PHP_SELF']) == '/root' ? '' : '../'; ?>assets/js/main.js"></script>
+<script src="<?php echo dirname($_SERVER['PHP_SELF']) == '/root' ? '' : '../'; ?>assets/js/

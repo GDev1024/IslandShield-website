@@ -136,4 +136,4 @@ require_once __DIR__ . '/functions/header.php';
     </div>
 </section>
 
-<?php require_once 'functions/footer.php'; ?>
+<?php require_once __DIR__ . '/functions/footer.php'; ?>
