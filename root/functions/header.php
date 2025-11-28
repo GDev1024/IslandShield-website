@@ -20,15 +20,15 @@ require_once __DIR__ . '/../database/auth.php';
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Saira:wght@300;700&display=swap" rel="stylesheet">
     
-    <!-- Custom CSS -->
-    <link href="<?php echo dirname($_SERVER['PHP_SELF']) == '/root' ? '' : '../'; ?>assets/css/style.css" rel="stylesheet">
+    <!-- Custom CSS - Using BASE_PATH -->
+    <link href="<?php echo CSS_PATH; ?>/style.css" rel="stylesheet">
 </head>
 <body>
 
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
-        <a class="navbar-brand" href="<?php echo dirname($_SERVER['PHP_SELF']) == '/root' ? '' : '../'; ?>index.php">
+        <a class="navbar-brand" href="<?php echo BASE_PATH; ?>/index.php">
             <i class="fas fa-shield-alt"></i>
             IslandShield Security
         </a>
@@ -44,32 +44,32 @@ require_once __DIR__ . '/../database/auth.php';
             </div>
             <ul class="navbar-nav ms-auto align-items-lg-center">
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo dirname($_SERVER['PHP_SELF']) == '/root' ? '' : '../'; ?>index.php">
+                    <a class="nav-link" href="<?php echo BASE_PATH; ?>/index.php">
                         <i class="fas fa-home d-lg-none me-2"></i>Home
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo dirname($_SERVER['PHP_SELF']) == '/root' ? '' : '../'; ?>index.php#services">
+                    <a class="nav-link" href="<?php echo BASE_PATH; ?>/index.php#services">
                         <i class="fas fa-shield-alt d-lg-none me-2"></i>Services
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo dirname($_SERVER['PHP_SELF']) == '/root' ? 'hero/' : ''; ?>about.php">
+                    <a class="nav-link" href="<?php echo BASE_PATH; ?>/hero/about.php">
                         <i class="fas fa-info-circle d-lg-none me-2"></i>About
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo dirname($_SERVER['PHP_SELF']) == '/root' ? 'hero/' : ''; ?>contact.php">
+                    <a class="nav-link" href="<?php echo BASE_PATH; ?>/hero/contact.php">
                         <i class="fas fa-envelope d-lg-none me-2"></i>Contact
                     </a>
                 </li>
                 <li class="nav-item ms-lg-3">
                     <?php if (isLoggedIn()): ?>
-                        <a href="<?php echo dirname($_SERVER['PHP_SELF']) == '/root' ? 'hero/' : ''; ?>dashboard.php" class="btn btn-login">
+                        <a href="<?php echo BASE_PATH; ?>/hero/dashboard.php" class="btn btn-login">
                             <i class="fas fa-user"></i> Dashboard
                         </a>
                     <?php else: ?>
-                        <a href="<?php echo dirname($_SERVER['PHP_SELF']) == '/root' ? 'functions/' : '../functions/'; ?>login.php" class="btn btn-login">
+                        <a href="<?php echo BASE_PATH; ?>/functions/login.php" class="btn btn-login">
                             <i class="fas fa-user"></i> Client Login
                         </a>
                     <?php endif; ?>

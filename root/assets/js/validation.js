@@ -1,4 +1,5 @@
 // Form Validation
+console.log('Validation.js loaded successfully!');
 
 document.addEventListener('DOMContentLoaded', function() {
     
@@ -79,4 +80,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    console.log('Form validation initialized');
 });
