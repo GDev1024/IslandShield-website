@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - IslandShield Security</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- Header / Nav -->
+<header>
+  <div class="container header-container">
+    <h1>IslandShield Security</h1>
+    <nav>
+      <ul id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li class="has-dropdown">
+          <a href="services.html">Services ▼</a>
+          <ul class="dropdown">
+            <li><a href="cctv.html">CCTV Installation</a></li>
+            <li><a href="personnel.html">Security Personnel</a></li>
+            <li><a href="event.html">Event Security</a></li>
+            <li><a href="emergency.html">Emergency Response</a></li>
+          </ul>
+        </li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="dashboard.html" class="active">Dashboard</a></li>
+        <li><a href="#" class="btn-nav btn-logout">Log Out</a></li>
+      </ul>
+    </nav>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
+
+<!-- Dashboard Content -->
+<section class="dashboard-section">
+  <div class="container">
+    <div class="dashboard-layout">
+      
+      <!-- Sidebar -->
+      <aside class="dashboard-sidebar">
+        <div class="user-profile">
+          <div class="user-avatar">👤</div>
+          <h3>John Doe</h3>
+          <p>john.doe@example.com</p>
+        </div>
+        
+        <nav class="dashboard-nav">
+          <ul>
+            <li><a href="#overview" class="active">📊 Overview</a></li>
+            <li><a href="#cameras">📹 Live Cameras</a></li>
+            <li><a href="#alerts">🔔 Alerts</a></li>
+            <li><a href="#activity">📝 Activity Log</a></li>
+            <li><a href="#services">🛡️ My Services</a></li>
+            <li><a href="#billing">💳 Billing</a></li>
+            <li><a href="#settings">⚙️ Settings</a></li>
+            <li><a href="#support">💬 Support</a></li>
+          </ul>
+        </nav>
+      </aside>
+      
+      <!-- Main Content -->
+      <main class="dashboard-main">
+        
+        <!-- Welcome Header -->
+        <div class="dashboard-header">
+          <h1>Welcome Back, John!</h1>
+          <p>Here's your security overview for today</p>
+        </div>
+        
+        <!-- Quick Stats -->
+        <div class="dashboard-stats">
+          <div class="stat-widget">
+            <div class="stat-icon green">✓</div>
+            <div class="stat-info">
+              <h3>System Status</h3>
+              <p class="stat-value">All Active</p>
+            </div>
+          </div>
+          
+          <div class="stat-widget">
+            <div class="stat-icon blue">📹</div>
+            <div class="stat-info">
+              <h3>Cameras Online</h3>
+              <p class="stat-value">8/8</p>
+            </div>
+          </div>
+          
+          <div class="stat-widget">
+            <div class="stat-icon yellow">🔔</div>
+            <div class="stat-info">
+              <h3>Alerts Today</h3>
+              <p class="stat-value">3</p>
+            </div>
+          </div>
+          
+          <div class="stat-widget">
+            <div class="stat-icon purple">👮</div>
+            <div class="stat-info">
+              <h3>On-Duty Guards</h3>
+              <p class="stat-value">2</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Live Camera Grid -->
+        <div class="dashboard-section-content">
+          <div class="section-header">
+            <h2>Live Camera Feeds</h2>
+            <a href="#" class="view-all-link">View All →</a>
+          </div>
+          
+          <div class="camera-grid">
+            <div class="camera-card">
+              <div class="camera-placeholder">
+                <span class="camera-icon">📹</span>
+                <span class="live-indicator">● LIVE</span>
+              </div>
+              <div class="camera-info">
+                <h3>Front Entrance</h3>
+                <p>Camera 01 • HD</p>
+              </div>
+            </div>
+            
+            <div class="camera-card">
+              <div class="camera-placeholder">
+                <span class="camera-icon">📹</span>
+                <span class="live-indicator">● LIVE</span>
+              </div>
+              <div class="camera-info">
+                <h3>Parking Lot</h3>
+                <p>Camera 02 • HD</p>
+              </div>
+            </div>
+            
+            <div class="camera-card">
+              <div class="camera-placeholder">
+                <span class="camera-icon">📹</span>
+                <span class="live-indicator">● LIVE</span>
+              </div>
+              <div class="camera-info">
+                <h3>Back Gate</h3>
+                <p>Camera 03 • HD</p>
+              </div>
+            </div>
+            
+            <div class="camera-card">
+              <div class="camera-placeholder">
+                <span class="camera-icon">📹</span>
+                <span class="live-indicator">● LIVE</span>
+              </div>
+              <div class="camera-info">
+                <h3>Side Entrance</h3>
+                <p>Camera 04 • HD</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Recent Alerts -->
+        <div class="dashboard-section-content">
+          <div class="section-header">
+            <h2>Recent Alerts</h2>
+            <a href="#" class="view-all-link">View All →</a>
+          </div>
+          
+          <div class="alerts-list">
+            <div class="alert-item alert-info">
+              <div class="alert-icon">ℹ️</div>
+              <div class="alert-content">
+                <h4>Motion Detected - Front Entrance</h4>
+                <p>Camera 01 detected movement at 2:45 PM</p>
+                <span class="alert-time">15 minutes ago</span>
+              </div>
+            </div>
+            
+            <div class="alert-item alert-warning">
+              <div class="alert-icon">⚠️</div>
+              <div class="alert-content">
+                <h4>Unauthorized Access Attempt</h4>
+                <p>Back Gate sensor triggered at 11:30 AM</p>
+                <span class="alert-time">3 hours ago</span>
+              </div>
+            </div>
+            
+            <div class="alert-item alert-success">
+              <div class="alert-icon">✓</div>
+              <div class="alert-content">
+                <h4>Security Patrol Completed</h4>
+                <p>Officer Mitchell completed scheduled patrol</p>
+                <span class="alert-time">5 hours ago</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Active Services -->
+        <div class="dashboard-section-content">
+          <div class="section-header">
+            <h2>Active Services</h2>
+            <a href="#" class="btn-small">Request Service</a>
+          </div>
+          
+          <div class="services-list">
+            <div class="service-item">
+              <div class="service-icon">📹</div>
+              <div class="service-details">
+                <h3>CCTV Monitoring</h3>
+                <p>24/7 Professional Monitoring</p>
+                <span class="service-status active">Active</span>
+              </div>
+              <div class="service-actions">
+                <button class="btn-icon">⚙️</button>
+              </div>
+            </div>
+            
+            <div class="service-item">
+              <div class="service-icon">🛡️</div>
+              <div class="service-details">
+                <h3>Security Personnel</h3>
+                <p>2 Officers on Duty • Night Shift</p>
+                <span class="service-status active">Active</span>
+              </div>
+              <div class="service-actions">
+                <button class="btn-icon">⚙️</button>
+              </div>
+            </div>
+            
+            <div class="service-item">
+              <div class="service-icon">☁️</div>
+              <div class="service-details">
+                <h3>Cloud Storage</h3>
+                <p>30-Day Retention • 45% Used</p>
+                <span class="service-status active">Active</span>
+              </div>
+              <div class="service-actions">
+                <button class="btn-icon">⚙️</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Quick Actions -->
+        <div class="dashboard-section-content">
+          <h2>Quick Actions</h2>
+          <div class="quick-actions">
+            <button class="action-btn">
+              <span class="action-icon">📞</span>
+              <span class="action-text">Emergency Call</span>
+            </button>
+            <button class="action-btn">
+              <span class="action-icon">📹</span>
+              <span class="action-text">View Footage</span>
+            </button>
+            <button class="action-btn">
+              <span class="action-icon">📊</span>
+              <span class="action-text">Download Report</span>
+            </button>
+            <button class="action-btn">
+              <span class="action-icon">💬</span>
+              <span class="action-text">Contact Support</span>
+            </button>
+          </div>
+        </div>
+        
+      </main>
+      
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container footer-grid">
+    <div class="footer-column">
+      <h3>IslandShield Security</h3>
+      <p>Providing professional security solutions to protect what matters most.</p>
+    </div>
+    <div class="footer-column">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>Contact Info</h4>
+      <p>📞 <a href="tel:4735557233">(473) 555-SAFE</a></p>
+      <p>✉️ <a href="mailto:info@islandshield.com">info@islandshield.com</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; 2024 IslandShield Security. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>
