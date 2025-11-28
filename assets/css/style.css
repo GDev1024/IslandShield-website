@@ -1,6 +1,5 @@
-/* ===========================
-   Global Styles
-   =========================== */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
+
 * { 
   margin: 0; 
   padding: 0; 
@@ -8,12 +7,17 @@
 }
 
 body { 
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Libre Baskerville', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #0b1e3d; 
   color: #f0f0f0; 
   line-height: 1.6;
   overflow-x: hidden;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Libre Baskerville', serif;
+}
+
 
 html {
   scroll-behavior: smooth;
