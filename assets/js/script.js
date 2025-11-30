@@ -175,48 +175,59 @@ document.addEventListener('DOMContentLoaded', () => {
   // ------------------------------
   const animateCounters = () => {
     const counters = document.querySelectorAll('.stat-number[data-target]');
+    
+    if (counters.length === 0) {
+      console.log('No stat counters found');
+      return;
+    }
 
     counters.forEach(counter => {
       const target = parseInt(counter.getAttribute('data-target'));
-      if (isNaN(target) || target === 0) return;
+      
+      if (isNaN(target) || target === 0) {
+        console.log('Invalid target:', target);
+        return;
+      }
 
+      let current = 0;
+      const increment = target / 100; // 100 steps
       const duration = 2000; // 2 seconds
-      const startTime = performance.now();
+      const stepTime = duration / 100;
 
-      const updateCounter = (currentTime) => {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        
-        // Easing function for smooth animation
-        const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-        const current = Math.floor(easeOutQuart * target);
-
-        counter.textContent = current + '+';
-
-        if (progress < 1) {
-          requestAnimationFrame(updateCounter);
-        } else {
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
           counter.textContent = target + '+';
+          clearInterval(timer);
+        } else {
+          counter.textContent = Math.floor(current) + '+';
         }
-      };
-
-      requestAnimationFrame(updateCounter);
+      }, stepTime);
     });
   };
 
   // Trigger animation when stats section is visible
   const statsSection = document.querySelector('.stats');
   if (statsSection) {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          animateCounters();
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.3 }); // Trigger when 30% visible
-    
-    observer.observe(statsSection);
+    // Use IntersectionObserver
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            console.log('Stats section visible, animating...');
+            animateCounters();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      
+      observer.observe(statsSection);
+    } else {
+      // Fallback for older browsers
+      animateCounters();
+    }
+  } else {
+    console.log('Stats section not found');
   }
 
   // ------------------------------

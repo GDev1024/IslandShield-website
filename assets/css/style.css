@@ -711,11 +711,19 @@ section {
 
 .stat-number,
 .stat-text {
+  display: block;
   font-size: 3rem;
   color: var(--accent-cyan);
   font-weight: bold;
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
   text-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+  line-height: 1.2;
+}
+
+.stat-card p {
+  color: var(--text-gray);
+  font-size: 1rem;
+  margin: 0;
 }
 
 /* faq section */
