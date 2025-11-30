@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services - IslandShield Security</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- Header / Nav -->
+<?php include "includes/header.php"; ?>
+
+<!-- Page Header -->
+<section class="page-header">
+  <div class="container">
+    <h1>Our Security Services</h1>
+    <p>Comprehensive protection solutions tailored to your unique needs</p>
+  </div>
+</section>
+
+<!-- Services Overview -->
+<section class="services-overview">
+  <div class="container">
+    <div class="intro-text">
+      <h2>Professional Security Solutions</h2>
+      <p>At IslandShield Security, we offer a complete range of security services designed to protect your property, assets, and peace of mind. Our team of experienced professionals uses cutting-edge technology and proven strategies to deliver exceptional security solutions.</p>
+    </div>
+
+    <!-- Service Categories -->
+    <div class="services-detailed">
+      
+      <!-- CCTV Installation -->
+      <div class="service-detail-card">
+        <div class="service-detail-icon">📹</div>
+        <div class="service-detail-content">
+          <h3>CCTV Installation & Monitoring</h3>
+          <p>State-of-the-art surveillance systems providing 24/7 monitoring and protection.</p>
+          <ul class="service-features">
+            <li>✓ HD & 4K Camera Systems</li>
+            <li>✓ Night Vision Technology</li>
+            <li>✓ Remote Access & Mobile Monitoring</li>
+            <li>✓ Cloud Storage Solutions</li>
+            <li>✓ Motion Detection & Alerts</li>
+            <li>✓ Professional Installation</li>
+          </ul>
+          <a href="cctv.php" class="btn">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Security Personnel -->
+      <div class="service-detail-card">
+        <div class="service-detail-icon">🛡️</div>
+        <div class="service-detail-content">
+          <h3>Security Personnel</h3>
+          <p>Highly trained and certified security guards for businesses and residences.</p>
+          <ul class="service-features">
+            <li>✓ Licensed Security Officers</li>
+            <li>✓ Armed & Unarmed Guards</li>
+            <li>✓ Access Control Management</li>
+            <li>✓ Patrol Services</li>
+            <li>✓ Corporate Security</li>
+            <li>✓ Residential Protection</li>
+          </ul>
+          <a href="personnel.php" class="btn">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Event Security -->
+      <div class="service-detail-card">
+        <div class="service-detail-icon">🎭</div>
+        <div class="service-detail-content">
+          <h3>Event Security</h3>
+          <p>Professional security teams for events of all sizes and types.</p>
+          <ul class="service-features">
+            <li>✓ Concert & Festival Security</li>
+            <li>✓ Corporate Events</li>
+            <li>✓ Private Parties & Weddings</li>
+            <li>✓ Crowd Management</li>
+            <li>✓ VIP Protection</li>
+            <li>✓ Entry & Exit Control</li>
+          </ul>
+          <a href="event.php" class="btn">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Emergency Response -->
+      <div class="service-detail-card">
+        <div class="service-detail-icon">🚨</div>
+        <div class="service-detail-content">
+          <h3>Emergency Response</h3>
+          <p>Rapid response teams available 24/7 for any security emergency.</p>
+          <ul class="service-features">
+            <li>✓ 24/7 Emergency Dispatch</li>
+            <li>✓ Rapid Response Teams</li>
+            <li>✓ Crisis Management</li>
+            <li>✓ Fire & Safety Protocols</li>
+            <li>✓ Medical Emergency Support</li>
+            <li>✓ Evacuation Planning</li>
+          </ul>
+          <a href="emergency.php" class="btn">Learn More</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="why-choose-us">
+  <div class="container">
+    <h2 class="section-title">Why Choose IslandShield?</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <h3>🏆 15+ Years Experience</h3>
+        <p>Over a decade of proven security excellence in Grenada</p>
+      </div>
+      <div class="benefit-card">
+        <h3>🎓 Certified Professionals</h3>
+        <p>All personnel are licensed, trained, and background-checked</p>
+      </div>
+      <div class="benefit-card">
+        <h3>💻 Advanced Technology</h3>
+        <p>Latest security systems and monitoring equipment</p>
+      </div>
+      <div class="benefit-card">
+        <h3>⏰ 24/7 Availability</h3>
+        <p>Round-the-clock monitoring and emergency response</p>
+      </div>
+      <div class="benefit-card">
+        <h3>💰 Competitive Pricing</h3>
+        <p>Affordable packages without compromising quality</p>
+      </div>
+      <div class="benefit-card">
+        <h3>🤝 Trusted Partner</h3>
+        <p>500+ satisfied clients across residential and commercial sectors</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Service Process -->
+<section class="service-process">
+  <div class="container">
+    <h2 class="section-title">Our Service Process</h2>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-number">1</div>
+        <h3>Consultation</h3>
+        <p>Free security assessment and needs analysis</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">2</div>
+        <h3>Custom Plan</h3>
+        <p>Tailored security solution designed for you</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">3</div>
+        <h3>Implementation</h3>
+        <p>Professional installation and setup</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">4</div>
+        <h3>Ongoing Support</h3>
+        <p>24/7 monitoring and maintenance</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container">
+    <h2>Ready to Get Started?</h2>
+    <p>Contact us today for a free security consultation and custom quote.</p>
+    <a href="contact.php" class="btn">Get Free Quote</a>
+    <p class="cta-phone">📞 Call Now: <a href="tel:4735557233">(473) 555-SAFE</a></p>
+  </div>
+</section>
+
+<!-- Footer -->
+<?php include "includes/footer.php"; ?>
+
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>
