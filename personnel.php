@@ -12,7 +12,6 @@
 
 <section class="page-header service-header">
   <div class="container">
-    <div class="service-header-icon">🛡️</div>
     <h1>Professional Security Personnel</h1>
     <p>Highly trained, licensed guards for businesses, residences, and special events</p>
   </div>

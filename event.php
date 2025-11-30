@@ -12,7 +12,6 @@
 
 <section class="page-header service-header">
   <div class="container">
-    <div class="service-header-icon">🎭</div>
     <h1>Professional Event Security</h1>
     <p>Expert security teams for concerts, conferences, weddings, and corporate events</p>
   </div>

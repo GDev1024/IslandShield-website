@@ -14,7 +14,6 @@
 <!-- Page Header -->
 <section class="page-header service-header">
   <div class="container">
-    <div class="service-header-icon">📹</div>
     <h1>CCTV Installation & Monitoring</h1>
     <p>State-of-the-art surveillance systems with 24/7 professional monitoring</p>
   </div>

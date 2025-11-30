@@ -12,7 +12,6 @@
 
 <section class="page-header service-header emergency-header">
   <div class="container">
-    <div class="service-header-icon">🚨</div>
     <h1>24/7 Emergency Response</h1>
     <p>Rapid response teams ready for any security emergency, day or night</p>
     <div class="emergency-hotline">
