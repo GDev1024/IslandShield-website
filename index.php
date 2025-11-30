@@ -13,17 +13,17 @@
 
 <!-- Hero Section -->
 <section class="hero">
-  <video autoplay muted loop playsinline class="hero-video">
-    <source src="assets/videos/IslandShield_Security.mp4" type="video/mp4">
-  </video>
   <div class="hero-fallback"></div>
   <div class="hero-overlay"></div>
-  <div class="container hero-content">
+  <video autoplay muted loop playsinline class="hero-video">
+      <source src="assets/videos/IslandShield_Security.mp4" type="video/mp4">
+    </video>
+    <div class="container hero-content">
     <h2 class="hero-title">Professional Security Solutions</h2>
     <p class="hero-subtitle">Protecting what matters most with 24/7 surveillance, expert personnel, and cutting-edge technology.</p>
     <div class="hero-buttons">
-      <a href="services.html" class="btn">Our Services</a>
-      <a href="contact.html" class="btn btn-secondary">Get a Quote</a>
+      <a href="services.php" class="btn">Our Services</a>
+      <a href="contact.php" class="btn btn-secondary">Get a Quote</a>
     </div>
   </div>
 </section>

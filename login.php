@@ -1,66 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - IslandShield Security</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
+<?php
+// contact.php
+include "includes/header.php";
+?>
 
-<!-- Header / Nav -->
-<?php include "includes/header.php"; ?>
-
-<!-- Login Section -->
 <main>
+  <!-- Contact Section -->
   <section class="auth-section">
     <div class="container auth-container">
       <div class="auth-card">
-        
+
         <!-- Auth Header -->
         <header class="auth-header">
-          <h1>Welcome Back</h1>
-          <p>Log in to access your security dashboard</p>
+          <h1>Contact Us</h1>
+          <p>Fill out the form below and we'll get back to you within 24 hours.</p>
         </header>
 
-        <!-- Login Form -->
-        <form id="loginForm" class="auth-form" aria-label="Login Form">
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="john@example.com" required autocomplete="email">
+        <!-- Contact Form -->
+        <form id="contactForm" class="auth-form" method="POST" action="process_contact.php" aria-label="Contact Form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="(473) 555-1234">
+            </div>
+            <div class="form-group">
+              <label for="service">Service Interested In</label>
+              <select id="service" name="service">
+                <option value="">Select a service</option>
+                <option value="cctv">CCTV Installation</option>
+                <option value="personnel">Security Personnel</option>
+                <option value="event">Event Security</option>
+                <option value="emergency">Emergency Response</option>
+                <option value="consultation">General Consultation</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
           </div>
 
           <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Enter your password" required autocomplete="current-password">
+            <label for="subject">Subject *</label>
+            <input type="text" id="subject" name="subject" placeholder="How can we help?" required>
           </div>
 
-          <fieldset class="form-options">
-            <label class="checkbox-label">
-              <input type="checkbox" id="remember" name="remember">
-              Remember me
-            </label>
-            <a href="#" class="forgot-password">Forgot Password?</a>
-          </fieldset>
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="6" placeholder="Tell us about your security needs..." required></textarea>
+          </div>
 
-          <button type="submit" class="btn btn-submit btn-full">Log In</button>
+          <button type="submit" class="btn btn-submit btn-full">Send Message</button>
         </form>
 
         <!-- Divider -->
         <div class="divider"><span>OR</span></div>
 
-        <!-- Social Login -->
-        <div class="social-login">
-          <button class="btn-social btn-google" type="button" aria-label="Login with Google">
-            <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google Logo">
-            <span>Continue with Google</span>
-          </button>
+        <!-- Contact Info -->
+        <div class="social-login contact-info">
+          <h2>Contact Information</h2>
+          <p>Reach us through any of the following channels:</p>
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <p>Main Street, Grenville, St. Andrew, Grenada</p>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📞</span>
+            <p>Main: <a href="tel:4735557233">(473) 555-SAFE</a><br>Emergency: <a href="tel:4735559111">(473) 555-9111</a></p>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">✉️</span>
+            <p>General: <a href="mailto:info@islandshield.com">info@islandshield.com</a><br>Support: <a href="mailto:support@islandshield.com">support@islandshield.com</a></p>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">🕐</span>
+            <p>Office: Mon-Fri, 8:00 AM - 6:00 PM<br>Emergency: 24/7/365</p>
+          </div>
         </div>
 
         <!-- Auth Footer -->
         <footer class="auth-footer">
-          <p>Don't have an account? <a href="register.html">Sign Up</a></p>
-          <p class="security-notice">🔒 Your connection is secure and encrypted</p>
+          <p>Need immediate help? <a href="tel:4735559111">Call our 24/7 hotline</a></p>
         </footer>
 
       </div>
@@ -68,10 +95,5 @@
   </section>
 </main>
 
-<!-- Footer -->
 <?php include "includes/footer.php"; ?>
-
-
 <script src="assets/js/script.js"></script>
-</body>
-</html>

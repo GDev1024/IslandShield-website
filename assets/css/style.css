@@ -282,11 +282,26 @@ a:hover {
   padding: 0;
 }
 
+/*Checkbox and Forgot Password*/
+.checkbox-group {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap; 
+  align-items: center;
+}
+
 .checkbox-label {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--text-light);
+  align-items: center; 
+  gap: 0.5rem; 
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.checkbox-label input[type="checkbox"] {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
 }
 
 .forgot-password {
@@ -544,8 +559,8 @@ nav ul li ul.dropdown li a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1;
   opacity: 0.8; 
+  z-index: 1;
 }
 
 .hero-content {
@@ -690,7 +705,89 @@ section {
   text-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
 }
 
-/* ==================== Testimonials ==================== */
+/* faq section */
+.faq-section .faq-search {
+  margin-bottom: var(--spacing-lg);
+}
+
+.faq-section .search-input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-alpha);
+  background: rgba(11, 30, 61, 0.5);
+  color: var(--text-light);
+}
+
+.faq-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+}
+
+.faq-category-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--primary-navy);
+  background: transparent;
+  border-radius: var(--radius-md);
+  color: var(--text-light);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.faq-category-btn.active {
+  background: var(--primary-navy);
+  color: var(--primary-gold);
+}
+
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--border-alpha);
+  padding: var(--spacing-md) 0;
+}
+
+.faq-item .faq-answer {
+  display: none;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  max-height: 0;
+}
+
+.faq-item.active .faq-answer {
+  display: block; /* show when active */
+  max-height: 500px; /* or some large enough value */
+}
+
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.faq-answer {
+  display: none;
+  padding-top: var(--spacing-sm);
+  color: var(--text-gray);
+}
+
+.faq-item.open .faq-answer {
+  display: block;
+}
+
+.faq-toggle {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--primary-gold);
+}
+
+/*  Testimonials */
 .testimonials {
   padding: 5rem 0;
   background: var(--bg-dark);

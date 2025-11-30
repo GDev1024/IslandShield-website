@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (isset($_SESSION['user'])) {
+    header('Location: dashboard.php');
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,43 +20,45 @@
 <?php include "includes/header.php"; ?>
 
 <!-- Registration Section -->
-<section class="auth-section">
-  <div class="container">
-    <div class="auth-wrapper">
-      <div class="auth-form-container">
-        <div class="auth-header">
+<main>
+  <section class="auth-section">
+    <div class="container auth-container">
+      <div class="auth-card">
+
+        <!-- Auth Header -->
+        <header class="auth-header">
           <h1>Create Your Account</h1>
           <p>Join IslandShield Security and manage your security services online</p>
-        </div>
-        
-        <form id="registerForm" class="auth-form">
+        </header>
+
+        <!-- Registration Form -->
+        <form id="registerForm" class="auth-form" aria-label="Registration Form">
           <div class="form-row">
             <div class="form-group">
               <label for="firstName">First Name *</label>
               <input type="text" id="firstName" name="firstName" required placeholder="John">
             </div>
-            
             <div class="form-group">
               <label for="lastName">Last Name *</label>
               <input type="text" id="lastName" name="lastName" required placeholder="Doe">
             </div>
           </div>
-          
+
           <div class="form-group">
             <label for="email">Email Address *</label>
             <input type="email" id="email" name="email" required placeholder="john@example.com">
           </div>
-          
+
           <div class="form-group">
             <label for="phone">Phone Number *</label>
             <input type="tel" id="phone" name="phone" required placeholder="(473) 555-1234">
           </div>
-          
+
           <div class="form-group">
             <label for="address">Street Address *</label>
             <input type="text" id="address" name="address" required placeholder="123 Main Street">
           </div>
-          
+
           <div class="form-row">
             <div class="form-group">
               <label for="parish">Parish *</label>
@@ -63,7 +73,6 @@
                 <option value="carriacou">Carriacou & Petite Martinique</option>
               </select>
             </div>
-            
             <div class="form-group">
               <label for="propertyType">Property Type *</label>
               <select id="propertyType" name="propertyType" required>
@@ -75,107 +84,48 @@
               </select>
             </div>
           </div>
-          
+
           <div class="form-group">
             <label for="password">Password *</label>
             <input type="password" id="password" name="password" required placeholder="Minimum 8 characters">
             <small>Must be at least 8 characters long</small>
           </div>
-          
+
           <div class="form-group">
             <label for="confirmPassword">Confirm Password *</label>
             <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Re-enter password">
           </div>
-          
+
           <div class="form-group checkbox-group">
-            <label class="checkbox-label">
-              <input type="checkbox" id="terms" name="terms" required>
-              I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
-            </label>
+             <label class="checkbox-label">
+                <input type="checkbox" id="terms" name="terms" required>
+                I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+              </label>
           </div>
-          
+
           <div class="form-group checkbox-group">
             <label class="checkbox-label">
-              <input type="checkbox" id="newsletter" name="newsletter">
+              <input type="checkbox" id="updates" name="updates">
               Send me security tips and company updates
-            </label>
+          </label>
           </div>
-          
+
           <button type="submit" class="btn btn-submit btn-full">Create Account</button>
         </form>
-        
-        <div class="auth-footer">
-          <p>Already have an account? <a href="login.html">Log In</a></p>
-        </div>
-      </div>
-      
-      <!-- Benefits Sidebar -->
-      <div class="auth-benefits">
-        <h2>Why Register?</h2>
-        <div class="benefit-list">
-          <div class="benefit-item">
-            <div class="benefit-icon">📊</div>
-            <div class="benefit-text">
-              <h3>Dashboard Access</h3>
-              <p>Monitor your security systems in real-time</p>
-            </div>
-          </div>
-          
-          <div class="benefit-item">
-            <div class="benefit-icon">📹</div>
-            <div class="benefit-text">
-              <h3>Camera Feeds</h3>
-              <p>View live CCTV footage from anywhere</p>
-            </div>
-          </div>
-          
-          <div class="benefit-item">
-            <div class="benefit-icon">🔔</div>
-            <div class="benefit-text">
-              <h3>Instant Alerts</h3>
-              <p>Receive real-time security notifications</p>
-            </div>
-          </div>
-          
-          <div class="benefit-item">
-            <div class="benefit-icon">📝</div>
-            <div class="benefit-text">
-              <h3>Service Management</h3>
-              <p>Request services and track appointments</p>
-            </div>
-          </div>
-          
-          <div class="benefit-item">
-            <div class="benefit-icon">📄</div>
-            <div class="benefit-text">
-              <h3>Billing & Invoices</h3>
-              <p>Access invoices and payment history</p>
-            </div>
-          </div>
-          
-          <div class="benefit-item">
-            <div class="benefit-icon">🎓</div>
-            <div class="benefit-text">
-              <h3>Security Resources</h3>
-              <p>Access exclusive security guides and tips</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="trust-badges">
-          <h3>Trusted & Secure</h3>
-          <p>🔒 256-bit SSL Encryption</p>
-          <p>✅ Licensed Security Provider</p>
-          <p>🛡️ ISO 9001 Certified</p>
-        </div>
+
+        <!-- Auth Footer -->
+        <footer class="auth-footer">
+          <p>Already have an account? <a href="login.php">Log In</a></p>
+          <p class="security-notice">🔒 Your connection is secure and encrypted</p>
+        </footer>
+
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</main>
 
 <!-- Footer -->
 <?php include "includes/footer.php"; ?>
-
 
 <script src="assets/js/script.js"></script>
 </body>
