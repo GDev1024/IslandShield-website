@@ -219,11 +219,12 @@ This is an academic project created for educational purposes at T.A. Marryshow C
 
 ## 🙏 Acknowledgments
 
-- T.A. Marryshow Community College for Web Design education
+- Mr. Christopher Miginon Web Design education
+- w3 and GeeksforGeeks
 - Font Awesome for icons
 - Google Fonts for typography
 - PHP and MySQL communities for excellent documentation
 
 ---
 
-**Built with ❤️ for IslandShield Security - A TAMCC Web Design Course Project**
+**Built with ❤️**
