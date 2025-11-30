@@ -14,7 +14,7 @@
 <!-- Hero Section -->
 <section class="hero">
   <video autoplay muted loop playsinline class="hero-video">
-    <source src="assets/images/IslandShield Trusted Security.mp4" type="video/mp4">
+    <source src="assets/videos/IslandShield_Security.mp4" type="video/mp4">
   </video>
   <div class="hero-fallback"></div>
   <div class="hero-overlay"></div>
