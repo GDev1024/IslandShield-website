@@ -165,19 +165,20 @@ a:hover {
 }
 
 .btn-secondary {
-  background: var(--accent-cyan);
-  color: white;
-}
+  background: var(--gradient-gold);
+  color: var(--text-light);
+  }
 
 .btn-secondary:hover {
   box-shadow: var(--shadow-glow);
+  color: var(--text-light);
 }
 
 .btn-full {
   width: 100%;
 }
 
-/* ==================== Cards ==================== */
+/* Cards */
 .card,
 .service-card,
 .feature-card-large,
@@ -200,6 +201,158 @@ a:hover {
   box-shadow: 0 10px 30px rgba(0, 191, 255, 0.3);
   border-color: var(--accent-cyan);
 }
+
+
+/* Authentication cards */
+.auth-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: var(--spacing-4xl) 0;
+  background: var(--primary-navy);
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 450px;
+}
+
+.auth-card {
+  background-color: var(--bg-card);
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-4xl) var(--spacing-2xl);
+  box-shadow: var(--shadow-2xl);
+  border: 1px solid var(--border-alpha);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  animation: fadeIn 0.8s ease;
+}
+
+.auth-header {
+  background-color: var(--primary-navy); 
+  box-shadow: none;               
+  border: none;                   
+  transform: none;                
+  padding: 0;
+}
+
+  
+.auth-header h1 {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--primary-gold);
+}
+
+.auth-header p {
+  color: var(--text-gray);
+  margin-bottom: var(--spacing-lg);
+}
+
+.auth-form .form-group {
+  margin-bottom: var(--spacing-md);
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-alpha);
+  background: rgba(11, 30, 61, 0.5);
+  color: var(--text-light);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: var(--accent-cyan);
+  background: rgba(11, 30, 61, 0.7);
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+  gap: var(--spacing-sm);
+  border: none;
+  padding: 0;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-light);
+}
+
+.forgot-password {
+  color: var(--accent-cyan);
+  font-size: 0.9rem;
+}
+
+.divider {
+  text-align: center;
+  margin: var(--spacing-lg) 0;
+  position: relative;
+}
+
+.divider span {
+  background: var(--primary-navy);
+  padding: 0 var(--spacing-md);
+  position: relative;
+  z-index: 1;
+  color: var(--text-gray);
+}
+
+.divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--border-alpha);
+  z-index: 0;
+}
+
+.social-login .btn-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: var(--radius-md);
+  background: var(--bg-dark);
+  color: var(--text-light);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.social-login .btn-social:hover {
+  background: var(--accent-cyan);
+  color: var(--primary-navy);
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: var(--spacing-md);
+  color: var(--text-gray);
+  border: none;
+  margin-top: var(--spacing-sm);
+  background: none;
+  font-size: 0.85rem;
+}
+
+.auth-footer a {
+  color: var(--primary-gold);
+  font-weight: bold;
+}
+
 
 /* ==================== Header & Navigation ==================== */
 header {
@@ -381,6 +534,7 @@ nav ul li ul.dropdown li a:hover {
   justify-content: center;
   color: var(--text-light);
   overflow: hidden;
+  background: linear-gradient(135deg, var(--primary-navy) 0%, #1a3a5c 100%); /* fallback + overlay */
 }
 
 .hero-video {
@@ -390,24 +544,8 @@ nav ul li ul.dropdown li a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -2;
-}
-
-.hero-fallback {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, var(--primary-navy) 0%, #1a3a5c 100%);
-  z-index: -3;
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(11, 30, 61, 0.6);
-  z-index: 0;
+  z-index: -1;
+  opacity: 0.8; 
 }
 
 .hero-content {
@@ -415,8 +553,15 @@ nav ul li ul.dropdown li a:hover {
   z-index: 1;
   text-align: center;
   padding: 0 var(--spacing-md);
-  animation: fadeInUp 1s ease;
 }
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 var(--spacing-md);
+}
+
 
 .hero-title {
   font-size: 3rem;
