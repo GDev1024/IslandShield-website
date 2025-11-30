@@ -35,7 +35,7 @@
 
     <div class="footer-column">
       <h4>Contact Info</h4>
-      <p>📍 Grenville, St. Andrew<br>Grenada</p>
+      <p>📍 Bruce Street, Grenville, St. Andrew<br>Grenada</p>
       <p>📞 <a href="tel:4735557233">(473) 555-SAFE</a></p>
       <p>✉️ <a href="mailto:info@islandshield.com">info@islandshield.com</a></p>
       <p>🕐 24/7 Available</p>

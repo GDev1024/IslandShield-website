@@ -98,7 +98,7 @@
           <li>✓ Professional Installation</li>
           <li>✓ 1-Year Warranty</li>
         </ul>
-        <a href="contact.html" class="btn">Get Started</a>
+        <a href="contact.php" class="btn">Get Started</a>
       </div>
       
       <!-- Standard Package -->
@@ -122,7 +122,7 @@
           <li>✓ Professional Installation</li>
           <li>✓ 2-Year Warranty</li>
         </ul>
-        <a href="contact.html" class="btn">Get Started</a>
+        <a href="contact.php" class="btn">Get Started</a>
       </div>
       
       <!-- Premium Package -->
@@ -146,7 +146,7 @@
           <li>✓ Dedicated Support</li>
           <li>✓ 3-Year Warranty</li>
         </ul>
-        <a href="contact.html" class="btn">Contact Us</a>
+        <a href="contact.php" class="btn">Contact Us</a>
       </div>
     </div>
   </div>
@@ -227,7 +227,7 @@
   <div class="container">
     <h2>Ready to Enhance Your Security?</h2>
     <p>Get a free consultation and custom quote for your CCTV system today.</p>
-    <a href="contact.html" class="btn">Request Free Quote</a>
+    <a href="contact.php" class="btn">Request Free Quote</a>
     <p class="cta-phone">📞 Call Now: <a href="tel:4735557233">(473) 555-SAFE</a></p>
   </div>
 </section>

@@ -11,101 +11,101 @@
 <!-- Header / Nav -->
 <?php include "includes/header.php"; ?>
 
-<!-- Page Header -->
-<section class="page-header">
-  <div class="container">
-    <h1>Contact Us</h1>
-    <p>Get in touch for a free security consultation</p>
-  </div>
-</section>
+<main>
 
-<!-- Contact Section -->
-<section class="contact-section">
-  <div class="container">
-    <div class="contact-wrapper">
-      
-      <!-- Contact Form -->
-      <div class="contact-form-container">
-        <h2>Send Us a Message</h2>
-        <p>Fill out the form below and we'll get back to you within 24 hours.</p>
-        
-        <form id="contactForm" class="contact-form">
-          <div class="form-group">
-            <label for="name">Full Name *</label>
-            <input type="text" id="name" name="name" required placeholder="John Doe">
-          </div>
+  <!-- Contact Section -->
+  <section class="auth-section">
+    <div class="container auth-container">
+      <div class="auth-card">
+
+        <!-- Header -->
+        <header class="auth-header">
+          <h1>Contact Us</h1>
+          <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+        </header>
+
+        <!-- Contact Form -->
+        <form id="contactForm" class="auth-form" method="POST" action="process_contact.php" aria-label="Contact Form">
           
-          <div class="form-group">
-            <label for="email">Email Address *</label>
-            <input type="email" id="email" name="email" required placeholder="john@example.com">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required>
+            </div>
           </div>
-          
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="(473) 555-1234">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="(473) 555-1234">
+            </div>
+            <div class="form-group">
+              <label for="service">Service Interested In</label>
+              <select id="service" name="service">
+                <option value="">Select a service</option>
+                <option value="cctv">CCTV Installation</option>
+                <option value="personnel">Security Personnel</option>
+                <option value="event">Event Security</option>
+                <option value="emergency">Emergency Response</option>
+                <option value="consultation">General Consultation</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
           </div>
-          
-          <div class="form-group">
-            <label for="service">Service Interested In</label>
-            <select id="service" name="service">
-              <option value="">Select a service</option>
-              <option value="cctv">CCTV Installation</option>
-              <option value="personnel">Security Personnel</option>
-              <option value="event">Event Security</option>
-              <option value="emergency">Emergency Response</option>
-              <option value="consultation">General Consultation</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-          
+
           <div class="form-group">
             <label for="subject">Subject *</label>
-            <input type="text" id="subject" name="subject" required placeholder="How can we help?">
+            <input type="text" id="subject" name="subject" placeholder="How can we help?" required>
           </div>
-          
+
           <div class="form-group">
             <label for="message">Message *</label>
-            <textarea id="message" name="message" rows="6" required placeholder="Tell us about your security needs..."></textarea>
+            <textarea id="message" name="message" rows="6" placeholder="Tell us about your security needs..." required></textarea>
           </div>
-          
-          <button type="submit" class="btn btn-submit">Send Message</button>
+
+          <button type="submit" class="btn btn-submit btn-full">Send Message</button>
         </form>
-      </div>
-      
-      <!-- Contact Information -->
-      <div class="contact-info-container">
-        <h2>Contact Information</h2>
-        <p>Reach out to us through any of the following channels. We're available 24/7 for emergencies.</p>
-        
-        <div class="contact-info-list">
-          <div class="contact-info-item">
-            <div class="contact-icon">📍</div>
+
+        <!-- Divider -->
+        <div class="divider"><span>OR</span></div>
+
+        <!-- Contact Information -->
+        <div class="contact-info">
+          <h2>Contact Information</h2>
+          <p>Reach us through any of the following channels. We're available 24/7 for emergencies.</p>
+
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
             <div class="contact-details">
               <h3>Office Location</h3>
               <p>Main Street<br>Grenville, St. Andrew<br>Grenada</p>
             </div>
           </div>
-          
-          <div class="contact-info-item">
-            <div class="contact-icon">📞</div>
+
+          <div class="contact-item">
+            <span class="contact-icon">📞</span>
             <div class="contact-details">
               <h3>Phone Numbers</h3>
               <p><strong>Main:</strong> <a href="tel:4735557233">(473) 555-SAFE</a></p>
               <p><strong>Emergency:</strong> <a href="tel:4735559111">(473) 555-9111</a></p>
             </div>
           </div>
-          
-          <div class="contact-info-item">
-            <div class="contact-icon">✉️</div>
+
+          <div class="contact-item">
+            <span class="contact-icon">✉️</span>
             <div class="contact-details">
               <h3>Email Addresses</h3>
               <p><strong>General:</strong> <a href="mailto:info@islandshield.com">info@islandshield.com</a></p>
               <p><strong>Support:</strong> <a href="mailto:support@islandshield.com">support@islandshield.com</a></p>
             </div>
           </div>
-          
-          <div class="contact-info-item">
-            <div class="contact-icon">🕐</div>
+
+          <div class="contact-item">
+            <span class="contact-icon">🕐</span>
             <div class="contact-details">
               <h3>Business Hours</h3>
               <p><strong>Office:</strong> Mon-Fri, 8:00 AM - 6:00 PM</p>
@@ -113,48 +113,19 @@
             </div>
           </div>
         </div>
-        
-        <div class="social-contact">
-          <h3>Follow Us</h3>
-          <div class="social-links-large">
-            <a href="#" aria-label="Facebook">📘</a>
-            <a href="#" aria-label="Twitter">🐦</a>
-            <a href="#" aria-label="LinkedIn">💼</a>
-            <a href="#" aria-label="Instagram">📷</a>
-          </div>
-        </div>
+
+        <!-- Auth Footer -->
+        <footer class="auth-footer">
+          <p>Need immediate help? <a href="tel:4735559111">Call our 24/7 hotline</a></p>
+        </footer>
+
       </div>
-      
     </div>
-  </div>
-</section>
-
-<!-- Map Section (Placeholder) -->
-<section class="map-section">
-  <div class="container">
-    <h2 class="section-title">Find Us Here</h2>
-    <div class="map-placeholder">
-      <p>📍 Our office is located in Grenville, St. Andrew, Grenada</p>
-      <p>Map integration available with Google Maps API</p>
-      <!-- Add actual Google Maps embed here -->
-    </div>
-  </div>
-</section>
-
-<!-- Emergency Contact Banner -->
-<section class="emergency-banner">
-  <div class="container">
-    <div class="emergency-content">
-      <h2>🚨 Need Immediate Assistance?</h2>
-      <p>For security emergencies, call our 24/7 hotline immediately</p>
-      <a href="tel:4735559111" class="btn btn-emergency">(473) 555-9111</a>
-    </div>
-  </div>
-</section>
+  </section>
+</main>
 
 <!-- Footer -->
 <?php include "includes/footer.php"; ?>
-
 
 <script src="assets/js/script.js"></script>
 </body>

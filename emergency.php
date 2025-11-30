@@ -190,7 +190,7 @@
           <li>✓ Incident Reports</li>
           <li>✓ Police Coordination</li>
         </ul>
-        <a href="contact.html" class="btn">Sign Up</a>
+        <a href="contact.php" class="btn">Sign Up</a>
       </div>
       
       <div class="package-card featured">
@@ -212,7 +212,7 @@
           <li>✓ Detailed Incident Reports</li>
           <li>✓ Emergency Contact Updates</li>
         </ul>
-        <a href="contact.html" class="btn">Sign Up</a>
+        <a href="contact.php" class="btn">Sign Up</a>
       </div>
       
       <div class="package-card">
@@ -234,7 +234,7 @@
           <li>✓ Quarterly Security Review</li>
           <li>✓ Priority Scheduling</li>
         </ul>
-        <a href="contact.html" class="btn">Contact Us</a>
+        <a href="contact.php" class="btn">Contact Us</a>
       </div>
     </div>
   </div>
@@ -329,7 +329,7 @@
   <div class="container">
     <h2>Sign Up for Emergency Response Service</h2>
     <p>Don't wait for an emergency to happen. Get protected today.</p>
-    <a href="contact.html" class="btn">Get Emergency Coverage</a>
+    <a href="contact.php" class="btn">Get Emergency Coverage</a>
     <p class="cta-phone">📞 Non-Emergency: <a href="tel:4735557233">(473) 555-SAFE</a></p>
   </div>
 </section>

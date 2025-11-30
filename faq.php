@@ -215,7 +215,7 @@
     <h2>Still Have Questions?</h2>
     <p>Can't find the answer you're looking for? Our team is here to help!</p>
     <div class="cta-buttons">
-      <a href="contact.html" class="btn">Contact Us</a>
+      <a href="contact.php" class="btn">Contact Us</a>
       <a href="tel:4735557233" class="btn btn-secondary">Call (473) 555-SAFE</a>
     </div>
   </div>

@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: islandshield-web
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+    environment:
+      - DB_HOST=db
+      - DB_NAME=islandshield_db
+      - DB_USER=islandshield_user
+      - DB_PASSWORD=secure_password
+    depends_on:
+      - db
+    networks:
+      - islandshield-network
+
+  db:
+    image: mysql:8.0
+    container_name: islandshield-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: islandshield_db
+      MYSQL_USER: islandshield_user
+      MYSQL_PASSWORD: secure_password
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./includes/islandshield_database.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "3306:3306"
+    networks:
+      - islandshield-network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: islandshield-phpmyadmin
+    restart: always
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: root_password
+    depends_on:
+      - db
+    networks:
+      - islandshield-network
+
+volumes:
+  db_data:
+
+networks:
+  islandshield-network:
+    driver: bridge

@@ -1,0 +1,39 @@
+services:
+  # Web Service
+  - type: web
+    name: islandshield-security
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /
+    envVars:
+      - key: PHP_MEMORY_LIMIT
+        value: 256M
+      - key: APACHE_DOCUMENT_ROOT
+        value: /var/www/html
+    
+  # Database Service (MySQL)
+  - type: pserv
+    name: islandshield-db
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile.db
+    disk:
+      name: islandshield-data
+      mountPath: /var/lib/mysql
+      sizeGB: 1
+    envVars:
+      - key: MYSQL_ROOT_PASSWORD
+        generateValue: true
+      - key: MYSQL_DATABASE
+        value: islandshield_db
+      - key: MYSQL_USER
+        value: islandshield_user
+      - key: MYSQL_PASSWORD
+        generateValue: true
+
+databases:
+  - name: islandshield-mysql
+    databaseName: islandshield_db
+    user: islandshield_user
+    plan: free

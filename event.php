@@ -174,7 +174,7 @@
           <li>✓ Incident Reporting</li>
           <li>✓ Basic First Aid</li>
         </ul>
-        <a href="contact.html" class="btn">Book Now</a>
+        <a href="contact.php" class="btn">Book Now</a>
       </div>
       
       <div class="package-card featured">
@@ -196,7 +196,7 @@
           <li>✓ Emergency Response Plan</li>
           <li>✓ Radio Communication</li>
         </ul>
-        <a href="contact.html" class="btn">Book Now</a>
+        <a href="contact.php" class="btn">Book Now</a>
       </div>
       
       <div class="package-card">
@@ -218,7 +218,7 @@
           <li>✓ Police Liaison</li>
           <li>✓ Post-Event Security</li>
         </ul>
-        <a href="contact.html" class="btn">Contact Us</a>
+        <a href="contact.php" class="btn">Contact Us</a>
       </div>
     </div>
   </div>
@@ -326,7 +326,7 @@
   <div class="container">
     <h2>Planning an Event?</h2>
     <p>Let us handle the security so you can focus on making your event memorable.</p>
-    <a href="contact.html" class="btn">Request Event Security Quote</a>
+    <a href="contact.php" class="btn">Request Event Security Quote</a>
     <p class="cta-phone">📞 Call Now: <a href="tel:4735557233">(473) 555-SAFE</a></p>
   </div>
 </section>
