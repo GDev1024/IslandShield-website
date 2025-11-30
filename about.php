@@ -173,7 +173,7 @@
   <div class="container">
     <h2>Join Our Growing Family of Protected Clients</h2>
     <p>Experience the IslandShield difference. Contact us for a free security consultation.</p>
-    <a href="contact.html" class="btn">Get in Touch</a>
+    <a href="contact.php" class="btn">Get in Touch</a>
     <p class="cta-phone">📞 Call Now: <a href="tel:4735557233">(473) 555-SAFE</a></p>
   </div>
 </section>

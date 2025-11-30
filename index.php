@@ -16,7 +16,7 @@
   <div class="hero-fallback"></div>
   <div class="hero-overlay"></div>
   <video autoplay muted loop playsinline class="hero-video">
-      <source src="assets/videos/IslandShield_Security.mp4" type="video/mp4">
+      <source src="assets/images/IslandShield_Security.mp4" type="video/mp4">
     </video>
     <div class="container hero-content">
     <h2 class="hero-title">Professional Security Solutions</h2>
@@ -40,7 +40,7 @@
         </div>
         <h3>CCTV Installation & Monitoring</h3>
         <p>State-of-the-art surveillance systems with 24/7 monitoring, HD cameras, and cloud storage solutions.</p>
-        <a href="cctv.html" class="learn-more">Learn More →</a>
+        <a href="cctv.php" class="learn-more">Learn More →</a>
       </div>
       <div class="service-card">
         <div class="service-img">
@@ -48,7 +48,7 @@
         </div>
         <h3>Security Personnel</h3>
         <p>Highly trained and certified security guards for businesses, residences, and special events.</p>
-        <a href="personnel.html" class="learn-more">Learn More →</a>
+        <a href="personnel.php" class="learn-more">Learn More →</a>
       </div>
       <div class="service-card">
         <div class="service-img">
@@ -56,7 +56,7 @@
         </div>
         <h3>Event Security</h3>
         <p>Professional security teams for concerts, conferences, private parties, and corporate events.</p>
-        <a href="event.html" class="learn-more">Learn More →</a>
+        <a href="event.php" class="learn-more">Learn More →</a>
       </div>
       <div class="service-card">
         <div class="service-img">
@@ -64,7 +64,7 @@
         </div>
         <h3>Emergency Response</h3>
         <p>Rapid response teams available 24/7 for emergency situations and crisis management.</p>
-        <a href="emergency.html" class="learn-more">Learn More →</a>
+        <a href="emergency.php" class="learn-more">Learn More →</a>
       </div>
     </div>
   </div>
@@ -118,7 +118,7 @@
   <div class="container">
     <h2>Ready to Secure Your Property?</h2>
     <p>Contact us today for a free security assessment and custom quote.</p>
-    <a href="contact.html" class="btn">Contact Us</a>
+    <a href="contact.php" class="btn">Contact Us</a>
     <p class="cta-phone">📞 Call Now: <a href="tel:4735557233">(473) 555-SAFE</a></p>
   </div>
 </section>

@@ -88,7 +88,7 @@
           <li>✓ Incident Reporting</li>
           <li>✓ Patrol Services</li>
         </ul>
-        <a href="contact.html" class="btn">Get Quote</a>
+        <a href="contact.php" class="btn">Get Quote</a>
       </div>
       
       <div class="package-card featured">
@@ -108,7 +108,7 @@
           <li>✓ Daily Reports</li>
           <li>✓ Emergency Response</li>
         </ul>
-        <a href="contact.html" class="btn">Get Quote</a>
+        <a href="contact.php" class="btn">Get Quote</a>
       </div>
       
       <div class="package-card">
@@ -128,7 +128,7 @@
           <li>✓ Priority Response</li>
           <li>✓ Management Reports</li>
         </ul>
-        <a href="contact.html" class="btn">Contact Us</a>
+        <a href="contact.php" class="btn">Contact Us</a>
       </div>
     </div>
   </div>
@@ -169,7 +169,7 @@
   <div class="container">
     <h2>Need Professional Security Guards?</h2>
     <p>Contact us for a free security assessment and customized guard service plan.</p>
-    <a href="contact.html" class="btn">Request Guards</a>
+    <a href="contact.php" class="btn">Request Guards</a>
     <p class="cta-phone">📞 Call Now: <a href="tel:4735557233">(473) 555-SAFE</a></p>
   </div>
 </section>

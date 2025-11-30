@@ -44,7 +44,7 @@
             <li>✓ Motion Detection & Alerts</li>
             <li>✓ Professional Installation</li>
           </ul>
-          <a href="cctv.html" class="btn">Learn More</a>
+          <a href="cctv.php" class="btn">Learn More</a>
         </div>
       </div>
 
@@ -62,7 +62,7 @@
             <li>✓ Corporate Security</li>
             <li>✓ Residential Protection</li>
           </ul>
-          <a href="personnel.html" class="btn">Learn More</a>
+          <a href="personnel.php" class="btn">Learn More</a>
         </div>
       </div>
 
@@ -80,7 +80,7 @@
             <li>✓ VIP Protection</li>
             <li>✓ Entry & Exit Control</li>
           </ul>
-          <a href="event.html" class="btn">Learn More</a>
+          <a href="event.php" class="btn">Learn More</a>
         </div>
       </div>
 
@@ -98,7 +98,7 @@
             <li>✓ Medical Emergency Support</li>
             <li>✓ Evacuation Planning</li>
           </ul>
-          <a href="emergency.html" class="btn">Learn More</a>
+          <a href="emergency.php" class="btn">Learn More</a>
         </div>
       </div>
 
@@ -173,7 +173,7 @@
   <div class="container">
     <h2>Ready to Get Started?</h2>
     <p>Contact us today for a free security consultation and custom quote.</p>
-    <a href="contact.html" class="btn">Get Free Quote</a>
+    <a href="contact.php" class="btn">Get Free Quote</a>
     <p class="cta-phone">📞 Call Now: <a href="tel:4735557233">(473) 555-SAFE</a></p>
   </div>
 </section>
