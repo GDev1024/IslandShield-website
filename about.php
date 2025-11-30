@@ -9,36 +9,8 @@
 <body>
 
 <!-- Header / Nav -->
-<header>
-  <div class="container header-container">
-    <h1>IslandShield Security</h1>
-    <nav>
-      <ul id="navMenu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About Us</a></li>
-        <li class="has-dropdown">
-          <a href="services.html">Services ▼</a>
-          <ul class="dropdown">
-            <li><a href="cctv.html">CCTV Installation</a></li>
-            <li><a href="personnel.html">Security Personnel</a></li>
-            <li><a href="event.html">Event Security</a></li>
-            <li><a href="emergency.html">Emergency Response</a></li>
-          </ul>
-        </li>
-        <li><a href="resources.html">Resources</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="register.html" class="btn-nav">Sign Up</a></li>
-        <li><a href="login.html" class="btn-nav btn-secondary">Log In</a></li>
-      </ul>
-    </nav>
-    <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
-</header>
+<?php include "includes/header.php"; ?>
+
 
 <!-- Page Header -->
 <section class="page-header">
@@ -103,19 +75,19 @@
       </div>
       <div class="team-member">
         <div class="member-photo">👩‍💼</div>
-        <h3>Dr. Sophia Charles</h3>
+        <h3>Dr. Kayla Charles</h3>
         <p class="member-role">Director of Operations</p>
         <p class="member-bio">Expert in security technology and systems integration with a Ph.D. in Security Management.</p>
       </div>
       <div class="team-member">
         <div class="member-photo">👨‍✈️</div>
-        <h3>Captain James Mitchell</h3>
+        <h3>Captain Joshua Elvis</h3>
         <p class="member-role">Head of Security Personnel</p>
         <p class="member-bio">Former military officer with 15 years of tactical security experience and personnel training.</p>
       </div>
       <div class="team-member">
         <div class="member-photo">👩‍💻</div>
-        <h3>Lisa Rodriguez</h3>
+        <h3>Ahndre Rodriguez</h3>
         <p class="member-role">Technology Director</p>
         <p class="member-bio">Specialist in surveillance systems and cybersecurity with multiple industry certifications.</p>
       </div>
@@ -207,52 +179,8 @@
 </section>
 
 <!-- Footer -->
-<footer>
-  <div class="container footer-grid">
-    <div class="footer-column">
-      <h3>IslandShield Security</h3>
-      <p>Providing professional security solutions to protect what matters most. Licensed, certified, and trusted by the community.</p>
-      <div class="social-links">
-        <a href="#" aria-label="Facebook">📘</a>
-        <a href="#" aria-label="Twitter">🐦</a>
-        <a href="#" aria-label="LinkedIn">💼</a>
-        <a href="#" aria-label="Instagram">📷</a>
-      </div>
-    </div>
-    <div class="footer-column">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="resources.html">Resources</a></li>
-      </ul>
-    </div>
-    <div class="footer-column">
-      <h4>Services</h4>
-      <ul>
-        <li><a href="cctv.html">CCTV Installation</a></li>
-        <li><a href="personnel.html">Security Personnel</a></li>
-        <li><a href="event.html">Event Security</a></li>
-        <li><a href="emergency.html">Emergency Response</a></li>
-      </ul>
-    </div>
-    <div class="footer-column">
-      <h4>Contact Info</h4>
-      <p>📍 Grenville, St. Andrew<br>Grenada</p>
-      <p>📞 <a href="tel:4735557233">(473) 555-SAFE</a></p>
-      <p>✉️ <a href="mailto:info@islandshield.com">info@islandshield.com</a></p>
-      <p>🕐 24/7 Available</p>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="container">
-      <p>&copy; 2024 IslandShield Security. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-    </div>
-  </div>
-</footer>
+<?php include "includes/footer.php"; ?>
+
 
 <script src="assets/js/script.js"></script>
 </body>

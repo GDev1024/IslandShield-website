@@ -9,35 +9,7 @@
 <body>
 
 <!-- Header / Nav -->
-<header>
-  <div class="container header-container">
-    <h1>IslandShield Security</h1>
-    <nav>
-      <ul id="navMenu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li class="has-dropdown">
-          <a href="services.html">Services ▼</a>
-          <ul class="dropdown">
-            <li><a href="cctv.html">CCTV Installation</a></li>
-            <li><a href="personnel.html">Security Personnel</a></li>
-            <li><a href="event.html">Event Security</a></li>
-            <li><a href="emergency.html">Emergency Response</a></li>
-          </ul>
-        </li>
-        <li><a href="resources.html">Resources</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="dashboard.html" class="active">Dashboard</a></li>
-        <li><a href="#" class="btn-nav btn-logout">Log Out</a></li>
-      </ul>
-    </nav>
-    <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
-</header>
+<?php include "includes/header.php"; ?>
 
 <!-- Dashboard Content -->
 <section class="dashboard-section">
@@ -277,32 +249,8 @@
 </section>
 
 <!-- Footer -->
-<footer>
-  <div class="container footer-grid">
-    <div class="footer-column">
-      <h3>IslandShield Security</h3>
-      <p>Providing professional security solutions to protect what matters most.</p>
-    </div>
-    <div class="footer-column">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-column">
-      <h4>Contact Info</h4>
-      <p>📞 <a href="tel:4735557233">(473) 555-SAFE</a></p>
-      <p>✉️ <a href="mailto:info@islandshield.com">info@islandshield.com</a></p>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="container">
-      <p>&copy; 2024 IslandShield Security. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
+<?php include "includes/footer.php"; ?>
+
 
 <script src="assets/js/script.js"></script>
 </body>

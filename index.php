@@ -9,37 +9,7 @@
 </head>
 <body>
 
-<!-- Header / Nav -->
-<header>
-  <div class="container header-container">
-    <h1>IslandShield Security</h1>
-    <nav>
-      <ul id="navMenu">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li class="has-dropdown">
-          <a href="services.html">Services ▼</a>
-          <ul class="dropdown">
-            <li><a href="cctv.html">CCTV Installation</a></li>
-            <li><a href="personnel.html">Security Personnel</a></li>
-            <li><a href="event.html">Event Security</a></li>
-            <li><a href="emergency.html">Emergency Response</a></li>
-          </ul>
-        </li>
-        <li><a href="resources.html">Resources</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="register.html" class="btn-nav">Sign Up</a></li>
-        <li><a href="login.html" class="btn-nav btn-secondary">Log In</a></li>
-      </ul>
-    </nav>
-    <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
-</header>
+<?php include "includes/header.php"; ?>
 
 <!-- Hero Section -->
 <section class="hero">
@@ -65,25 +35,33 @@
     <p class="section-subtitle">Comprehensive security solutions tailored to your needs</p>
     <div class="services-grid">
       <div class="service-card">
-        <div class="service-icon">📹</div>
+        <div class="service-img">
+          <img src="assets/images/cctv.jpg" alt="CCTV Installation & Monitoring">
+        </div>
         <h3>CCTV Installation & Monitoring</h3>
         <p>State-of-the-art surveillance systems with 24/7 monitoring, HD cameras, and cloud storage solutions.</p>
         <a href="cctv.html" class="learn-more">Learn More →</a>
       </div>
       <div class="service-card">
-        <div class="service-icon">🛡️</div>
+        <div class="service-img">
+          <img src="assets/images/security_personnel.jpg" alt="Security Personnel">
+        </div>
         <h3>Security Personnel</h3>
         <p>Highly trained and certified security guards for businesses, residences, and special events.</p>
         <a href="personnel.html" class="learn-more">Learn More →</a>
       </div>
       <div class="service-card">
-        <div class="service-icon">🎭</div>
+        <div class="service-img">
+          <img src="assets/images/event_security.jpg" alt="Event Security">
+        </div>
         <h3>Event Security</h3>
         <p>Professional security teams for concerts, conferences, private parties, and corporate events.</p>
         <a href="event.html" class="learn-more">Learn More →</a>
       </div>
       <div class="service-card">
-        <div class="service-icon">🚨</div>
+        <div class="service-img">
+          <img src="assets/images/emergency_response.jpg" alt="Emergency Response">
+        </div>
         <h3>Emergency Response</h3>
         <p>Rapid response teams available 24/7 for emergency situations and crisis management.</p>
         <a href="emergency.html" class="learn-more">Learn More →</a>
@@ -146,52 +124,7 @@
 </section>
 
 <!-- Footer -->
-<footer>
-  <div class="container footer-grid">
-    <div class="footer-column">
-      <h3>IslandShield Security</h3>
-      <p>Providing professional security solutions to protect what matters most. Licensed, certified, and trusted by the community.</p>
-      <div class="social-links">
-        <a href="#" class="fa fa-facebook"></a>
-        <a href="#" class="fa fa-twitter"></a>
-        <a href="#" class="fa fa-linkedin"></a>
-        <a href="#" class="fa fa-instagram"></a>
-      </div>
-    </div>
-    <div class="footer-column">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="resources.html">Resources</a></li>
-      </ul>
-    </div>
-    <div class="footer-column">
-      <h4>Services</h4>
-      <ul>
-        <li><a href="cctv.html">CCTV Installation</a></li>
-        <li><a href="personnel.html">Security Personnel</a></li>
-        <li><a href="event.html">Event Security</a></li>
-        <li><a href="emergency.html">Emergency Response</a></li>
-      </ul>
-    </div>
-    <div class="footer-column">
-      <h4>Contact Info</h4>
-      <p>📍 Grenville, St. Andrew<br>Grenada</p>
-      <p>📞 <a href="tel:4735557233">(473) 555-SAFE</a></p>
-      <p>✉️ <a href="mailto:info@islandshield.com">info@islandshield.com</a></p>
-      <p>🕐 24/7 Available</p>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="container">
-      <p>&copy; 2025 IslandShield Security. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-    </div>
-  </div>
-</footer>
+<?php include "includes/footer.php"; ?>
 
 <script src="assets/js/script.js"></script>
 </body>

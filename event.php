@@ -8,40 +8,10 @@
 </head>
 <body>
 
-<header>
-  <div class="container header-container">
-    <h1>IslandShield Security</h1>
-    <nav>
-      <ul id="navMenu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li class="has-dropdown">
-          <a href="services.html">Services ▼</a>
-          <ul class="dropdown">
-            <li><a href="cctv.html">CCTV Installation</a></li>
-            <li><a href="personnel.html">Security Personnel</a></li>
-            <li><a href="event.html" class="active">Event Security</a></li>
-            <li><a href="emergency.html">Emergency Response</a></li>
-          </ul>
-        </li>
-        <li><a href="resources.html">Resources</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="register.html" class="btn-nav">Sign Up</a></li>
-        <li><a href="login.html" class="btn-nav btn-secondary">Log In</a></li>
-      </ul>
-    </nav>
-    <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
-</header>
+<?php include "includes/header.php"; ?>
 
 <section class="page-header service-header">
   <div class="container">
-    <div class="service-header-icon">🎭</div>
     <h1>Professional Event Security</h1>
     <p>Expert security teams for concerts, conferences, weddings, and corporate events</p>
   </div>
@@ -361,49 +331,8 @@
   </div>
 </section>
 
-<footer>
-  <div class="container footer-grid">
-    <div class="footer-column">
-      <h3>IslandShield Security</h3>
-      <p>Professional security solutions for Grenada.</p>
-      <div class="social-links">
-        <a href="#" class="fa fa-facebook"></a>
-        <a href="#" class="fa fa-twitter"></a>
-        <a href="#" class="fa fa-linkedin"></a>
-        <a href="#" class="fa fa-instagram"></a>
-      </div>
-    </div>
-    <div class="footer-column">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-column">
-      <h4>Services</h4>
-      <ul>
-        <li><a href="cctv.html">CCTV Installation</a></li>
-        <li><a href="personnel.html">Security Personnel</a></li>
-        <li><a href="event.html">Event Security</a></li>
-        <li><a href="emergency.html">Emergency Response</a></li>
-      </ul>
-    </div>
-    <div class="footer-column">
-      <h4>Contact Info</h4>
-      <p>📍 Grenville, St. Andrew, Grenada</p>
-      <p>📞 <a href="tel:4735557233">(473) 555-SAFE</a></p>
-      <p>✉️ <a href="mailto:info@islandshield.com">info@islandshield.com</a></p>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="container">
-      <p>&copy; 2024 IslandShield Security. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-    </div>
-  </div>
-</footer>
+<?php include "includes/footer.php"; ?>
+
 
 <script src="assets/js/script.js"></script>
 </body>
