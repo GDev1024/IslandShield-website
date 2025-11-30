@@ -74,15 +74,15 @@
 <section class="stats">
   <div class="container stats-grid">
     <div class="stat-card">
-      <h3 class="stat-number" data-target="500">0</h3>
+      <h3 class="stat-number" data-target="500">0+</h3>
       <p>Clients Protected</p>
     </div>
     <div class="stat-card">
-      <h3 class="stat-number" data-target="15">0</h3>
+      <h3 class="stat-number" data-target="15">0+</h3>
       <p>Years Experience</p>
     </div>
     <div class="stat-card">
-      <h3 class="stat-number" data-target="100">0</h3>
+      <h3 class="stat-number" data-target="100">0+</h3>
       <p>Security Personnel</p>
     </div>
     <div class="stat-card">
@@ -125,7 +125,3 @@
 
 <!-- Footer -->
 <?php include "includes/footer.php"; ?>
-
-<script src="assets/js/script.js"></script>
-</body>
-</html>

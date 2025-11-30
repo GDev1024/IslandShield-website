@@ -170,45 +170,54 @@ document.addEventListener('DOMContentLoaded', () => {
   scrollBtn.addEventListener('mouseenter', ()=> scrollBtn.style.transform='scale(1.1)');
   scrollBtn.addEventListener('mouseleave', ()=> scrollBtn.style.transform='scale(1)');
 
-  // Animate stats counters
-const animateCounters = () => {
-  const counters = document.querySelectorAll('.stat-number');
+  // ------------------------------
+  // Animate Stats Counters
+  // ------------------------------
+  const animateCounters = () => {
+    const counters = document.querySelectorAll('.stat-number[data-target]');
 
-  counters.forEach(counter => {
-    const target = Number(counter.getAttribute('data-target'));
-    if (isNaN(target)) return;
+    counters.forEach(counter => {
+      const target = parseInt(counter.getAttribute('data-target'));
+      if (isNaN(target) || target === 0) return;
 
-    let current = 0;
-    const duration = 2000; // 2 seconds
-    const stepTime = 16; // ~60fps
-    const increment = Math.ceil(target / (duration / stepTime));
+      const duration = 2000; // 2 seconds
+      const startTime = performance.now();
 
-    const update = () => {
-      current += increment;
-      if (current < target) {
+      const updateCounter = (currentTime) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        // Easing function for smooth animation
+        const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+        const current = Math.floor(easeOutQuart * target);
+
         counter.textContent = current + '+';
-        requestAnimationFrame(update);
-      } else {
-        counter.textContent = target + '+';
-      }
-    };
-    update();
-  });
-};
 
-// Trigger animation only when section is visible
-const statsSection = document.querySelector('.stats');
-if (statsSection) {
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        animateCounters();
-        observer.unobserve(entry.target);
-      }
+        if (progress < 1) {
+          requestAnimationFrame(updateCounter);
+        } else {
+          counter.textContent = target + '+';
+        }
+      };
+
+      requestAnimationFrame(updateCounter);
     });
-  }, { threshold: 0.5 });
-  observer.observe(statsSection);
-}
+  };
+
+  // Trigger animation when stats section is visible
+  const statsSection = document.querySelector('.stats');
+  if (statsSection) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounters();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 }); // Trigger when 30% visible
+    
+    observer.observe(statsSection);
+  }
 
   // ------------------------------
   // Console Branding
