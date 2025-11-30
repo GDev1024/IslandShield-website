@@ -4,9 +4,9 @@ define("BASE_URL", "http://localhost/islandshield/");
 
 // Database Settings (XAMPP default)
 define("DB_HOST", "localhost");
-define("DB_USER", "root");     // default XAMPP user
-define("DB_PASS", "");         // empty password for XAMPP
-define("DB_NAME", "islandshield"); // name of your database
+define("DB_USER", "root");     
+define("DB_PASS", "");         
+define("DB_NAME", "islandshield"); 
 
 $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 

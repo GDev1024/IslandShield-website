@@ -1,258 +1,43 @@
-// ===========================
-// Mobile Navigation Toggle
-// ===========================
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('navMenu');
-
-if (hamburger && navMenu) {
-  hamburger.addEventListener("click", () => {
-    navMenu.classList.toggle("open");
-    hamburger.classList.toggle("active");
-});
-
-  // Close menu when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-      navMenu.classList.remove('open');
-      hamburger.classList.remove('active');
-    }
-  });
-
-  // Handle dropdown in mobile
-  const dropdownParents = document.querySelectorAll('.has-dropdown');
-  dropdownParents.forEach(parent => {
-    parent.addEventListener('click', (e) => {
-      if (window.innerWidth <= 768) {
-        e.preventDefault();
-        parent.classList.toggle('show-dropdown');
-      }
-    });
-  });
-  
+// global fetch
+function showErrorMessage(container, message) {
+  const errorDiv = document.createElement('div');
+  errorDiv.className = 'error-message alert-message';
+  errorDiv.style.cssText = `
+    background: rgba(255, 68, 68, 0.2);
+    border: 1px solid #ff4444;
+    color: #ff4444;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    animation: fadeIn 0.3s ease;
+  `;
+  errorDiv.textContent = message;
+  container.insertBefore(errorDiv, container.firstChild);
+  setTimeout(() => errorDiv.remove(), 5000);
 }
 
-// ===========================
-// Animated Counter for Stats
-// ===========================
-const animateCounters = () => {
-  const counters = document.querySelectorAll('.stat-number');
-  
-  counters.forEach(counter => {
-    const target = parseInt(counter.getAttribute('data-target'));
-    const duration = 2000; // 2 seconds
-    const increment = target / (duration / 16); // 60fps
-    let current = 0;
-    
-    const updateCounter = () => {
-      current += increment;
-      if (current < target) {
-        counter.textContent = Math.floor(current) + '+';
-        requestAnimationFrame(updateCounter);
-      } else {
-        counter.textContent = target + '+';
-      }
-    };
-    
-    updateCounter();
-  });
-};
-
-// ===========================
-// Intersection Observer for Stats
-// ===========================
-const statsSection = document.querySelector('.stats');
-if (statsSection) {
-  const observerOptions = {
-    threshold: 0.5,
-    rootMargin: '0px'
-  };
-
-  const statsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        animateCounters();
-        statsObserver.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
-  statsObserver.observe(statsSection);
+function showSuccess(element, message) {
+  const successDiv = document.createElement('div');
+  successDiv.className = 'success-message alert-message';
+  successDiv.style.cssText = `
+    background: rgba(0, 255, 0, 0.2);
+    border: 1px solid #00ff00;
+    color: #00ff00;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    animation: fadeIn 0.3s ease;
+  `;
+  successDiv.textContent = message;
+  element.parentElement.insertBefore(successDiv, element);
 }
 
-// ===========================
-// Smooth Scroll for Navigation Links
-// ===========================
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-      // Close mobile menu if open
-      if (navMenu) {
-        navMenu.classList.remove('show');
-      }
-      if (hamburger) {
-        hamburger.classList.remove('active');
-      }
-    }
-  });
-});
-
-// ===========================
-// Active Navigation Link on Scroll
-// ===========================
-window.addEventListener('scroll', () => {
-  const sections = document.querySelectorAll('section[id]');
-  const scrollY = window.pageYOffset;
-
-  sections.forEach(section => {
-    const sectionHeight = section.offsetHeight;
-    const sectionTop = section.offsetTop - 100;
-    const sectionId = section.getAttribute('id');
-    const navLink = document.querySelector(`nav a[href="#${sectionId}"]`);
-
-    if (navLink) {
-      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-        navLink.classList.add('active');
-      } else {
-        navLink.classList.remove('active');
-      }
-    }
-  });
-});
-
-// ===========================
-// Form Validation (for Registration/Login pages)
-// ===========================
-const registerForm = document.getElementById('registerForm');
-if (registerForm) {
-  registerForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const password = document.getElementById('password');
-    const confirmPassword = document.getElementById('confirmPassword');
-    const email = document.getElementById('email');
-    const name = document.getElementById('name');
-    
-    // Reset previous error messages
-    clearErrors();
-    
-    let isValid = true;
-    
-    // Name validation
-    if (name && name.value.trim().length < 2) {
-      showError(name, 'Name must be at least 2 characters long');
-      isValid = false;
-    }
-    
-    // Email validation
-    if (email && !isValidEmail(email.value)) {
-      showError(email, 'Please enter a valid email address');
-      isValid = false;
-    }
-    
-    // Password validation
-    if (password && password.value.length < 8) {
-      showError(password, 'Password must be at least 8 characters long');
-      isValid = false;
-    }
-    
-    // Confirm password validation
-    if (confirmPassword && password.value !== confirmPassword.value) {
-      showError(confirmPassword, 'Passwords do not match');
-      isValid = false;
-    }
-    
-    if (isValid) {
-      // Here you would normally send data to PHP backend
-      alert('Registration successful! (This is a demo - integrate with PHP backend)');
-      registerForm.reset();
-    }
-  });
+function clearErrors() {
+  document.querySelectorAll('.error-message, .alert-message').forEach(el => el.remove());
+  const inputs = document.querySelectorAll('input, textarea, select');
+  inputs.forEach(input => input.style.borderColor = '');
 }
 
-// Login Form Validation
-const loginForm = document.getElementById('loginForm');
-if (loginForm) {
-  loginForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const email = document.getElementById('email');
-    const password = document.getElementById('password');
-    
-    clearErrors();
-    
-    let isValid = true;
-    
-    if (email && !isValidEmail(email.value)) {
-      showError(email, 'Please enter a valid email address');
-      isValid = false;
-    }
-    
-    if (password && password.value.length < 1) {
-      showError(password, 'Please enter your password');
-      isValid = false;
-    }
-    
-    if (isValid) {
-      // Here you would normally send data to PHP backend
-      alert('Login successful! (This is a demo - integrate with PHP backend)');
-      // Redirect to dashboard
-      // window.location.href = 'dashboard.html';
-    }
-  });
-}
-
-// Contact Form Validation
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const name = document.getElementById('name');
-    const email = document.getElementById('email');
-    const subject = document.getElementById('subject');
-    const message = document.getElementById('message');
-    
-    clearErrors();
-    
-    let isValid = true;
-    
-    if (name && name.value.trim().length < 2) {
-      showError(name, 'Name must be at least 2 characters long');
-      isValid = false;
-    }
-    
-    if (email && !isValidEmail(email.value)) {
-      showError(email, 'Please enter a valid email address');
-      isValid = false;
-    }
-    
-    if (subject && subject.value.trim().length < 3) {
-      showError(subject, 'Subject must be at least 3 characters long');
-      isValid = false;
-    }
-    
-    if (message && message.value.trim().length < 10) {
-      showError(message, 'Message must be at least 10 characters long');
-      isValid = false;
-    }
-    
-    if (isValid) {
-      // Here you would normally send data to PHP backend
-      alert('Message sent successfully! (This is a demo - integrate with PHP backend)');
-      contactForm.reset();
-    }
-  });
-}
-
-// ===========================
-// Form Helper Functions
-// ===========================
 function isValidEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
@@ -267,113 +52,276 @@ function showError(input, message) {
   errorElement.style.fontSize = '0.875rem';
   errorElement.style.marginTop = '0.25rem';
   errorElement.style.display = 'block';
-  
   input.style.borderColor = '#ff4444';
   formGroup.appendChild(errorElement);
 }
 
-function clearErrors() {
-  const errorMessages = document.querySelectorAll('.error-message');
-  errorMessages.forEach(error => error.remove());
-  
-  const inputs = document.querySelectorAll('input, textarea');
-  inputs.forEach(input => {
-    input.style.borderColor = '';
-  });
-}
+// mobile nav toggle
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
 
-// ===========================
-// Video Fallback Handler
-// ===========================
-const heroVideo = document.querySelector('.hero-video');
-if (heroVideo) {
-  heroVideo.addEventListener('error', () => {
-    heroVideo.style.display = 'none';
-    const fallback = document.querySelector('.hero-fallback');
-    if (fallback) {
-      fallback.style.display = 'block';
+if (hamburger && navMenu) {
+  hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("open");
+    hamburger.classList.toggle("active");
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+      navMenu.classList.remove('open');
+      hamburger.classList.remove('active');
     }
   });
-}
 
-// ===========================
-// Scroll-to-Top Button (Optional Enhancement)
-// ===========================
-const createScrollToTop = () => {
-  const button = document.createElement('button');
-  button.innerHTML = '↑';
-  button.className = 'scroll-to-top';
-  button.style.cssText = `
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #ffcc00;
-    color: #0b1e3d;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    opacity: 0;
-    transition: all 0.3s ease;
-    z-index: 999;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  `;
-  
-  document.body.appendChild(button);
-  
-  window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
-      button.style.opacity = '1';
-      button.style.pointerEvents = 'auto';
-    } else {
-      button.style.opacity = '0';
-      button.style.pointerEvents = 'none';
-    }
-  });
-  
-  button.addEventListener('click', () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+  document.querySelectorAll('.has-dropdown').forEach(parent => {
+    parent.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        parent.classList.toggle('show-dropdown');
+      }
     });
   });
-  
-  button.addEventListener('mouseenter', () => {
-    button.style.transform = 'scale(1.1)';
+}
+
+// smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      navMenu?.classList.remove('open');
+      hamburger?.classList.remove('active');
+    }
   });
-  
-  button.addEventListener('mouseleave', () => {
-    button.style.transform = 'scale(1)';
+});
+
+// registration form   
+const registerForm = document.getElementById('registerForm');
+if (registerForm) {
+  registerForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    clearErrors();
+    const formData = new FormData(registerForm);
+    const submitBtn = registerForm.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Creating Account...';
+    submitBtn.disabled = true;
+
+    try {
+      const response = await fetch('Includes/registration_handler.php', { method: 'POST', body: formData });
+      const data = await response.json();
+
+      if (data.success) {
+        showSuccess(submitBtn, data.message);
+        setTimeout(() => window.location.href = data.redirect, 2000);
+      } else {
+        if (data.errors?.length) data.errors.forEach(error => showErrorMessage(registerForm, error));
+        else showErrorMessage(registerForm, data.message);
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }
+    } catch {
+      showErrorMessage(registerForm, 'Network error. Please try again.');
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+    }
+  });
+}
+
+// login form
+const loginForm = document.getElementById('loginForm');
+if (loginForm) {
+  loginForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    clearErrors();
+    const formData = new FormData(loginForm);
+    const submitBtn = loginForm.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Logging In...';
+    submitBtn.disabled = true;
+
+    try {
+      const response = await fetch('Includes/login_handler.php', { method: 'POST', body: formData });
+      const data = await response.json();
+
+      if (data.success) {
+        showSuccess(submitBtn, data.message);
+        sessionStorage.setItem('user', JSON.stringify(data.user));
+        setTimeout(() => window.location.href = data.redirect, 1500);
+      } else {
+        showErrorMessage(loginForm, data.message);
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }
+    } catch {
+      showErrorMessage(loginForm, 'Network error. Please try again.');
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+    }
+  });
+}
+
+// contact form
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    clearErrors();
+    const formData = new FormData(contactForm);
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+
+    try {
+      const response = await fetch('Includes/contact_form_handler.php', { method: 'POST', body: formData });
+      const data = await response.json();
+
+      if (data.success) {
+        showSuccess(submitBtn, data.message);
+        contactForm.reset();
+        setTimeout(() => { submitBtn.textContent = originalText; submitBtn.disabled = false; }, 3000);
+      } else {
+        if (data.errors?.length) data.errors.forEach(error => showErrorMessage(contactForm, error));
+        else showErrorMessage(contactForm, data.message);
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }
+    } catch {
+      showErrorMessage(contactForm, 'Network error. Please try again.');
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+    }
+  });
+}
+
+// logout
+document.querySelectorAll('.btn-logout, [href*="logout"]').forEach(btn => {
+  btn.addEventListener('click', async (e) => {
+    e.preventDefault();
+    try {
+      await fetch('Includes/logout_handler.php');
+      sessionStorage.clear();
+      window.location.href = 'index.php';
+    } catch {
+      window.location.href = 'index.php';
+    }
+  });
+});
+
+// dashboard data
+async function loadDashboardData() {
+  try {
+    const authResponse = await fetch('Includes/check_auth.php');
+    const authData = await authResponse.json();
+    if (!authData.authenticated) return window.location.href = 'login.php';
+    updateUserProfile(authData.user);
+
+    const dashResponse = await fetch('Includes/dashboard_data.php');
+    const dashData = await dashResponse.json();
+
+    if (dashData.success) {
+      updateDashboardStats(dashData);
+      updateServicesList(dashData.services);
+      updateAlertsList(dashData.alerts);
+      updateCameraStats(dashData.cameras);
+    }
+  } catch {
+    showErrorMessage(document.body, 'Failed to load dashboard data');
+  }
+}
+
+function updateUserProfile(user) {
+  const userName = document.querySelector('.user-profile h3');
+  const userEmail = document.querySelector('.user-profile p');
+  if (userName) userName.textContent = user.name;
+  if (userEmail) userEmail.textContent = user.email;
+}
+
+function updateDashboardStats(data) {
+  if (data.cameras) {
+    const onlineElement = document.querySelector('.stat-value');
+    if (onlineElement) onlineElement.textContent = `${data.cameras.online}/${data.cameras.total}`;
+  }
+}
+
+function updateServicesList(services) {
+  const servicesContainer = document.querySelector('.services-list');
+  if (!servicesContainer || !services) return;
+  servicesContainer.innerHTML = services.map(service => `
+    <div class="service-item">
+      <div class="service-icon">🛡️</div>
+      <div class="service-details">
+        <h3>${service.service_type.toUpperCase()} Monitoring</h3>
+        <p>${service.package_name || 'Standard Package'}</p>
+        <span class="service-status active">Active</span>
+      </div>
+      <div class="service-actions">
+        <button class="btn-icon">⚙️</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function updateAlertsList(alerts) {
+  const alertsContainer = document.querySelector('.alerts-list');
+  if (!alertsContainer || !alerts) return;
+  alertsContainer.innerHTML = alerts.map(alert => `
+    <div class="alert-item alert-${alert.type}">
+      <div class="alert-icon">${getAlertIcon(alert.type)}</div>
+      <div class="alert-content">
+        <h4>${alert.title}</h4>
+        <p>${alert.message}</p>
+        <span class="alert-time">${alert.time}</span>
+      </div>
+    </div>
+  `).join('');
+}
+
+function getAlertIcon(type) {
+  const icons = { 'info': 'ℹ️', 'warning': '⚠️', 'success': '✓', 'critical': '🚨' };
+  return icons[type] || 'ℹ️';
+}
+
+function updateCameraStats(cameras) {
+  // camera stats logic
+}
+
+// auto load dashboard data
+if (window.location.pathname.includes('dashboard.php')) loadDashboardData();
+
+//  stats counters animation
+const animateCounters = () => {
+  const counters = document.querySelectorAll('.stat-number');
+  counters.forEach(counter => {
+    const target = parseInt(counter.getAttribute('data-target'));
+    const duration = 2000;
+    const increment = target / (duration / 16);
+    let current = 0;
+    const updateCounter = () => {
+      current += increment;
+      counter.textContent = current < target ? Math.floor(current) + '+' : target + '+';
+      if (current < target) requestAnimationFrame(updateCounter);
+    };
+    updateCounter();
   });
 };
 
-// Initialize scroll-to-top button
-createScrollToTop();
-
-// FAQ Accordion (if on FAQ page)
-const faqItems = document.querySelectorAll('.faq-item');
-if (faqItems.length > 0) {
-  faqItems.forEach(item => {
-    const question = item.querySelector('.faq-question');
-    if (question) {
-      question.addEventListener('click', () => {
-        item.classList.toggle('active');
-        
-        // Close other FAQ items
-        faqItems.forEach(otherItem => {
-          if (otherItem !== item) {
-            otherItem.classList.remove('active');
-          }
-        });
-      });
-    }
-  });
+const statsSection = document.querySelector('.stats');
+if (statsSection) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounters();
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5, rootMargin: '0px' });
+  observer.observe(statsSection);
 }
 
-// Service Cards Animation on Scroll
-
+// service cards animation
 const serviceCards = document.querySelectorAll('.service-card');
 if (serviceCards.length > 0) {
   const cardObserver = new IntersectionObserver((entries) => {
@@ -386,10 +334,7 @@ if (serviceCards.length > 0) {
         cardObserver.unobserve(entry.target);
       }
     });
-  }, {
-    threshold: 0.1,
-    rootMargin: '0px'
-  });
+  }, { threshold: 0.1, rootMargin: '0px' });
 
   serviceCards.forEach(card => {
     card.style.opacity = '0';
@@ -399,7 +344,51 @@ if (serviceCards.length > 0) {
   });
 }
 
-//  Console Welcome Message
+// scroll to top button
+const createScrollToTop = () => {
+  const button = document.createElement('button');
+  button.innerHTML = '↑';
+  button.className = 'scroll-to-top';
+  button.style.cssText = `
+    position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px;
+    border-radius: 50%; background-color: #ffcc00; color: #0b1e3d;
+    border: none; font-size: 24px; cursor: pointer; opacity: 0;
+    transition: all 0.3s ease; z-index: 999; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  `;
+  document.body.appendChild(button);
+
+  window.addEventListener('scroll', () => {
+    button.style.opacity = window.pageYOffset > 300 ? '1' : '0';
+    button.style.pointerEvents = window.pageYOffset > 300 ? 'auto' : 'none';
+  });
+
+  button.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  button.addEventListener('mouseenter', () => button.style.transform = 'scale(1.1)');
+  button.addEventListener('mouseleave', () => button.style.transform = 'scale(1)');
+};
+createScrollToTop();
+
+
+// video fallback
+const heroVideo = document.querySelector('.hero-video');
+if (heroVideo) {
+  heroVideo.addEventListener('error', () => {
+    heroVideo.style.display = 'none';
+    document.querySelector('.hero-fallback')?.style.display = 'block';
+  });
+}
+
+// faq 
+document.querySelectorAll('.faq-item').forEach(item => {
+  const question = item.querySelector('.faq-question');
+  question?.addEventListener('click', () => {
+    item.classList.toggle('active');
+    document.querySelectorAll('.faq-item').forEach(other => {
+      if (other !== item) other.classList.remove('active');
+    });
+  });
+});
+
  
 console.log('%cIslandShield Security', 'font-size: 24px; color: #ffcc00; font-weight: bold;');
 console.log('%cProtecting what matters most 🛡️', 'font-size: 14px; color: #00bfff;');

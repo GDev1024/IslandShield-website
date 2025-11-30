@@ -75,19 +75,19 @@
       </div>
       <div class="team-member">
         <div class="member-photo">👩‍💼</div>
-        <h3>Dr. Sophia Charles</h3>
+        <h3>Dr. Kayla Charles</h3>
         <p class="member-role">Director of Operations</p>
         <p class="member-bio">Expert in security technology and systems integration with a Ph.D. in Security Management.</p>
       </div>
       <div class="team-member">
         <div class="member-photo">👨‍✈️</div>
-        <h3>Captain James Mitchell</h3>
+        <h3>Captain Joshua Elvis</h3>
         <p class="member-role">Head of Security Personnel</p>
         <p class="member-bio">Former military officer with 15 years of tactical security experience and personnel training.</p>
       </div>
       <div class="team-member">
         <div class="member-photo">👩‍💻</div>
-        <h3>Lisa Rodriguez</h3>
+        <h3>Ahndre Rodriguez</h3>
         <p class="member-role">Technology Director</p>
         <p class="member-bio">Specialist in surveillance systems and cybersecurity with multiple industry certifications.</p>
       </div>

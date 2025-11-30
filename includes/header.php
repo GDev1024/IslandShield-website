@@ -5,7 +5,9 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 
 <header>
   <div class="container header-container">
-    <img src="/assets/images/logo2.png" alt="IslandShield Security Logo">
+   <a href="index.php" class="default_logo"> 
+     <img src="assets/images/logo2.png" alt="IslandShield Security Logo">
+   </a>
 
     <nav>
       <ul id="navMenu">

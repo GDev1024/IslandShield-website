@@ -35,25 +35,33 @@
     <p class="section-subtitle">Comprehensive security solutions tailored to your needs</p>
     <div class="services-grid">
       <div class="service-card">
-        <div class="service-icon">📹</div>
+        <div class="service-img">
+          <img src="assets/images/cctv.jpg" alt="CCTV Installation & Monitoring">
+        </div>
         <h3>CCTV Installation & Monitoring</h3>
         <p>State-of-the-art surveillance systems with 24/7 monitoring, HD cameras, and cloud storage solutions.</p>
         <a href="cctv.html" class="learn-more">Learn More →</a>
       </div>
       <div class="service-card">
-        <div class="service-icon">🛡️</div>
+        <div class="service-img">
+          <img src="assets/images/security_personnel.jpg" alt="Security Personnel">
+        </div>
         <h3>Security Personnel</h3>
         <p>Highly trained and certified security guards for businesses, residences, and special events.</p>
         <a href="personnel.html" class="learn-more">Learn More →</a>
       </div>
       <div class="service-card">
-        <div class="service-icon">🎭</div>
+        <div class="service-img">
+          <img src="assets/images/event_security.jpg" alt="Event Security">
+        </div>
         <h3>Event Security</h3>
         <p>Professional security teams for concerts, conferences, private parties, and corporate events.</p>
         <a href="event.html" class="learn-more">Learn More →</a>
       </div>
       <div class="service-card">
-        <div class="service-icon">🚨</div>
+        <div class="service-img">
+          <img src="assets/images/emergency_response.jpg" alt="Emergency Response">
+        </div>
         <h3>Emergency Response</h3>
         <p>Rapid response teams available 24/7 for emergency situations and crisis management.</p>
         <a href="emergency.html" class="learn-more">Learn More →</a>
