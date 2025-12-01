@@ -1,6 +1,10 @@
 <?php
-// Load environment variables
-$env = parse_ini_file(__DIR__ . '/../.env', false, INI_SCANNER_TYPED);
+// Load environment variables from .env file if it exists (local development)
+$env = [];
+$envFile = __DIR__ . '/../.env';
+if (file_exists($envFile)) {
+    $env = parse_ini_file($envFile, false, INI_SCANNER_TYPED);
+}
 
 // Base URL - auto-detect or use environment variable
 $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https://' : 'http://';
