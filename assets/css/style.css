@@ -1080,18 +1080,50 @@ footer {
   nav ul {
     display: none;
     flex-direction: column;
-    background: rgba(11, 30, 61, 0.95);
+    background: rgba(11, 30, 61, 0.98);
+    backdrop-filter: blur(20px);
     position: absolute;
-    top: 60px;
+    top: 100%;
     right: 0;
-    width: 250px;
-    padding: var(--spacing-md);
+    width: 280px;
+    padding: var(--spacing-lg);
     border-radius: var(--radius-md);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border-light);
+    margin-top: 0.5rem;
+  }
+
+  nav ul.open {
+    display: flex;
   }
 
   nav ul.show {
     display: flex;
+  }
+
+  nav ul li {
+    width: 100%;
+  }
+
+  nav ul li a {
+    width: 100%;
+    padding: var(--spacing-md);
+  }
+
+  nav ul li ul.dropdown {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+    box-shadow: none;
+    border: none;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  nav ul li.has-dropdown.show-dropdown ul.dropdown {
+    display: block;
   }
 
   .hamburger {
