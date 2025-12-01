@@ -41,8 +41,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     // Check if email already exists
     if (empty($errors)) {
-        $stmt = $pdo->prepare("SELECT user_id FROM users WHERE email = ?");
-        $stmt->execute([$email]);
+        $stmt = $connection->prepare("SELECT user_id FROM users WHERE email = :email");
+        $stmt->execute(['email' => $email]);
         if ($stmt->fetch()) {
             $errors[] = "Email already registered";
         }
@@ -53,23 +53,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         try {
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
             
-            $stmt = $pdo->prepare("
+            $stmt = $connection->prepare("
                 INSERT INTO users (first_name, last_name, email, phone, address, parish, property_type, password_hash)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                VALUES (:first_name, :last_name, :email, :phone, :address, :parish, :property_type, :password_hash)
             ");
             
             $stmt->execute([
-                $firstName, $lastName, $email, $phone, 
-                $address, $parish, $propertyType, $hashedPassword
+                'first_name' => $firstName,
+                'last_name' => $lastName,
+                'email' => $email,
+                'phone' => $phone,
+                'address' => $address,
+                'parish' => $parish,
+                'property_type' => $propertyType,
+                'password_hash' => $hashedPassword
             ]);
             
             echo json_encode([
                 'success' => true,
                 'message' => 'Registration successful! Redirecting to login...',
-                'redirect' => 'login.html'
+                'redirect' => 'login.php'
             ]);
             
         } catch(PDOException $e) {
+            error_log("Registration error: " . $e->getMessage());
             echo json_encode([
                 'success' => false,
                 'message' => 'Registration failed. Please try again.'

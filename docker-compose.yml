@@ -10,41 +10,45 @@ services:
       - .:/var/www/html
     environment:
       - DB_HOST=db
+      - DB_PORT=5432
       - DB_NAME=islandshield_db
       - DB_USER=islandshield_user
-      - DB_PASSWORD=secure_password
+      - DB_PASSWORD=BenBen-1738
     depends_on:
       - db
     networks:
       - islandshield-network
 
   db:
-    image: mysql:8.0
+    image: postgres:15
     container_name: islandshield-db
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root_password
-      MYSQL_DATABASE: islandshield_db
-      MYSQL_USER: islandshield_user
-      MYSQL_PASSWORD: secure_password
+      POSTGRES_DB: islandshield_db
+      POSTGRES_USER: islandshield_user
+      POSTGRES_PASSWORD: BenBen-1738
     volumes:
-      - db_data:/var/lib/mysql
-      - ./includes/islandshield_database.sql:/docker-entrypoint-initdb.d/init.sql
+      - db_data:/var/lib/postgresql/data
+      - ./includes/islandshield_database_postgresql.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
-      - "3306:3306"
+      - "5432:5432"
     networks:
       - islandshield-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U islandshield_user -d islandshield_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    container_name: islandshield-phpmyadmin
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: islandshield-pgadmin
     restart: always
     ports:
       - "8081:80"
     environment:
-      PMA_HOST: db
-      PMA_PORT: 3306
-      MYSQL_ROOT_PASSWORD: root_password
+      PGADMIN_DEFAULT_EMAIL: admin@islandshield.com
+      PGADMIN_DEFAULT_PASSWORD: admin
     depends_on:
       - db
     networks:

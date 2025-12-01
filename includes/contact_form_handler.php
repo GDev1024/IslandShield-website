@@ -36,12 +36,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($errors)) {
         try {
             // Insert into database
-            $stmt = $pdo->prepare("
+            $stmt = $connection->prepare("
                 INSERT INTO contact_messages (name, email, phone, service, subject, message)
-                VALUES (?, ?, ?, ?, ?, ?)
+                VALUES (:name, :email, :phone, :service, :subject, :message)
             ");
             
-            $stmt->execute([$name, $email, $phone, $service, $subject, $message]);
+            $stmt->execute([
+                'name' => $name,
+                'email' => $email,
+                'phone' => $phone,
+                'service' => $service,
+                'subject' => $subject,
+                'message' => $message
+            ]);
             
             // Send email notification (optional)
             $to = "info@islandshield.com";
@@ -66,6 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ]);
             
         } catch(PDOException $e) {
+            error_log("Contact form error: " . $e->getMessage());
             echo json_encode([
                 'success' => false,
                 'message' => 'Failed to send message. Please try again or call us directly.'

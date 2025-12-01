@@ -19,13 +19,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     
     try {
+        // Start session if not already started
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        
         // Get user from database
-        $stmt = $pdo->prepare("
+        $stmt = $connection->prepare("
             SELECT user_id, first_name, last_name, email, password_hash, status 
             FROM users 
-            WHERE email = ?
+            WHERE email = :email
         ");
-        $stmt->execute([$email]);
+        $stmt->execute(['email' => $email]);
         $user = $stmt->fetch();
         
         if ($user && password_verify($password, $user['password_hash'])) {
@@ -45,13 +50,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['logged_in'] = true;
             
             // Update last login
-            $stmt = $pdo->prepare("UPDATE users SET last_login = NOW() WHERE user_id = ?");
-            $stmt->execute([$user['user_id']]);
+            $stmt = $connection->prepare("UPDATE users SET last_login = NOW() WHERE user_id = :user_id");
+            $stmt->execute(['user_id' => $user['user_id']]);
             
             echo json_encode([
                 'success' => true,
                 'message' => 'Login successful!',
-                'redirect' => 'dashboard.html',
+                'redirect' => 'dashboard.php',
                 'user' => [
                     'name' => $_SESSION['user_name'],
                     'email' => $_SESSION['user_email']
@@ -66,6 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         
     } catch(PDOException $e) {
+        error_log("Login error: " . $e->getMessage());
         echo json_encode([
             'success' => false,
             'message' => 'Login failed. Please try again.'
