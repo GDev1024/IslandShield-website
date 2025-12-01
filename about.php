@@ -124,28 +124,6 @@
   </div>
 </section>
 
-<!-- Stats -->
-<section class="stats">
-  <div class="container stats-grid">
-    <div class="stat-card">
-      <h3 class="stat-number" data-target="500">0</h3>
-      <p>Clients Protected</p>
-    </div>
-    <div class="stat-card">
-      <h3 class="stat-number" data-target="15">0</h3>
-      <p>Years Experience</p>
-    </div>
-    <div class="stat-card">
-      <h3 class="stat-number" data-target="100">0</h3>
-      <p>Security Personnel</p>
-    </div>
-    <div class="stat-card">
-      <h3 class="stat-number" data-target="98">0</h3>
-      <p>Client Satisfaction %</p>
-    </div>
-  </div>
-</section>
-
 <!-- Community Involvement -->
 <section class="community-section">
   <div class="container">
@@ -173,8 +151,11 @@
   <div class="container">
     <h2>Join Our Growing Family of Protected Clients</h2>
     <p>Experience the IslandShield difference. Contact us for a free security consultation.</p>
-    <a href="contact.php" class="btn">Get in Touch</a>
-    <p class="cta-phone">📞 Call Now: <a href="tel:4735557233">(473) 555-SAFE</a></p>
+    <div class="cta-buttons">
+      <a href="contact.php" class="btn">Get in Touch</a>
+      <a href="tel:4735557233" class="btn btn-secondary">Call Now</a>
+    </div>
+    <p class="cta-note">15+ years of excellence | 500+ clients protected | Licensed & certified</p>
   </div>
 </section>
 

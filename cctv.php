@@ -160,31 +160,31 @@
       <div class="process-step-detailed">
         <div class="step-number-large">1</div>
         <h3>Free Consultation</h3>
-        <p>We visit your property to assess security needs and recommend the best camera placement and system configuration.</p>
+        <p>We assess your property and recommend optimal camera placement.</p>
       </div>
       
       <div class="process-step-detailed">
         <div class="step-number-large">2</div>
         <h3>Custom Design</h3>
-        <p>Our team creates a detailed system design with camera specifications, coverage maps, and equipment list.</p>
+        <p>Detailed system design with coverage maps and equipment specs.</p>
       </div>
       
       <div class="process-step-detailed">
         <div class="step-number-large">3</div>
         <h3>Professional Installation</h3>
-        <p>Certified technicians install all equipment with minimal disruption, ensuring optimal camera angles and concealment.</p>
+        <p>Certified technicians install equipment with minimal disruption.</p>
       </div>
       
       <div class="process-step-detailed">
         <div class="step-number-large">4</div>
-        <h3>System Configuration</h3>
-        <p>We configure your system, set up mobile access, and train you on all features and functionality.</p>
+        <h3>System Setup & Training</h3>
+        <p>We configure your system and train you on all features.</p>
       </div>
       
       <div class="process-step-detailed">
         <div class="step-number-large">5</div>
         <h3>Ongoing Support</h3>
-        <p>24/7 monitoring, regular maintenance, and technical support ensure your system stays operational.</p>
+        <p>24/7 monitoring and technical support to keep you protected.</p>
       </div>
     </div>
   </div>
@@ -227,8 +227,11 @@
   <div class="container">
     <h2>Ready to Enhance Your Security?</h2>
     <p>Get a free consultation and custom quote for your CCTV system today.</p>
-    <a href="contact.php" class="btn">Request Free Quote</a>
-    <p class="cta-phone">📞 Call Now: <a href="tel:4735557233">(473) 555-SAFE</a></p>
+    <div class="cta-buttons">
+      <a href="contact.php" class="btn">Request Free Quote</a>
+      <a href="tel:4735557233" class="btn btn-secondary">Call Now</a>
+    </div>
+    <p class="cta-note">Professional installation | 24/7 monitoring | Free consultation</p>
   </div>
 </section>
 

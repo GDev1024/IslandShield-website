@@ -29,96 +29,52 @@
   </div>
 </section>
 
-<!-- Emergency Services -->
+<!-- What We Handle -->
 <section class="service-features-section">
   <div class="container">
-    <h2 class="section-title">Emergency Services</h2>
+    <h2 class="section-title">Emergency Situations We Handle</h2>
+    
     <div class="features-grid-detailed">
       <div class="feature-card-large">
-        <div class="feature-icon-large">⚡</div>
-        <h3>Rapid Deployment</h3>
-        <p>Response teams dispatched immediately upon alarm activation or emergency call.</p>
+        <div class="feature-icon-large">🚨</div>
+        <h3>Break-In / Intrusion</h3>
+        <p>Immediate response to unauthorized entry and burglary attempts.</p>
+        <span class="response-badge critical">5-10 min response</span>
       </div>
       
       <div class="feature-card-large">
-        <div class="feature-icon-large">🚓</div>
-        <h3>Mobile Patrols</h3>
-        <p>Armed response vehicles patrolling key areas for fastest possible arrival times.</p>
+        <div class="feature-icon-large">⚠️</div>
+        <h3>Security Threats</h3>
+        <p>Direct threats, suspicious activity, or hostile situations.</p>
+        <span class="response-badge critical">5-10 min response</span>
+      </div>
+      
+      <div class="feature-card-large">
+        <div class="feature-icon-large">🔥</div>
+        <h3>Fire Emergencies</h3>
+        <p>Fire alarm response and coordination with fire services.</p>
+        <span class="response-badge urgent">8-12 min response</span>
+      </div>
+      
+      <div class="feature-card-large">
+        <div class="feature-icon-large">🏥</div>
+        <h3>Medical Emergencies</h3>
+        <p>First aid assistance and ambulance coordination.</p>
+        <span class="response-badge urgent">8-12 min response</span>
       </div>
       
       <div class="feature-card-large">
         <div class="feature-icon-large">📡</div>
         <h3>Alarm Response</h3>
-        <p>Immediate response to all alarm activations with full investigation and reporting.</p>
-      </div>
-      
-      <div class="feature-card-large">
-        <div class="feature-icon-large">🏥</div>
-        <h3>Medical Coordination</h3>
-        <p>First aid trained personnel and coordination with medical emergency services.</p>
-      </div>
-      
-      <div class="feature-card-large">
-        <div class="feature-icon-large">🔥</div>
-        <h3>Fire Response</h3>
-        <p>Fire safety protocols and coordination with fire emergency services.</p>
+        <p>Investigation of all alarm triggers and system issues.</p>
+        <span class="response-badge standard">10-15 min response</span>
       </div>
       
       <div class="feature-card-large">
         <div class="feature-icon-large">🚪</div>
         <h3>Lock-Out Service</h3>
-        <p>Emergency access assistance for authorized personnel locked out of facilities.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Response Types -->
-<section class="emergency-types-section">
-  <div class="container">
-    <h2 class="section-title">Emergency Situations We Handle</h2>
-    
-    <div class="emergency-types-grid">
-      <div class="emergency-type-card critical">
-        <div class="emergency-icon">🚨</div>
-        <h3>Break-In / Intrusion</h3>
-        <p>Immediate response to unauthorized entry, intruder alarms, and burglary attempts.</p>
-        <span class="response-time">Avg. Response: 5-10 minutes</span>
-      </div>
-      
-      <div class="emergency-type-card critical">
-        <div class="emergency-icon">⚠️</div>
-        <h3>Security Threats</h3>
-        <p>Response to direct threats, suspicious activity, or hostile situations requiring immediate intervention.</p>
-        <span class="response-time">Avg. Response: 5-10 minutes</span>
-      </div>
-      
-      <div class="emergency-type-card urgent">
-        <div class="emergency-icon">🔥</div>
-        <h3>Fire Emergencies</h3>
-        <p>Fire alarm response, evacuation assistance, and coordination with fire services.</p>
-        <span class="response-time">Avg. Response: 8-12 minutes</span>
-      </div>
-      
-      <div class="emergency-type-card urgent">
-        <div class="emergency-icon">🏥</div>
-        <h3>Medical Emergencies</h3>
-        <p>First aid assistance and coordination with ambulance services for medical crises.</p>
-        <span class="response-time">Avg. Response: 8-12 minutes</span>
-      </div>
-      
-      <div class="emergency-type-card standard">
-        <div class="emergency-icon">🚗</div>
-        <h3>Alarm Activations</h3>
-        <p>Investigation of all alarm triggers including false alarms and system malfunctions.</p>
-        <span class="response-time">Avg. Response: 10-15 minutes</span>
-      </div>
-      
-      <div class="emergency-type-card standard">
-        <div class="emergency-icon">🔧</div>
-        <h3>Facility Emergencies</h3>
-        <p>Response to power failures, flooding, structural issues, and other facility emergencies.</p>
-        <span class="response-time">Avg. Response: 15-20 minutes</span>
+        <p>Emergency access assistance for authorized personnel.</p>
+        <span class="response-badge standard">15-20 min response</span>
       </div>
     </div>
   </div>
@@ -254,83 +210,34 @@
       <div class="benefit-item-large">
         <div class="benefit-icon-large">🎓</div>
         <h3>Crisis-Trained Teams</h3>
-        <p>All response personnel undergo extensive emergency management and crisis intervention training.</p>
+        <p>All response personnel undergo extensive emergency management training.</p>
       </div>
       
       <div class="benefit-item-large">
         <div class="benefit-icon-large">📡</div>
         <h3>Advanced Dispatch</h3>
-        <p>State-of-the-art monitoring and dispatch systems for coordinated emergency response.</p>
+        <p>State-of-the-art monitoring and dispatch systems for coordinated response.</p>
       </div>
       
       <div class="benefit-item-large">
         <div class="benefit-icon-large">🤝</div>
         <h3>Police Coordination</h3>
-        <p>Direct liaison with local law enforcement for seamless emergency coordination.</p>
+        <p>Direct liaison with local law enforcement for seamless coordination.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Emergency Preparedness Tips -->
-<section class="tips-section">
-  <div class="container">
-    <h2 class="section-title">Emergency Preparedness Tips</h2>
-    <p class="section-subtitle">Be prepared before an emergency happens</p>
-    
-    <div class="tips-grid">
-      <div class="tip-card">
-        <h3>📝 Create an Emergency Plan</h3>
-        <p>Develop and document evacuation routes, meeting points, and emergency procedures for your property.</p>
-      </div>
-      
-      <div class="tip-card">
-        <h3>📞 Keep Contacts Updated</h3>
-        <p>Ensure we have current emergency contact numbers for all key personnel and decision makers.</p>
-      </div>
-      
-      <div class="tip-card">
-        <h3>🔑 Secure Access Points</h3>
-        <p>Regularly inspect and maintain all locks, gates, and security access points on your property.</p>
-      </div>
-      
-      <div class="tip-card">
-        <h3>🔦 Emergency Supplies</h3>
-        <p>Keep flashlights, first aid kits, and emergency supplies accessible in multiple locations.</p>
-      </div>
-      
-      <div class="tip-card">
-        <h3>🚨 Test Your Systems</h3>
-        <p>Regularly test alarm systems, panic buttons, and emergency communication devices.</p>
-      </div>
-      
-      <div class="tip-card">
-        <h3>👥 Train Your Team</h3>
-        <p>Ensure all staff members know emergency procedures and how to contact our response team.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Emergency CTA -->
-<section class="emergency-cta">
-  <div class="container">
-    <div class="emergency-cta-content">
-      <h2>🚨 ACTIVE EMERGENCY?</h2>
-      <p>Call our emergency hotline immediately for rapid response</p>
-      <a href="tel:4735559111" class="btn btn-emergency-huge">(473) 555-9111</a>
-      <p class="emergency-note">Available 24 hours a day, 7 days a week, 365 days a year</p>
-    </div>
-  </div>
-</section>
-
-<!-- Regular CTA -->
+<!-- CTA -->
 <section class="cta">
   <div class="container">
-    <h2>Sign Up for Emergency Response Service</h2>
+    <h2>🚨 Need Emergency Response Coverage?</h2>
     <p>Don't wait for an emergency to happen. Get protected today.</p>
-    <a href="contact.php" class="btn">Get Emergency Coverage</a>
-    <p class="cta-phone">📞 Non-Emergency: <a href="tel:4735557233">(473) 555-SAFE</a></p>
+    <div class="cta-buttons">
+      <a href="tel:4735559111" class="btn btn-emergency">Emergency: (473) 555-9111</a>
+      <a href="contact.php" class="btn">Get Coverage</a>
+    </div>
+    <p class="cta-note">24/7/365 Emergency Hotline | Non-Emergency: (473) 555-SAFE</p>
   </div>
 </section>
 

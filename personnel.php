@@ -169,8 +169,11 @@
   <div class="container">
     <h2>Need Professional Security Guards?</h2>
     <p>Contact us for a free security assessment and customized guard service plan.</p>
-    <a href="contact.php" class="btn">Request Guards</a>
-    <p class="cta-phone">📞 Call Now: <a href="tel:4735557233">(473) 555-SAFE</a></p>
+    <div class="cta-buttons">
+      <a href="contact.php" class="btn">Request Guards</a>
+      <a href="tel:4735557233" class="btn btn-secondary">Call Now</a>
+    </div>
+    <p class="cta-note">Licensed & trained personnel | Flexible scheduling | 24/7 availability</p>
   </div>
 </section>
 

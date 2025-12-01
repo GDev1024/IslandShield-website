@@ -1876,3 +1876,373 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==================== Emergency Page Enhancements ==================== */
+
+/* Response Badges */
+.response-badge {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.response-badge.critical {
+  background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(255, 68, 68, 0.3);
+}
+
+.response-badge.urgent {
+  background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(255, 152, 0, 0.3);
+}
+
+.response-badge.standard {
+  background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+}
+
+/* CTA Enhancements */
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.cta-note {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-gray);
+  opacity: 0.9;
+}
+
+.btn-emergency {
+  background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
+  color: white;
+  animation: pulse-emergency 2s infinite;
+}
+
+.btn-emergency:hover {
+  background: linear-gradient(135deg, #ff6666 0%, #ff0000 100%);
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 68, 68, 0.4);
+}
+
+@keyframes pulse-emergency {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 68, 68, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 15px rgba(255, 68, 68, 0);
+  }
+}
+
+/* Emergency Page Specific */
+.emergency-header {
+  background: linear-gradient(135deg, #cc0000 0%, #8b0000 100%);
+  position: relative;
+}
+
+.emergency-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 68, 68, 0.2) 0%, transparent 70%);
+}
+
+.emergency-hotline {
+  margin-top: 2rem;
+}
+
+.btn-emergency-large {
+  display: inline-block;
+  background: white;
+  color: #cc0000;
+  padding: 1.2rem 2.5rem;
+  border-radius: var(--radius-lg);
+  font-size: 1.3rem;
+  font-weight: 800;
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-emergency-large:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+  background: var(--primary-gold);
+  color: var(--text-dark);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn-emergency-large {
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+  }
+}
+
+/* ==================== About Page Styles ==================== */
+
+/* Company Story */
+.company-story {
+  padding: 4rem 0;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.story-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.story-content h2 {
+  font-size: 2.5rem;
+  color: var(--primary-gold);
+  margin-bottom: 2rem;
+}
+
+.story-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-gray);
+  margin-bottom: 1.5rem;
+}
+
+/* Mission, Vision, Values */
+.mvv-section {
+  padding: 4rem 0;
+}
+
+.mvv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.mvv-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-alpha);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.mvv-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-light);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.mvv-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.mvv-card h3 {
+  font-size: 1.5rem;
+  color: var(--primary-gold);
+  margin-bottom: 1rem;
+}
+
+.mvv-card p {
+  color: var(--text-gray);
+  line-height: 1.7;
+}
+
+.mvv-card ul {
+  list-style: none;
+  text-align: left;
+  margin-top: 1rem;
+}
+
+.mvv-card ul li {
+  padding: 0.5rem 0;
+  color: var(--text-gray);
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.mvv-card ul li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent-cyan);
+  font-weight: bold;
+}
+
+/* Team Section */
+.team-section {
+  padding: 4rem 0;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.team-member {
+  background: var(--bg-card);
+  border: 1px solid var(--border-alpha);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.team-member:hover {
+  border-color: var(--primary-gold);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-gold);
+}
+
+.member-photo {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1.5rem;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  border: 3px solid var(--primary-gold);
+}
+
+.team-member h3 {
+  font-size: 1.3rem;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+.member-role {
+  color: var(--primary-gold);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.member-bio {
+  color: var(--text-gray);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Certifications */
+.certifications {
+  padding: 4rem 0;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.cert-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-alpha);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.cert-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--accent-cyan);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-glow);
+}
+
+.cert-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.cert-card h3 {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+.cert-card p {
+  color: var(--text-gray);
+  font-size: 0.9rem;
+}
+
+/* Community Section */
+.community-section {
+  padding: 4rem 0;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.community-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.community-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-alpha);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  transition: var(--transition);
+}
+
+.community-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-light);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.community-card h3 {
+  font-size: 1.3rem;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.community-card p {
+  color: var(--text-gray);
+  line-height: 1.7;
+}
+
+/* Responsive for About Page */
+@media (max-width: 768px) {
+  .story-content h2 {
+    font-size: 2rem;
+  }
+  
+  .mvv-grid,
+  .team-grid,
+  .cert-grid,
+  .community-grid {
+    grid-template-columns: 1fr;
+  }
+}
