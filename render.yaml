@@ -7,29 +7,41 @@ services:
     dockerfilePath: ./Dockerfile
     healthCheckPath: /index.php
     envVars:
+      - key: DB_TYPE
+        value: pgsql
       - key: DB_HOST
         fromDatabase:
-          name: islandshield-mysql
+          name: islandshield-postgres
           property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: islandshield-postgres
+          property: port
       - key: DB_NAME
         fromDatabase:
-          name: islandshield-mysql
+          name: islandshield-postgres
           property: database
       - key: DB_USER
         fromDatabase:
-          name: islandshield-mysql
+          name: islandshield-postgres
           property: user
       - key: DB_PASSWORD
         fromDatabase:
-          name: islandshield-mysql
+          name: islandshield-postgres
           property: password
       - key: APP_ENV
         value: production
       - key: APP_DEBUG
         value: false
+      - key: APP_URL
+        value: https://islandshield-security.onrender.com
+      - key: SESSION_LIFETIME
+        value: 120
+      - key: SECURE_COOKIES
+        value: true
 
 databases:
-  - name: islandshield-mysql
+  - name: islandshield-postgres
     databaseName: islandshield_db
-    user: islandshield_user
+    user: islandshield_db_user
     plan: free
