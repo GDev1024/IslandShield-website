@@ -41,42 +41,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     // Check if email already exists
     if (empty($errors)) {
-        $stmt = $connection->prepare("SELECT user_id FROM users WHERE email = :email");
-        $stmt->execute(['email' => $email]);
-        if ($stmt->fetch()) {
+        $stmt = mysqli_prepare($connection, "SELECT user_id FROM users WHERE email = ?");
+        mysqli_stmt_bind_param($stmt, "s", $email);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        if (mysqli_fetch_assoc($result)) {
             $errors[] = "Email already registered";
         }
     }
     
     // If validation passes, insert user
     if (empty($errors)) {
-        try {
-            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-            
-            $stmt = $connection->prepare("
-                INSERT INTO users (first_name, last_name, email, phone, address, parish, property_type, password_hash)
-                VALUES (:first_name, :last_name, :email, :phone, :address, :parish, :property_type, :password_hash)
-            ");
-            
-            $stmt->execute([
-                'first_name' => $firstName,
-                'last_name' => $lastName,
-                'email' => $email,
-                'phone' => $phone,
-                'address' => $address,
-                'parish' => $parish,
-                'property_type' => $propertyType,
-                'password_hash' => $hashedPassword
-            ]);
-            
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        
+        $stmt = mysqli_prepare($connection, "INSERT INTO users (first_name, last_name, email, phone, address, parish, property_type, password_hash) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+        mysqli_stmt_bind_param($stmt, "ssssssss", $firstName, $lastName, $email, $phone, $address, $parish, $propertyType, $hashedPassword);
+        
+        if (mysqli_stmt_execute($stmt)) {
             echo json_encode([
                 'success' => true,
                 'message' => 'Registration successful! Redirecting to login...',
                 'redirect' => 'login.php'
             ]);
-            
-        } catch(PDOException $e) {
-            error_log("Registration error: " . $e->getMessage());
+        } else {
+            error_log("Registration error: " . mysqli_error($connection));
             echo json_encode([
                 'success' => false,
                 'message' => 'Registration failed. Please try again.'

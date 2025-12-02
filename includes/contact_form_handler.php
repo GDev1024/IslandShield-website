@@ -34,21 +34,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     
     if (empty($errors)) {
-        try {
-            // Insert into database
-            $stmt = $connection->prepare("
-                INSERT INTO contact_messages (name, email, phone, service, subject, message)
-                VALUES (:name, :email, :phone, :service, :subject, :message)
-            ");
-            
-            $stmt->execute([
-                'name' => $name,
-                'email' => $email,
-                'phone' => $phone,
-                'service' => $service,
-                'subject' => $subject,
-                'message' => $message
-            ]);
+        // Insert into database
+        $stmt = mysqli_prepare($connection, "INSERT INTO contact_messages (name, email, phone, service, subject, message) VALUES (?, ?, ?, ?, ?, ?)");
+        mysqli_stmt_bind_param($stmt, "ssssss", $name, $email, $phone, $service, $subject, $message);
+        
+        if (mysqli_stmt_execute($stmt)) {
             
             // Send email notification (optional)
             $to = "info@islandshield.com";
@@ -72,8 +62,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'message' => 'Thank you! Your message has been sent successfully. We will contact you within 24 hours.'
             ]);
             
-        } catch(PDOException $e) {
-            error_log("Contact form error: " . $e->getMessage());
+        } else {
+            error_log("Contact form error: " . mysqli_error($connection));
             echo json_encode([
                 'success' => false,
                 'message' => 'Failed to send message. Please try again or call us directly.'
