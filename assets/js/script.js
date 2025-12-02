@@ -120,9 +120,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  handleFormSubmit('registerForm', 'Includes/registration_handler.php', true);
-  handleFormSubmit('loginForm', 'Includes/login_handler.php', true);
-  handleFormSubmit('contactForm', 'Includes/contact_form_handler.php');
+  handleFormSubmit('registerForm', 'includes/registration_handler.php', true);
+  handleFormSubmit('loginForm', 'includes/login_handler.php', true);
+  handleFormSubmit('contactForm', 'includes/contact_form_handler.php');
 
   // ------------------------------
   // Logout
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.btn-logout, [href*="logout"]').forEach(btn => {
     btn.addEventListener('click', async e => {
       e.preventDefault();
-      try{ await fetch('Includes/logout_handler.php'); sessionStorage.clear(); window.location.href='index.php'; }
+      try{ await fetch('includes/logout_handler.php'); sessionStorage.clear(); window.location.href='index.php'; }
       catch{ window.location.href='index.php'; }
     });
   });
