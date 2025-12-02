@@ -3,6 +3,9 @@ require_once 'config.php';
 
 header('Content-Type: application/json');
 
+// Log for debugging
+error_log("Registration handler called");
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     // Get and sanitize input
@@ -42,11 +45,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Check if email already exists
     if (empty($errors)) {
         $stmt = mysqli_prepare($connection, "SELECT user_id FROM users WHERE email = ?");
-        mysqli_stmt_bind_param($stmt, "s", $email);
-        mysqli_stmt_execute($stmt);
-        $result = mysqli_stmt_get_result($stmt);
-        if (mysqli_fetch_assoc($result)) {
-            $errors[] = "Email already registered";
+        if (!$stmt) {
+            error_log("Prepare failed: " . mysqli_error($connection));
+            $errors[] = "Database error. Please try again.";
+        } else {
+            mysqli_stmt_bind_param($stmt, "s", $email);
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
+            if (mysqli_fetch_assoc($result)) {
+                $errors[] = "Email already registered";
+            }
+            mysqli_stmt_close($stmt);
         }
     }
     
@@ -55,20 +64,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
         
         $stmt = mysqli_prepare($connection, "INSERT INTO users (first_name, last_name, email, phone, address, parish, property_type, password_hash) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-        mysqli_stmt_bind_param($stmt, "ssssssss", $firstName, $lastName, $email, $phone, $address, $parish, $propertyType, $hashedPassword);
         
-        if (mysqli_stmt_execute($stmt)) {
-            echo json_encode([
-                'success' => true,
-                'message' => 'Registration successful! Redirecting to login...',
-                'redirect' => 'login.php'
-            ]);
-        } else {
-            error_log("Registration error: " . mysqli_error($connection));
+        if (!$stmt) {
+            error_log("Prepare failed: " . mysqli_error($connection));
             echo json_encode([
                 'success' => false,
-                'message' => 'Registration failed. Please try again.'
+                'message' => 'Database error: ' . mysqli_error($connection)
             ]);
+        } else {
+            mysqli_stmt_bind_param($stmt, "ssssssss", $firstName, $lastName, $email, $phone, $address, $parish, $propertyType, $hashedPassword);
+            
+            if (mysqli_stmt_execute($stmt)) {
+                error_log("Registration successful for: " . $email);
+                echo json_encode([
+                    'success' => true,
+                    'message' => 'Registration successful! Redirecting to login...',
+                    'redirect' => 'login.php'
+                ]);
+            } else {
+                error_log("Registration error: " . mysqli_error($connection));
+                echo json_encode([
+                    'success' => false,
+                    'message' => 'Registration failed: ' . mysqli_error($connection)
+                ]);
+            }
+            mysqli_stmt_close($stmt);
         }
     } else {
         echo json_encode([
