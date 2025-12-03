@@ -197,7 +197,6 @@ IslandShield/
 ├── .env                   # Environment variables (not in git)
 ├── .gitignore             # Git ignore file
 ├── README.md              # Project documentation
-├── TESTING_CHECKLIST.md   # Testing checklist
 └── LICENSE                # License file
 ```
 
