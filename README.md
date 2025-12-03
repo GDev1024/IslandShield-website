@@ -70,7 +70,7 @@ Here's what powers the website:
 |-------|----------|-------|--------|
 | **Planning** | Days 1-2 days | Research, requirements gathering, feasibility study | ✅ Complete |
 | **Design** | Days 3-4 | Mockups, color scheme, sitemap | ✅ Complete |
-| **Development** | Days 5-7  | Frontend development, backend integration, database setup | ✅ Complete |
+| **Development** | Days 5-10  | Frontend development, backend integration, database setup | ✅ Complete |
 | **Testing** | Days 11-13  | Cross-browser testing, mobile testing, bug fixes | ✅ Complete |
 | **Deployment** | Day 14 | Server setup, deployment, final testing | ✅ Complete |
 
