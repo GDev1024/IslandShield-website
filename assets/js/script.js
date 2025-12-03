@@ -40,30 +40,89 @@ document.addEventListener('DOMContentLoaded', () => {
   const isValidEmail = email => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   // ------------------------------
-  // Mobile Nav
+  // Mobile Nav - FIXED
   // ------------------------------
   const hamburger = document.getElementById('hamburger');
   const navMenu = document.getElementById('navMenu');
-  if(hamburger && navMenu){
-    hamburger.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
-      hamburger.classList.toggle('active');
-    });
-
-    document.addEventListener('click', e => {
-      if(!navMenu.contains(e.target) && !hamburger.contains(e.target)){
+  
+  if (hamburger && navMenu) {
+    console.log('Hamburger and menu found'); // Debug log
+    
+    // Toggle menu on hamburger click
+    hamburger.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const isOpen = navMenu.classList.contains('open');
+      console.log('Menu was:', isOpen ? 'open' : 'closed'); // Debug log
+      
+      if (isOpen) {
         navMenu.classList.remove('open');
         hamburger.classList.remove('active');
+        document.body.classList.remove('menu-open');
+      } else {
+        navMenu.classList.add('open');
+        hamburger.classList.add('active');
+        document.body.classList.add('menu-open');
+      }
+      
+      console.log('Menu now:', navMenu.classList.contains('open') ? 'open' : 'closed'); // Debug log
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+        navMenu.classList.remove('open');
+        hamburger.classList.remove('active');
+        document.body.classList.remove('menu-open');
       }
     });
-
+    
+    // Close menu when clicking a link
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        // Don't close if it's a dropdown parent on mobile
+        if (window.innerWidth <= 768 && link.closest('.has-dropdown') && !link.getAttribute('href').startsWith('#')) {
+          return;
+        }
+        navMenu.classList.remove('open');
+        hamburger.classList.remove('active');
+        document.body.classList.remove('menu-open');
+      });
+    });
+    
+    // Handle dropdown toggles on mobile
     document.querySelectorAll('.has-dropdown').forEach(parent => {
-      parent.addEventListener('click', e => {
-        if(window.innerWidth <= 768){
+      const link = parent.querySelector('a');
+      
+      link.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
           e.preventDefault();
+          e.stopPropagation();
+          
+          // Close other dropdowns
+          document.querySelectorAll('.has-dropdown').forEach(other => {
+            if (other !== parent) {
+              other.classList.remove('show-dropdown');
+            }
+          });
+          
+          // Toggle this dropdown
           parent.classList.toggle('show-dropdown');
         }
       });
+    });
+    
+    // Close dropdowns when resizing to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        navMenu.classList.remove('open');
+        hamburger.classList.remove('active');
+        document.body.classList.remove('menu-open');
+        document.querySelectorAll('.has-dropdown').forEach(parent => {
+          parent.classList.remove('show-dropdown');
+        });
+      }
     });
   }
 
