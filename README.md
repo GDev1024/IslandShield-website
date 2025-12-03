@@ -68,11 +68,11 @@ Here's what powers the website:
 
 | Phase | Duration | Tasks | Status |
 |-------|----------|-------|--------|
-| **Planning** | Week 1 | Research, requirements gathering, feasibility study | ✅ Complete |
-| **Design** | Week 2 | Wireframes, mockups, color scheme, sitemap | ✅ Complete |
-| **Development** | Weeks 3-6 | Frontend development, backend integration, database setup | ✅ Complete |
-| **Testing** | Week 7 | Cross-browser testing, mobile testing, bug fixes | ✅ Complete |
-| **Deployment** | Week 8 | Server setup, deployment, final testing | ✅ Complete |
+| **Planning** | Days 1-2 days | Research, requirements gathering, feasibility study | ✅ Complete |
+| **Design** | Days 3-4 | Mockups, color scheme, sitemap | ✅ Complete |
+| **Development** | Days 5-7  | Frontend development, backend integration, database setup | ✅ Complete |
+| **Testing** | Days 11-13  | Cross-browser testing, mobile testing, bug fixes | ✅ Complete |
+| **Deployment** | Day 14 | Server setup, deployment, final testing | ✅ Complete |
 
 ### Sitemap
 
