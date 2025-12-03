@@ -12,7 +12,11 @@ if (isset($_SESSION['user'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register - IslandShield Security</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Modular CSS -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages/auth.css">
 </head>
 <body>
 

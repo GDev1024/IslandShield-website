@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Security Personnel - IslandShield Security</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Modular CSS -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages/pages.css">
 </head>
 <body>
 
@@ -18,11 +22,25 @@
   </div>
 </section>
 
-<section class="service-overview">
+<!-- Service Overview - Split Layout -->
+<section class="split-section">
   <div class="container">
-    <div class="service-intro">
-      <h2>Trusted Protection Professionals</h2>
-      <p>Our security officers are more than just guards—they're trained professionals committed to protecting your assets, property, and people. Every member of our team undergoes rigorous background checks, professional training, and continuous education to maintain the highest standards of security service.</p>
+    <div class="split-container">
+      <div class="split-content">
+        <h2>Trusted Protection Professionals</h2>
+        <p>Our security officers are more than just guards—they're trained professionals committed to protecting your assets, property, and people.</p>
+        <ul>
+          <li>Licensed and certified guards</li>
+          <li>Comprehensive background checks</li>
+          <li>Professional training programs</li>
+          <li>Armed and unarmed options</li>
+          <li>24/7 availability</li>
+        </ul>
+        <a href="#packages" class="btn">View Guard Services</a>
+      </div>
+      <div class="split-visual">
+        <img src="assets/images/security_personnel.jpg" alt="Security Personnel">
+      </div>
     </div>
   </div>
 </section>
@@ -135,32 +153,36 @@
   </div>
 </section>
 
-<section class="why-choose-section">
+<!-- Why Choose Us - Card Grid -->
+<section class="card-grid-section">
   <div class="container">
-    <h2 class="section-title">Why Choose Our Security Personnel?</h2>
-    <div class="benefits-detailed">
-      <div class="benefit-item-large">
-        <div class="benefit-icon-large">🎓</div>
+    <div class="card-grid-header">
+      <h2>Why Choose Our Security Personnel?</h2>
+      <p>Trained professionals you can trust</p>
+    </div>
+    <div class="premium-card-grid">
+      <div class="premium-card">
+        <div class="premium-card-icon">🎓</div>
         <h3>Comprehensive Training</h3>
-        <p>Every officer completes intensive training in security procedures, first aid, and emergency response.</p>
+        <p>Every officer completes intensive training in security procedures, first aid, emergency response, and customer service excellence.</p>
       </div>
       
-      <div class="benefit-item-large">
-        <div class="benefit-icon-large">✅</div>
+      <div class="premium-card">
+        <div class="premium-card-icon">✅</div>
         <h3>Background Verified</h3>
-        <p>Thorough background checks and reference verification for all personnel.</p>
+        <p>Thorough background checks, reference verification, and continuous monitoring for all personnel to ensure your safety.</p>
       </div>
       
-      <div class="benefit-item-large">
-        <div class="benefit-icon-large">🔰</div>
+      <div class="premium-card">
+        <div class="premium-card-icon">🔰</div>
         <h3>Fully Licensed</h3>
-        <p>All guards licensed by the Government of Grenada and insured.</p>
+        <p>All guards licensed by the Government of Grenada, fully insured, and compliant with all security regulations.</p>
       </div>
       
-      <div class="benefit-item-large">
-        <div class="benefit-icon-large">👔</div>
+      <div class="premium-card">
+        <div class="premium-card-icon">👔</div>
         <h3>Professional Appearance</h3>
-        <p>Uniformed officers maintain professional demeanor at all times.</p>
+        <p>Uniformed officers maintain professional demeanor, appearance, and conduct at all times, representing your business with pride.</p>
       </div>
     </div>
   </div>

@@ -1,0 +1,280 @@
+/* ==================== COMPONENTS.CSS ==================== */
+/* Reusable UI components used across the site */
+
+/* ==================== Buttons ==================== */
+.btn,
+.btn-nav {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+  font-size: 1rem;
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+
+.btn {
+  background: var(--gradient-gold);
+  color: var(--primary-navy);
+  margin: var(--spacing-sm);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
+  color: var(--primary-navy);
+}
+
+.btn-secondary {
+  background: var(--gradient-primary);
+  color: var(--text-light);
+  border: 1px solid var(--accent-cyan);
+}
+
+.btn-secondary:hover {
+  background: var(--gradient-cyan);
+  box-shadow: var(--shadow-glow);
+  color: var(--text-light);
+}
+
+.btn-full {
+  width: 100%;
+}
+
+.btn-small {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  background: var(--primary-gold);
+  color: var(--bg-dark);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-small:hover {
+  background: var(--accent-cyan);
+  color: var(--text-light);
+}
+
+.btn-small-outline {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 1px solid var(--accent-cyan);
+  color: var(--accent-cyan);
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-small-outline:hover {
+  background: var(--accent-cyan);
+  color: var(--bg-dark);
+}
+
+/* ==================== Cards ==================== */
+.card,
+.service-card,
+.feature-card-large,
+.package-card {
+  background-color: var(--bg-card);
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 191, 255, 0.1);
+  border: 1px solid var(--border-alpha);
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+.card:hover,
+.service-card:hover,
+.feature-card-large:hover,
+.package-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 191, 255, 0.2);
+  border-color: var(--accent-cyan);
+}
+
+/* ==================== Forms ==================== */
+.form-group {
+  margin-bottom: var(--spacing-lg);
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--border-alpha);
+  border-radius: var(--radius-sm);
+  background: rgba(11, 30, 61, 0.5);
+  color: var(--text-light);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent-cyan);
+  background: rgba(11, 30, 61, 0.7);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.checkbox-group {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+/* ==================== Empty States ==================== */
+.empty-state {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  opacity: 0.3;
+  margin-bottom: 1rem;
+}
+
+.empty-state h3 {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+  color: var(--text-gray);
+  margin-bottom: 1.5rem;
+}
+
+.empty-state-compact {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px dashed var(--border-alpha);
+  border-radius: var(--radius-md);
+}
+
+.empty-icon-small {
+  font-size: 2rem;
+  opacity: 0.4;
+}
+
+.empty-content {
+  flex: 1;
+}
+
+.empty-content h4 {
+  font-size: 1rem;
+  color: var(--text-light);
+  margin-bottom: 0.25rem;
+}
+
+.empty-content p {
+  font-size: 0.85rem;
+  color: var(--text-gray);
+}
+
+/* ==================== Section Titles ==================== */
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+  color: var(--primary-gold);
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--text-gray);
+  margin-bottom: var(--spacing-2xl);
+}
+
+/* ==================== CTA Section ==================== */
+.cta {
+  padding: 5rem 0;
+  background: var(--gradient-primary);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta h2 {
+  font-size: 2.5rem;
+  color: var(--text-light);
+  margin-bottom: var(--spacing-md);
+}
+
+.cta p {
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-xl);
+  color: var(--text-gray);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-phone {
+  margin-top: var(--spacing-lg);
+  font-size: 1.3rem;
+  color: var(--text-light);
+}
+
+.cta-phone a {
+  color: var(--primary-gold);
+  font-weight: bold;
+}
+
+.cta-note {
+  margin-top: var(--spacing-md);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ==================== View All Link ==================== */
+.view-all-link {
+  color: var(--accent-cyan);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.view-all-link:hover {
+  color: var(--primary-gold);
+  transform: translateX(5px);
+}

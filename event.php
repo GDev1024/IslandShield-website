@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Event Security - IslandShield Security</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Modular CSS -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages/pages.css">
 </head>
 <body>
 
@@ -18,11 +22,25 @@
   </div>
 </section>
 
-<section class="service-overview">
+<!-- Service Overview - Split Layout -->
+<section class="split-section">
   <div class="container">
-    <div class="service-intro">
-      <h2>Make Your Event Safe & Successful</h2>
-      <p>Whether you're hosting a small private gathering or a large public event, professional security is essential. Our experienced event security teams provide comprehensive protection, crowd management, and emergency response to ensure your event runs smoothly and safely from start to finish.</p>
+    <div class="split-container">
+      <div class="split-content">
+        <h2>Make Your Event Safe & Successful</h2>
+        <p>Whether you're hosting a small private gathering or a large public event, professional security is essential for success.</p>
+        <ul>
+          <li>Experienced event security teams</li>
+          <li>Crowd management specialists</li>
+          <li>Entry and exit control</li>
+          <li>VIP protection available</li>
+          <li>Emergency response ready</li>
+        </ul>
+        <a href="#packages" class="btn">View Event Packages</a>
+      </div>
+      <div class="split-visual">
+        <img src="assets/images/event_security2.png" alt="Event Security">
+      </div>
     </div>
   </div>
 </section>
@@ -233,33 +251,36 @@
   </div>
 </section>
 
-<!-- Why Choose Us -->
-<section class="why-choose-section">
+<!-- Why Choose Us - Card Grid -->
+<section class="card-grid-section">
   <div class="container">
-    <h2 class="section-title">Why Choose IslandShield for Event Security?</h2>
-    <div class="benefits-detailed">
-      <div class="benefit-item-large">
-        <div class="benefit-icon-large">🎯</div>
+    <div class="card-grid-header">
+      <h2>Why Choose IslandShield for Event Security?</h2>
+      <p>Professional teams that make your event safe and memorable</p>
+    </div>
+    <div class="premium-card-grid">
+      <div class="premium-card">
+        <div class="premium-card-icon">🎯</div>
         <h3>Experienced Event Teams</h3>
-        <p>Our personnel have secured hundreds of events across Grenada, from intimate gatherings to large festivals.</p>
+        <p>Our personnel have secured hundreds of events across Grenada, from intimate gatherings to large festivals with thousands of attendees.</p>
       </div>
       
-      <div class="benefit-item-large">
-        <div class="benefit-icon-large">📋</div>
+      <div class="premium-card">
+        <div class="premium-card-icon">📋</div>
         <h3>Detailed Planning</h3>
-        <p>We create customized security plans for each event, considering all unique factors and requirements.</p>
+        <p>We create customized security plans for each event, considering venue layout, guest count, and all unique factors and requirements.</p>
       </div>
       
-      <div class="benefit-item-large">
-        <div class="benefit-icon-large">👔</div>
+      <div class="premium-card">
+        <div class="premium-card-icon">👔</div>
         <h3>Professional Appearance</h3>
-        <p>Our uniformed officers maintain a professional, approachable presence that enhances your event.</p>
+        <p>Our uniformed officers maintain a professional, approachable presence that enhances your event atmosphere while ensuring safety.</p>
       </div>
       
-      <div class="benefit-item-large">
-        <div class="benefit-icon-large">⚡</div>
+      <div class="premium-card">
+        <div class="premium-card-icon">⚡</div>
         <h3>Rapid Response</h3>
-        <p>Trained to handle emergencies quickly and efficiently without disrupting your event.</p>
+        <p>Trained to handle emergencies quickly and efficiently without disrupting your event or alarming guests unnecessarily.</p>
       </div>
     </div>
   </div>

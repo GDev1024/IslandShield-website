@@ -35,10 +35,22 @@
 
     <div class="footer-column">
       <h4>Contact Info</h4>
-      <p>📍 Bruce Street, Grenville, St. Andrew<br>Grenada</p>
-      <p>📞 <a href="tel:4735557233">(473) 555-SAFE</a></p>
-      <p>✉️ <a href="mailto:info@islandshield.com">info@islandshield.com</a></p>
-      <p>🕐 24/7 Available</p>
+      <p class="footer-contact-item">
+        <span class="contact-icon">📍</span>
+        <span class="contact-text">Bruce Street, Grenville<br>St. Andrew, Grenada</span>
+      </p>
+      <p class="footer-contact-item">
+        <span class="contact-icon">📞</span>
+        <span class="contact-text"><a href="tel:4735557233">(473) 555-SAFE</a></span>
+      </p>
+      <p class="footer-contact-item">
+        <span class="contact-icon">✉️</span>
+        <span class="contact-text"><a href="mailto:info@islandshield.com">info@islandshield.com</a></span>
+      </p>
+      <p class="footer-contact-item">
+        <span class="contact-icon">🕐</span>
+        <span class="contact-text">24/7 Available</span>
+      </p>
     </div>
   </div>
 

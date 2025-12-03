@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us - IslandShield Security</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Modular CSS -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages/pages.css">
 </head>
 <body>
 
@@ -83,7 +87,7 @@
             <span class="contact-icon">📍</span>
             <div class="contact-details">
               <h3>Office Location</h3>
-              <p>Main Street<br>Grenville, St. Andrew<br>Grenada</p>
+              <p>Bruce Street, Grenville<br>St. Andrew, Grenada</p>
             </div>
           </div>
 

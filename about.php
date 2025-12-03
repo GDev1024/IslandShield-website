@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us - IslandShield Security</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Modular CSS -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages/pages.css">
 </head>
 <body>
 
@@ -21,36 +25,72 @@
   </div>
 </section>
 
-<!-- Company Story -->
-<section class="company-story">
+<!-- Company Story - Split Layout -->
+<section class="split-section">
   <div class="container">
-    <div class="story-content">
-      <h2>Our Story</h2>
-      <p>Founded in 2009, IslandShield Security began with a simple mission: to provide Grenada with world-class security services that protect what matters most. What started as a small team of dedicated security professionals has grown into one of the island's most trusted security providers.</p>
-      <p>Over the past 15+ years, we've protected hundreds of homes, businesses, and events across Grenada. Our commitment to excellence, cutting-edge technology, and personalized service has made us the preferred choice for those who refuse to compromise on safety.</p>
-      <p>Today, IslandShield Security stands as a testament to professionalism, reliability, and innovation in the security industry. We continue to invest in the latest technology and training to ensure our clients receive nothing but the best protection available.</p>
+    <div class="split-container">
+      <div class="split-content">
+        <h2>Our Story</h2>
+        <p>Founded in 2009, IslandShield Security began with a simple mission: to provide Grenada with world-class security services that protect what matters most.</p>
+        <p>What started as a small team of dedicated security professionals has grown into one of the island's most trusted security providers.</p>
+        <ul>
+          <li>15+ years of security excellence</li>
+          <li>500+ satisfied clients protected</li>
+          <li>24/7 monitoring and response</li>
+          <li>Licensed and certified professionals</li>
+        </ul>
+      </div>
+      <div class="split-visual">
+        <img src="assets/images/team.png" alt="IslandShield Security" style="object-fit: contain; padding: 2rem;">
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Mission, Vision, Values -->
-<section class="mvv-section">
+<!-- Why Choose Us - Split Layout Reverse -->
+<section class="split-section">
   <div class="container">
-    <div class="mvv-grid">
-      <div class="mvv-card">
-        <div class="mvv-icon"></div>
+    <div class="split-container reverse">
+      <div class="split-content">
+        <h2>Why Choose IslandShield?</h2>
+        <p>We're not just another security company. We're your partners in protection, committed to delivering exceptional service through innovation, professionalism, and unwavering dedication to your safety.</p>
+        <ul>
+          <li>Cutting-edge technology and equipment</li>
+          <li>Highly trained and certified personnel</li>
+          <li>Rapid emergency response teams</li>
+          <li>Customized security solutions</li>
+          <li>Proven track record of excellence</li>
+        </ul>
+      </div>
+      <div class="split-visual">
+        <img src="assets/images/logo1.png" alt="IslandShield Excellence" style="object-fit: contain; padding: 2rem;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mission, Vision, Values - Card Grid -->
+<section class="card-grid-section">
+  <div class="container">
+    <div class="card-grid-header">
+      <h2>Our Mission, Vision & Values</h2>
+      <p>The principles that guide everything we do</p>
+    </div>
+    <div class="premium-card-grid">
+      <div class="premium-card">
+        <div class="premium-card-icon">🎯</div>
         <h3>Our Mission</h3>
         <p>To provide comprehensive, reliable, and innovative security solutions that protect our clients' assets, property, and peace of mind through professional service and cutting-edge technology.</p>
       </div>
-      <div class="mvv-card">
-        <div class="mvv-icon"></div>
+      <div class="premium-card">
+        <div class="premium-card-icon">🌟</div>
         <h3>Our Vision</h3>
         <p>To be the Caribbean's leading security provider, recognized for excellence, innovation, and unwavering commitment to client safety and satisfaction.</p>
       </div>
-      <div class="mvv-card">
-        <div class="mvv-icon"></div>
+      <div class="premium-card">
+        <div class="premium-card-icon">💎</div>
         <h3>Our Values</h3>
-        <ul>
+        <ul class="premium-card-features">
           <li>Integrity in all operations</li>
           <li>Excellence in service delivery</li>
           <li>Innovation and adaptation</li>
@@ -69,25 +109,25 @@
     <p class="section-subtitle">Experienced professionals dedicated to your security</p>
     <div class="team-grid">
       <div class="team-member">
-        <div class="member-photo"></div>
+        <div class="member-photo">👨‍💼</div>
         <h3>Marcus Thompson</h3>
         <p class="member-role">Founder & CEO</p>
         <p class="member-bio">20+ years in security management with international certifications in security operations and crisis management.</p>
       </div>
       <div class="team-member">
-        <div class="member-photo"></div>
+        <div class="member-photo">👩‍💼</div>
         <h3>Dr. Kayla Charles</h3>
         <p class="member-role">Director of Operations</p>
         <p class="member-bio">Expert in security technology and systems integration with a Ph.D. in Security Management.</p>
       </div>
       <div class="team-member">
-        <div class="member-photo"></div>
+        <div class="member-photo">👮</div>
         <h3>Captain Joshua Elvis</h3>
         <p class="member-role">Head of Security Personnel</p>
         <p class="member-bio">Former military officer with 15 years of tactical security experience and personnel training.</p>
       </div>
       <div class="team-member">
-        <div class="member-photo"></div>
+        <div class="member-photo">👨‍💻</div>
         <h3>Ahndre Rodriguez</h3>
         <p class="member-role">Technology Director</p>
         <p class="member-bio">Specialist in surveillance systems and cybersecurity with multiple industry certifications.</p>
@@ -96,30 +136,33 @@
   </div>
 </section>
 
-<!-- Certifications & Accreditations -->
-<section class="certifications">
+<!-- Certifications & Accreditations - Card Grid -->
+<section class="card-grid-section">
   <div class="container">
-    <h2 class="section-title">Certifications & Accreditations</h2>
-    <div class="cert-grid">
-      <div class="cert-card">
-        <div class="cert-icon"></div>
+    <div class="card-grid-header">
+      <h2>Certifications & Accreditations</h2>
+      <p>Recognized excellence in security services</p>
+    </div>
+    <div class="premium-card-grid">
+      <div class="premium-card">
+        <div class="premium-card-icon">📜</div>
         <h3>Licensed Security Provider</h3>
-        <p>Fully licensed by the Government of Grenada</p>
+        <p>Fully licensed by the Government of Grenada with all required permits and certifications for security operations.</p>
       </div>
-      <div class="cert-card">
-        <div class="cert-icon"></div>
+      <div class="premium-card">
+        <div class="premium-card-icon">🏅</div>
         <h3>ISO 9001 Certified</h3>
-        <p>International quality management standards</p>
+        <p>International quality management standards ensuring consistent, high-quality service delivery.</p>
       </div>
-      <div class="cert-card">
-        <div class="cert-icon"></div>
+      <div class="premium-card">
+        <div class="premium-card-icon">🌐</div>
         <h3>ASIS International Member</h3>
-        <p>Global security professional association</p>
+        <p>Member of the world's largest security professional association, staying current with global best practices.</p>
       </div>
-      <div class="cert-card">
-        <div class="cert-icon"></div>
+      <div class="premium-card">
+        <div class="premium-card-icon">✅</div>
         <h3>Background Verified</h3>
-        <p>All personnel thoroughly vetted and trained</p>
+        <p>All personnel undergo thorough background checks, training, and continuous professional development.</p>
       </div>
     </div>
   </div>

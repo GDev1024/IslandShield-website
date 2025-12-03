@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Emergency Response - IslandShield Security</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Modular CSS -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages/pages.css">
 </head>
 <body>
 
@@ -21,11 +25,25 @@
   </div>
 </section>
 
-<section class="service-overview">
+<!-- Service Overview - Split Layout -->
+<section class="split-section">
   <div class="container">
-    <div class="service-intro">
-      <h2>When Every Second Counts</h2>
-      <p>Security emergencies can happen at any time. That's why IslandShield Security maintains a dedicated 24/7 emergency response team ready to respond to any crisis situation. Our rapid response units are strategically positioned across Grenada to reach you quickly when you need help most.</p>
+    <div class="split-container">
+      <div class="split-content">
+        <h2>When Every Second Counts</h2>
+        <p>Security emergencies can happen at any time. That's why IslandShield Security maintains a dedicated 24/7 emergency response team ready to respond to any crisis situation.</p>
+        <ul>
+          <li>5-10 minute response time</li>
+          <li>24/7/365 availability</li>
+          <li>Trained emergency personnel</li>
+          <li>Island-wide coverage</li>
+          <li>Direct police coordination</li>
+        </ul>
+        <a href="tel:4735559111" class="btn btn-emergency">Call Emergency: (473) 555-9111</a>
+      </div>
+      <div class="split-visual">
+        <img src="assets/images/emergency_response2.png" alt="Emergency Response">
+      </div>
     </div>
   </div>
 </section>
@@ -197,33 +215,36 @@
   </div>
 </section>
 
-<!-- Why Choose Us -->
-<section class="why-choose-section">
+<!-- Why Choose Us - Card Grid -->
+<section class="card-grid-section">
   <div class="container">
-    <h2 class="section-title">Why Trust IslandShield for Emergencies?</h2>
-    <div class="benefits-detailed">
-      <div class="benefit-item-large">
-        <div class="benefit-icon-large">⚡</div>
+    <div class="card-grid-header">
+      <h2>Why Trust IslandShield for Emergencies?</h2>
+      <p>Rapid response when you need it most</p>
+    </div>
+    <div class="premium-card-grid">
+      <div class="premium-card">
+        <div class="premium-card-icon">⚡</div>
         <h3>Lightning-Fast Response</h3>
-        <p>Strategic positioning ensures we reach most locations within 10-15 minutes island-wide.</p>
+        <p>Strategic positioning across Grenada ensures we reach most locations within 5-15 minutes, getting help to you when every second counts.</p>
       </div>
       
-      <div class="benefit-item-large">
-        <div class="benefit-icon-large">🎓</div>
+      <div class="premium-card">
+        <div class="premium-card-icon">🎓</div>
         <h3>Crisis-Trained Teams</h3>
-        <p>All response personnel undergo extensive emergency management training.</p>
+        <p>All response personnel undergo extensive emergency management training, first aid certification, and regular crisis simulation exercises.</p>
       </div>
       
-      <div class="benefit-item-large">
-        <div class="benefit-icon-large">📡</div>
+      <div class="premium-card">
+        <div class="premium-card-icon">📡</div>
         <h3>Advanced Dispatch</h3>
-        <p>State-of-the-art monitoring and dispatch systems for coordinated response.</p>
+        <p>State-of-the-art monitoring and dispatch systems with GPS tracking ensure coordinated, efficient emergency response every time.</p>
       </div>
       
-      <div class="benefit-item-large">
-        <div class="benefit-icon-large">🤝</div>
+      <div class="premium-card">
+        <div class="premium-card-icon">🤝</div>
         <h3>Police Coordination</h3>
-        <p>Direct liaison with local law enforcement for seamless coordination.</p>
+        <p>Direct liaison with local law enforcement and emergency services for seamless coordination and comprehensive emergency management.</p>
       </div>
     </div>
   </div>

@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IslandShield Security - Professional Security Solutions</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Modular CSS -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages/pages.css">
 </head>
 <body>
 
@@ -60,7 +64,7 @@
       </div>
       <div class="service-card">
         <div class="service-img">
-          <img src="assets/images/emergency_response.jpg" alt="Emergency Response">
+          <img src="assets/images/emergency_response.png" alt="Emergency Response">
         </div>
         <h3>Emergency Response</h3>
         <p>Rapid response teams available 24/7 for emergency situations and crisis management.</p>

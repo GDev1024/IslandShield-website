@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CCTV Installation & Monitoring - IslandShield Security</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Modular CSS -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages/pages.css">
 </head>
 <body>
 
@@ -20,12 +24,25 @@
   </div>
 </section>
 
-<!-- Service Overview -->
-<section class="service-overview">
+<!-- Service Overview - Split Layout -->
+<section class="split-section">
   <div class="container">
-    <div class="service-intro">
-      <h2>Professional Surveillance Solutions</h2>
-      <p>Protect your property with cutting-edge CCTV technology. Our advanced surveillance systems provide crystal-clear footage, intelligent motion detection, and remote access from anywhere in the world. Whether you need residential or commercial security, we design custom solutions that fit your specific needs and budget.</p>
+    <div class="split-container">
+      <div class="split-content">
+        <h2>Professional Surveillance Solutions</h2>
+        <p>Protect your property with cutting-edge CCTV technology. Our advanced surveillance systems provide crystal-clear footage, intelligent motion detection, and remote access from anywhere in the world.</p>
+        <ul>
+          <li>4K Ultra HD camera systems</li>
+          <li>24/7 remote monitoring access</li>
+          <li>Cloud and local storage options</li>
+          <li>Professional installation included</li>
+          <li>Mobile app for iOS & Android</li>
+        </ul>
+        <a href="#packages" class="btn">View Packages</a>
+      </div>
+      <div class="split-visual">
+        <img src="assets/images/cctv_install.jpeg" alt="CCTV Installation">
+      </div>
     </div>
   </div>
 </section>
@@ -191,33 +208,36 @@
   </div>
 </section>
 
-<!-- Why Choose Us -->
-<section class="why-choose-section">
+<!-- Why Choose Us - Card Grid -->
+<section class="card-grid-section">
   <div class="container">
-    <h2 class="section-title">Why Choose Our CCTV Services?</h2>
-    <div class="benefits-detailed">
-      <div class="benefit-item-large">
-        <div class="benefit-icon-large">🏆</div>
+    <div class="card-grid-header">
+      <h2>Why Choose Our CCTV Services?</h2>
+      <p>Professional installation, premium equipment, unmatched support</p>
+    </div>
+    <div class="premium-card-grid">
+      <div class="premium-card">
+        <div class="premium-card-icon">🏆</div>
         <h3>Industry-Leading Equipment</h3>
-        <p>We use only top-tier brands known for reliability and performance.</p>
+        <p>We use only top-tier brands known for reliability and performance, ensuring your security system works flawlessly for years to come.</p>
       </div>
       
-      <div class="benefit-item-large">
-        <div class="benefit-icon-large">👨‍🔧</div>
+      <div class="premium-card">
+        <div class="premium-card-icon">👨‍🔧</div>
         <h3>Expert Installation</h3>
-        <p>Certified technicians with years of experience in surveillance systems.</p>
+        <p>Certified technicians with years of experience in surveillance systems provide professional installation with minimal disruption.</p>
       </div>
       
-      <div class="benefit-item-large">
-        <div class="benefit-icon-large">🛡️</div>
+      <div class="premium-card">
+        <div class="premium-card-icon">🛡️</div>
         <h3>Comprehensive Warranty</h3>
-        <p>All equipment and installation covered with extensive warranty protection.</p>
+        <p>All equipment and installation covered with extensive warranty protection, giving you complete peace of mind.</p>
       </div>
       
-      <div class="benefit-item-large">
-        <div class="benefit-icon-large">💰</div>
+      <div class="premium-card">
+        <div class="premium-card-icon">💰</div>
         <h3>Competitive Pricing</h3>
-        <p>Best value packages with flexible payment options available.</p>
+        <p>Best value packages with flexible payment options available, making professional security accessible to everyone.</p>
       </div>
     </div>
   </div>
