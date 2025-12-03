@@ -105,21 +105,24 @@ nav ul li a.active {
 }
 
 /* Dropdown menus for services */
+/* Dropdown menus for services */
 nav ul li ul.dropdown {
   position: absolute;
   top: calc(100% + 8px);
   left: 0;
   background: rgba(10, 22, 40, 0.98);
   backdrop-filter: blur(20px) saturate(180%);
-  padding: 0.5rem;
+  padding: 0;                  /* remove invalid 'auto' */
   border-radius: var(--radius-lg);
-  min-width: 220px;
+  width: max-content;          /* auto width based on content */
+  white-space: nowrap;
   box-shadow: var(--shadow-2xl);
   border: 1px solid var(--border-light);
   opacity: 0;
   visibility: hidden;
   transform: translateY(-10px);
   transition: opacity 0.3s ease, transform 0.3s ease;
+  box-sizing: border-box;      /* use border-box to include padding/border in width */
 }
 
 nav ul li:hover ul.dropdown {
@@ -128,12 +131,14 @@ nav ul li:hover ul.dropdown {
   transform: translateY(0);
 }
 
+
 nav ul li ul.dropdown li {
   margin: 0;
 }
 
 nav ul li ul.dropdown li a {
   padding: 0.6rem 1rem;
+  white-space: nowrap;
   border-radius: var(--radius-md);
   display: block;
 }
@@ -483,7 +488,6 @@ body.menu-open {
 
 
 /* ==================== Responsive Breakpoints ==================== */
-
 /* Tablet (768px and below) */
 @media (max-width: 768px) {
   header {
@@ -532,17 +536,26 @@ body.menu-open {
     font-size: 1rem;
   }
   
+  /* Dropdown menus for services */
   nav ul li ul.dropdown {
     position: static;
     opacity: 1;
     visibility: visible;
     transform: none;
-    margin-top: 0.5rem;
-    margin-left: 1rem;
-    padding: 0.5rem;
+    margin: 0;               /* removed fixed margin */
+    padding: 0;              /* removed fixed padding */
+    width: auto;             /* auto width based on content */
+    max-width: 90vw;         /* prevent overflow on tablet */
     box-shadow: none;
     border: none;
     background: rgba(255, 255, 255, 0.05);
+    white-space: normal;     /* allow text wrapping */
+  }
+  
+  nav ul li ul.dropdown li a {
+    padding: 0.75rem 1rem;   /* spacing inside links */
+    width: 100%;             /* links fill parent width */
+    display: block;
   }
   
   .hamburger {
@@ -589,5 +602,27 @@ body.menu-open {
   nav ul {
     width: 100%;
     padding: 4rem 1.5rem 2rem;
+  }
+  
+  /* Dropdown menus for services */
+  nav ul li ul.dropdown {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    margin: 0;               /* removed fixed margin */
+    padding: 0;              /* removed fixed padding */
+    width: auto;             /* auto width based on content */
+    max-width: 95vw;         /* prevent overflow on mobile */
+    box-shadow: none;
+    border: none;
+    background: rgba(255, 255, 255, 0.05);
+    white-space: normal;     /* allow text wrapping */
+  }
+  
+  nav ul li ul.dropdown li a {
+    padding: 0.75rem 1rem;   /* spacing inside links */
+    width: 100%;             /* links fill parent width */
+    display: block;
   }
 }
