@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IslandShield Security - Professional Security Solutions</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <!-- Modular CSS -->
+  <!-- CSS files -->
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/components.css">
@@ -15,7 +15,7 @@
 
 <?php include "includes/header.php"; ?>
 
-<!-- Hero Section -->
+<!-- Main hero section with video -->
 <section class="hero">
   <div class="hero-fallback"></div>
   <div class="hero-overlay"></div>
@@ -32,7 +32,7 @@
   </div>
 </section>
 
-<!-- Core Services -->
+<!-- Services section -->
 <section class="core-services">
   <div class="container">
     <h2 class="section-title">Our Core Services</h2>
@@ -74,7 +74,7 @@
   </div>
 </section>
 
-<!-- Stats -->
+<!-- Company stats -->
 <section class="stats">
   <div class="container stats-grid">
     <div class="stat-card">
@@ -96,7 +96,7 @@
   </div>
 </section>
 
-<!-- Testimonials -->
+<!-- Client testimonials -->
 <section class="testimonials">
   <div class="container">
     <h2 class="section-title">What Our Clients Say</h2>
@@ -117,7 +117,7 @@
   </div>
 </section>
 
-<!-- Call-to-Action -->
+<!-- Contact CTA -->
 <section class="cta">
   <div class="container">
     <h2>Ready to Secure Your Property?</h2>
@@ -127,5 +127,5 @@
   </div>
 </section>
 
-<!-- Footer -->
+<!-- Footer section -->
 <?php include "includes/footer.php"; ?>

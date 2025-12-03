@@ -50,19 +50,6 @@
           <button type="submit" class="btn btn-submit btn-full">Log In</button>
         </form>
 
-        <!-- Divider -->
-        <div class="divider"><span>OR</span></div>
-
-        <!-- Social Login -->
-        <div class="social-login">
-          <button type="button" class="btn-social btn-google">
-            🔍 Continue with Google
-          </button>
-          <button type="button" class="btn-social btn-facebook">
-            📘 Continue with Facebook
-          </button>
-        </div>
-
         <!-- Auth Footer -->
         <footer class="auth-footer">
           <p>Don't have an account? <a href="register.php">Sign up here</a></p>
@@ -74,4 +61,5 @@
 </main>
 
 <?php include "includes/footer.php"; ?>
+
 <script src="assets/js/script.js"></script>

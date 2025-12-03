@@ -236,7 +236,7 @@
   color: var(--accent-cyan);
 }
 
-/* Stats Grid */
+/* Stats Grid - Fixed 4 columns with responsive fallback */
 .dashboard-stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -247,6 +247,7 @@
 @media (max-width: 1024px) {
   .dashboard-stats-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 }
 

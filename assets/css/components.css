@@ -384,3 +384,60 @@
   top: 0;
   color: var(--primary-navy);
 }
+
+
+/* ==================== Responsive Components ==================== */
+
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+  .btn,
+  .btn-nav {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.95rem;
+  }
+  
+  .btn-small {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+  
+  .card,
+  .service-card,
+  .feature-card-large,
+  .package-card {
+    padding: var(--spacing-md);
+  }
+  
+  .stat-card {
+    padding: var(--spacing-lg);
+  }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+  .btn,
+  .btn-nav {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .btn-full {
+    width: 100%;
+    margin: var(--spacing-xs) 0;
+  }
+  
+  .card,
+  .service-card,
+  .feature-card-large,
+  .package-card {
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+  }
+  
+  .card:hover,
+  .service-card:hover,
+  .feature-card-large:hover,
+  .package-card:hover {
+    transform: translateY(-3px);
+  }
+}

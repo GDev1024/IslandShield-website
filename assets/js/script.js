@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ------------------------------
-  // Utility Functions
-  // ------------------------------
+  // Helper functions for alerts and validation
   const createAlert = (type, message) => {
     const div = document.createElement('div');
     div.className = `${type}-message alert-message`;
@@ -39,22 +37,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const isValidEmail = email => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-  // ------------------------------
-  // Mobile Nav - FIXED
-  // ------------------------------
+  // Mobile navigation menu toggle
   const hamburger = document.getElementById('hamburger');
   const navMenu = document.getElementById('navMenu');
   
   if (hamburger && navMenu) {
-    console.log('Hamburger and menu found'); // Debug log
+    console.log('Hamburger and menu found');
     
-    // Toggle menu on hamburger click
+    // Toggle menu when clicking hamburger
     hamburger.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
       
       const isOpen = navMenu.classList.contains('open');
-      console.log('Menu was:', isOpen ? 'open' : 'closed'); // Debug log
+      console.log('Menu was:', isOpen ? 'open' : 'closed');
       
       if (isOpen) {
         navMenu.classList.remove('open');
@@ -66,10 +62,10 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.add('menu-open');
       }
       
-      console.log('Menu now:', navMenu.classList.contains('open') ? 'open' : 'closed'); // Debug log
+      console.log('Menu now:', navMenu.classList.contains('open') ? 'open' : 'closed');
     });
     
-    // Close menu when clicking outside
+    // Close menu if you click outside of it
     document.addEventListener('click', (e) => {
       if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
         navMenu.classList.remove('open');
@@ -78,10 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
     
-    // Close menu when clicking a link
+    // Close menu after clicking a link
     navMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', (e) => {
-        // Don't close if it's a dropdown parent on mobile
+        // Keep open if it's a dropdown parent on mobile
         if (window.innerWidth <= 768 && link.closest('.has-dropdown') && !link.getAttribute('href').startsWith('#')) {
           return;
         }
@@ -91,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
     
-    // Handle dropdown toggles on mobile
+    // Mobile dropdown behavior
     document.querySelectorAll('.has-dropdown').forEach(parent => {
       const link = parent.querySelector('a');
       
@@ -100,20 +96,20 @@ document.addEventListener('DOMContentLoaded', () => {
           e.preventDefault();
           e.stopPropagation();
           
-          // Close other dropdowns
+          // Close any other open dropdowns
           document.querySelectorAll('.has-dropdown').forEach(other => {
             if (other !== parent) {
               other.classList.remove('show-dropdown');
             }
           });
           
-          // Toggle this dropdown
+          // Open/close this dropdown
           parent.classList.toggle('show-dropdown');
         }
       });
     });
     
-    // Close dropdowns when resizing to desktop
+    // Reset everything when switching to desktop view
     window.addEventListener('resize', () => {
       if (window.innerWidth > 768) {
         navMenu.classList.remove('open');
@@ -126,9 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ------------------------------
-  // Smooth Scroll
-  // ------------------------------
+  // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', e => {
       e.preventDefault();
@@ -141,9 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ------------------------------
-  // Forms: Registration, Login, Contact
-  // ------------------------------
+  // Form submission handlers
   const handleFormSubmit = (formId, handlerUrl, successRedirect=null) => {
     const form = document.getElementById(formId);
     if(!form) return;
@@ -183,9 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
   handleFormSubmit('loginForm', 'includes/login_handler.php', true);
   handleFormSubmit('contactForm', 'includes/contact_form_handler.php');
 
-  // ------------------------------
-  // Logout
-  // ------------------------------
+  // Logout functionality
   document.querySelectorAll('.btn-logout, [href*="logout"]').forEach(btn => {
     btn.addEventListener('click', async e => {
       e.preventDefault();
@@ -194,9 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ------------------------------
-  // FAQ Toggle
-  // ------------------------------
+  // FAQ accordion toggle
   document.querySelectorAll('.faq-item').forEach(item => {
     const q = item.querySelector('.faq-question');
     q?.addEventListener('click', () => {
@@ -206,9 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ------------------------------
-  // Scroll To Top Button
-  // ------------------------------
+  // Back to top button
   const scrollBtn = document.createElement('button');
   scrollBtn.textContent = '↑';
   scrollBtn.className='scroll-to-top';
@@ -229,9 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
   scrollBtn.addEventListener('mouseenter', ()=> scrollBtn.style.transform='scale(1.1)');
   scrollBtn.addEventListener('mouseleave', ()=> scrollBtn.style.transform='scale(1)');
 
-  // ------------------------------
-  // Animate Stats Counters
-  // ------------------------------
+  // Animated number counters for stats
   const animateCounters = () => {
     const counters = document.querySelectorAll('.stat-number[data-target]');
     
@@ -265,10 +249,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  // Trigger animation when stats section is visible
+  // Start counting when stats section comes into view
   const statsSection = document.querySelector('.stats');
   if (statsSection) {
-    // Use IntersectionObserver
+    // Use IntersectionObserver to detect when visible
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -282,16 +266,14 @@ document.addEventListener('DOMContentLoaded', () => {
       
       observer.observe(statsSection);
     } else {
-      // Fallback for older browsers
+      // Backup for older browsers
       animateCounters();
     }
   } else {
     console.log('Stats section not found');
   }
 
-  // ------------------------------
-  // Console Branding
-  // ------------------------------
+  // Fun console message
   console.log('%cIslandShield Security', 'font-size: 24px; color: #ffcc00; font-weight: bold;');
   console.log('%cProtecting what matters most 🛡️', 'font-size: 14px; color: #00bfff;');
 

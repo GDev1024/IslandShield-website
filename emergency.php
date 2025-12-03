@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Emergency Response - IslandShield Security</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <!-- Modular CSS -->
+  <!-- CSS files -->
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/components.css">
@@ -25,7 +25,7 @@
   </div>
 </section>
 
-<!-- Service Overview - Split Layout -->
+<!-- Service overview -->
 <section class="split-section">
   <div class="container">
     <div class="split-container">
@@ -48,7 +48,7 @@
   </div>
 </section>
 
-<!-- What We Handle -->
+<!-- Emergency types we handle -->
 <section class="service-features-section">
   <div class="container">
     <h2 class="section-title">Emergency Situations We Handle</h2>
@@ -99,7 +99,7 @@
   </div>
 </section>
 
-<!-- How It Works -->
+<!-- Response process -->
 <section class="process-section">
   <div class="container">
     <h2 class="section-title">How Our Emergency Response Works</h2>
@@ -143,7 +143,7 @@
   </div>
 </section>
 
-<!-- Response Packages -->
+<!-- Pricing packages -->
 <section class="packages-section">
   <div class="container">
     <h2 class="section-title">Emergency Response Packages</h2>
@@ -215,7 +215,7 @@
   </div>
 </section>
 
-<!-- Why Choose Us - Card Grid -->
+<!-- Why choose us -->
 <section class="card-grid-section">
   <div class="container">
     <div class="card-grid-header">
@@ -250,7 +250,7 @@
   </div>
 </section>
 
-<!-- CTA -->
+<!-- Call to action -->
 <section class="cta">
   <div class="container">
     <h2>🚨 Need Emergency Response Coverage?</h2>
