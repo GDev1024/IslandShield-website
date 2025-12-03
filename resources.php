@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Security Resources - IslandShield Security</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -287,13 +288,13 @@
         <p>Step-by-step checklist to assess your home's security vulnerabilities.</p>
         <div class="download-meta">
           <span class="download-info">
-            <span class="meta-icon">📊</span> PDF • 2 pages
+            <span class="meta-icon">📕</span> PDF • 2 pages
           </span>
           <span class="download-size">450 KB</span>
         </div>
         <a href="#" class="btn-download">
           <span>Download Free</span>
-          <span class="download-arrow">↓</span>
+          <span class="download-arrow">⬇️</span>
         </a>
       </div>
       
@@ -303,13 +304,13 @@
         <p>Printable card with emergency numbers and important contact information.</p>
         <div class="download-meta">
           <span class="download-info">
-            <span class="meta-icon">📊</span> PDF • 1 page
+            <span class="meta-icon">📕</span> PDF • 1 page
           </span>
           <span class="download-size">200 KB</span>
         </div>
         <a href="#" class="btn-download">
           <span>Download Free</span>
-          <span class="download-arrow">↓</span>
+          <span class="download-arrow">⬇️</span>
         </a>
       </div>
       
@@ -319,13 +320,13 @@
         <p>Essential steps to secure your home before traveling.</p>
         <div class="download-meta">
           <span class="download-info">
-            <span class="meta-icon">📊</span> PDF • 1 page
+            <span class="meta-icon">📕</span> PDF • 1 page
           </span>
           <span class="download-size">300 KB</span>
         </div>
         <a href="#" class="btn-download">
           <span>Download Free</span>
-          <span class="download-arrow">↓</span>
+          <span class="download-arrow">⬇️</span>
         </a>
       </div>
       
@@ -335,13 +336,13 @@
         <p>Customizable security policy template for businesses.</p>
         <div class="download-meta">
           <span class="download-info">
-            <span class="meta-icon">📊</span> PDF • 8 pages
+            <span class="meta-icon">📕</span> PDF • 8 pages
           </span>
           <span class="download-size">1.2 MB</span>
         </div>
         <a href="#" class="btn-download">
           <span>Download Free</span>
-          <span class="download-arrow">↓</span>
+          <span class="download-arrow">⬇️</span>
         </a>
       </div>
       
@@ -351,13 +352,13 @@
         <p>Expert tips on optimal camera positioning for maximum coverage.</p>
         <div class="download-meta">
           <span class="download-info">
-            <span class="meta-icon">📊</span> PDF • 4 pages
+            <span class="meta-icon">📕</span> PDF • 4 pages
           </span>
           <span class="download-size">800 KB</span>
         </div>
         <a href="#" class="btn-download">
           <span>Download Free</span>
-          <span class="download-arrow">↓</span>
+          <span class="download-arrow">⬇️</span>
         </a>
       </div>
       
@@ -367,13 +368,13 @@
         <p>Standardized form for documenting security incidents.</p>
         <div class="download-meta">
           <span class="download-info">
-            <span class="meta-icon">📊</span> PDF • 2 pages
+            <span class="meta-icon">📕</span> PDF • 2 pages
           </span>
           <span class="download-size">350 KB</span>
         </div>
         <a href="#" class="btn-download">
           <span>Download Free</span>
-          <span class="download-arrow">↓</span>
+          <span class="download-arrow">⬇️</span>
         </a>
       </div>
     </div>

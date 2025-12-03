@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const data = await res.json();
 
         if(data.success){
-          showMessage(submitBtn, data.message, 'success');
+          showMessage(form, data.message, 'success');
           if(formId==='contactForm') form.reset();
           if(successRedirect) setTimeout(()=>window.location.href=data.redirect, 1500);
           else setTimeout(()=>{ submitBtn.textContent = originalText; submitBtn.disabled=false; }, 2000);

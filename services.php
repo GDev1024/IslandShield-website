@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Services - IslandShield Security</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -68,7 +69,7 @@
 
       <!-- Event Security -->
       <div class="service-detail-card">
-        <div class="service-detail-icon">🎭</div>
+        <div class="service-detail-icon">🎉</div>
         <div class="service-detail-content">
           <h3>Event Security</h3>
           <p>Professional security teams for events of all sizes and types.</p>

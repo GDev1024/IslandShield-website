@@ -52,10 +52,10 @@
         <!-- Social Login -->
         <div class="social-login">
           <button type="button" class="btn-social btn-google">
-            <i class="fa fa-google"></i> Continue with Google
+            🔍 Continue with Google
           </button>
           <button type="button" class="btn-social btn-facebook">
-            <i class="fa fa-facebook"></i> Continue with Facebook
+            📘 Continue with Facebook
           </button>
         </div>
 

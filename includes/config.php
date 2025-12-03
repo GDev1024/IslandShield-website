@@ -3,13 +3,19 @@
 $env = [];
 $envFile = __DIR__ . '/../.env';
 if (file_exists($envFile)) {
-    $env = parse_ini_file($envFile, false, INI_SCANNER_TYPED);
+    $env = @parse_ini_file($envFile, false, INI_SCANNER_RAW);
+    if ($env === false) {
+        $env = [];
+    }
 }
 
 // Base URL - auto-detect or use environment variable
 $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https://' : 'http://';
 $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
 define("BASE_URL", getenv('APP_URL') ?: $protocol . $host . '/');
+
+// Debug Mode - Use environment variable (define early)
+define("DEBUG_MODE", getenv('APP_DEBUG') === 'true' || ($env['APP_DEBUG'] ?? false));
 
 // Database Settings - Use environment variables with fallbacks
 define("DB_HOST", getenv('DB_HOST') ?: ($env['DB_HOST'] ?? 'localhost'));
@@ -35,9 +41,6 @@ mysqli_set_charset($connection, "utf8mb4");
 
 // Timezone
 date_default_timezone_set("America/Grenada");
-
-// Debug Mode - Use environment variable
-define("DEBUG_MODE", getenv('APP_DEBUG') === 'true' || ($env['APP_DEBUG'] ?? false));
 
 if (DEBUG_MODE) {
     ini_set('display_errors', 1);
