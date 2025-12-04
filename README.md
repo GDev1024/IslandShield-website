@@ -270,10 +270,8 @@ This project is licensed under the **Apache License 2.0**. See the [LICENSE](LIC
 ## 🙏 Acknowledgments
 
 - **Mr. Christopher Miginon** — instructor & guidance
-- **T.A. Marryshow Community College** — resources & support
 - **MDN Web Docs & W3Schools** — references & examples
-- **Font Awesome & Google Fonts** — icons & typography
-- **PHP & MySQL community** — documentation & help
+- **Web Design Community via Discord** — documentation & help
 
 
 ---
@@ -293,5 +291,5 @@ This project is licensed under the **Apache License 2.0**. See the [LICENSE](LIC
 
 ---
 
-**Built with ❤️ by Garyson from T.A. Marryshow Community College**
+**Built with ❤️ by Garyson at T.A. Marryshow Community College**
 *For educational purposes — Web Design Final Project 2024–2025*
