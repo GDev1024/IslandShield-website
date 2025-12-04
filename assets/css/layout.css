@@ -104,22 +104,23 @@ nav ul li a.active {
   color: var(--primary-gold);
 }
 
-/* Dropdown menus for services */
+/* FIXED: Dropdown menus for services */
 nav ul li ul.dropdown {
   position: absolute;
   top: calc(100% + 8px);
   left: 0;
   background: rgba(10, 22, 40, 0.98);
   backdrop-filter: blur(20px) saturate(180%);
-  padding: 0.5rem;
+  padding: 0.5rem 0;
   border-radius: var(--radius-lg);
   min-width: 220px;
+  white-space: nowrap;
   box-shadow: var(--shadow-2xl);
   border: 1px solid var(--border-light);
   opacity: 0;
   visibility: hidden;
   transform: translateY(-10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
 }
 
 nav ul li:hover ul.dropdown {
@@ -130,17 +131,20 @@ nav ul li:hover ul.dropdown {
 
 nav ul li ul.dropdown li {
   margin: 0;
+  width: 100%;
 }
 
 nav ul li ul.dropdown li a {
-  padding: 0.6rem 1rem;
-  border-radius: var(--radius-md);
+  padding: 0.75rem 1.25rem;
+  white-space: nowrap;
+  border-radius: 0;
   display: block;
+  width: 100%;
 }
 
 nav ul li ul.dropdown li a:hover {
   background: rgba(255, 255, 255, 0.1);
-  padding-left: 1.25rem;
+  padding-left: 1.5rem;
 }
 
 /* User account dropdown */
@@ -172,6 +176,8 @@ nav ul li ul.dropdown li a:hover {
   flex-direction: column;
   cursor: pointer;
   gap: 4px;
+  padding: 0.5rem;
+  z-index: 1002;
 }
 
 .hamburger span {
@@ -376,12 +382,13 @@ footer {
   flex-wrap: wrap;
 }
 
-/* Mobile responsive styles */
+/* FIXED: Mobile responsive styles */
 @media (max-width: 768px) {
   .hamburger {
     display: flex !important;
     z-index: 1002;
     position: relative;
+    scale: 0.9; /* merged duplicate */
   }
 
   nav {
@@ -390,22 +397,24 @@ footer {
 
   nav ul {
     position: fixed;
-    top: 80px;
-    left: -100%;
-    width: 100%;
-    height: calc(100vh - 80px);
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
     background: rgba(10, 22, 40, 0.98);
     backdrop-filter: blur(20px);
     flex-direction: column;
-    padding: 2rem;
-    transition: left 0.3s ease;
-    overflow-y: auto;
+    padding: 5rem 2rem 2rem;
+    gap: 0;
     z-index: 1001;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    transition: right 0.3s ease;
     display: flex !important;
   }
 
   nav ul.open {
-    left: 0 !important;
+    right: 0 !important;
   }
 
   nav ul li {
@@ -425,169 +434,65 @@ footer {
     opacity: 1;
     visibility: visible;
     transform: none;
-    margin-top: 0.5rem;
-    margin-left: 1rem;
-    padding: 0.5rem;
+    margin: 0.5rem 0 0 1rem;
+    padding: 0.4rem 0.75rem !important;
+    line-height: 1.2 !important; 
+    width: calc(100% - 1rem);
+    min-width: auto;
     box-shadow: none;
     border: none;
     background: rgba(255, 255, 255, 0.05);
-    display: none;
+    border-radius: var(--radius-md);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  nav ul li ul.dropdown li {
+    margin: 0;
   }
 
   nav ul li.has-dropdown.show-dropdown ul.dropdown {
-    display: flex;
-    flex-direction: column;
+    max-height: 500px;
   }
 
-  .hero-title {
-    font-size: 2rem;
+  nav ul li ul.dropdown li a {
+    padding: 0.6rem 1rem;
+    width: 100%;
+    display: block;
   }
 
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-
-  .page-header h1 {
-    font-size: 2rem;
-  }
+  .hero-title { font-size: 2rem; }
+  .hero-subtitle { font-size: 1rem; }
+  .page-header h1 { font-size: 2rem; }
+  .header-container { padding: 0.5rem 1.5rem; }
+  .default_logo img { height: 50px; max-width: 120px; }
 }
 
 /* Smaller phones */
-@media (max-width: 375px) {
-  nav ul {
-    padding: 1.5rem 1rem;
-    top: 70px;
-    height: calc(100vh - 70px);
-  }
-
-  .default_logo img {
-    height: 50px;
-    max-width: 100px;
-  }
-
-  .hamburger {
-    scale: 0.9;
-  }
-}
-
-/* Stop scrolling when mobile menu is open */
-body.menu-open {
-  overflow: hidden;
-}
-
-@media (max-width: 1024px) {
-  .default_logo img {
-    height: 60px;
-  }
-}
-
-
-/* ==================== Responsive Breakpoints ==================== */
-
-/* Tablet (768px and below) */
-@media (max-width: 768px) {
-  header {
-    padding: 0.5rem 0;
-  }
-  
-  .header-container {
-    padding: 0.5rem 1.5rem;
-  }
-  
-  .default_logo img {
-    height: 50px;
-    max-width: 120px;
-  }
-  
-  nav ul {
-    display: none;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 280px;
-    height: 100vh;
-    background: rgba(10, 22, 40, 0.98);
-    backdrop-filter: blur(20px);
-    flex-direction: column;
-    padding: 5rem 2rem 2rem;
-    gap: 0;
-    z-index: 999;
-    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
-    overflow-y: auto;
-  }
-  
-  nav ul.open,
-  nav ul.show {
-    display: flex;
-  }
-  
-  nav ul li {
-    width: 100%;
-    margin-bottom: 0.5rem;
-  }
-  
-  nav ul li a {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1rem;
-  }
-  
-  nav ul li ul.dropdown {
-    position: static;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-    margin-top: 0.5rem;
-    margin-left: 1rem;
-    padding: 0.5rem;
-    box-shadow: none;
-    border: none;
-    background: rgba(255, 255, 255, 0.05);
-  }
-  
-  .hamburger {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    cursor: pointer;
-    z-index: 1001;
-    padding: 0.5rem;
-  }
-  
-  .hamburger span {
-    width: 25px;
-    height: 3px;
-    background-color: var(--primary-gold);
-    transition: var(--transition);
-    border-radius: 3px;
-  }
-  
-  .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-  
-  .hamburger.active span:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -6px);
-  }
-}
-
-/* Mobile (480px and below) */
 @media (max-width: 480px) {
-  .header-container {
-    padding: 0.5rem 1rem;
-  }
-  
-  .default_logo img {
-    height: 45px;
-    max-width: 100px;
-  }
-  
   nav ul {
     width: 100%;
     padding: 4rem 1.5rem 2rem;
   }
+
+  .default_logo img {
+    height: 45px;
+    max-width: 100px;
+  }
+
+  .hamburger { scale: 0.9; }
+  .header-container { padding: 0.5rem 1rem; }
+
+  nav ul li ul.dropdown li a {
+    padding: 0.25rem 0.5rem !important;
+    line-height: 1.1 !important;
+  }
+}
+
+/* Stop scrolling when mobile menu is open */
+body.menu-open { overflow: hidden; }
+
+@media (max-width: 1024px) {
+  .default_logo img { height: 60px; }
 }
