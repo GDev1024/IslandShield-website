@@ -60,7 +60,7 @@ IslandShield Security is a fully functional, production-ready website for a prof
 |---------|-------------|
 | **Registration** | Secure account creation with comprehensive validation |
 | **Login System** | Session-based authentication with "remember me" option |
-| **Client Dashboard** | Live camera feeds (yet to be implemented), security alerts, service management interface |
+| **Client Dashboard** | Camera status monitoring, security alerts display, service management interface |
 
 ### Technical Features
 
@@ -105,14 +105,15 @@ IslandShield/
 │   └── images/                   # Logos, service images, media assets
 │
 ├── includes/
-│   ├── config.php                # Database configuration (local)
+│   ├── config.php                # Database configuration (local + production)
 │   ├── header.php                # Global site header
 │   ├── footer.php                # Global site footer
-│   ├── registration_handler.php  # User registration logic
-│   ├── login_handler.php         # User authentication
-│   ├── logout_handler.php        # Session termination
 │   ├── contact_form_handler.php  # Contact form processing
+│   ├── logout_handler.php        # Session termination
 │   └── islandshield_database.sql # Database schema and sample data
+│
+├── registration_handler.php      # User registration logic (root for InfinityFree)
+├── login_handler.php             # User authentication (root for InfinityFree)
 │
 ├── Page Files (*.php)
 │   ├── index.php                 # Homepage
@@ -131,6 +132,7 @@ IslandShield/
 │
 ├── Utility Files
 │   ├── check_db.php              # Database connection test
+│   ├── test_connection.php       # Connection diagnostics
 │   └── test_registration.php     # Registration testing utility
 │
 ├── Documentation
