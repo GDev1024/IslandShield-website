@@ -77,13 +77,13 @@ IslandShield Security is a fully functional, production-ready website for a prof
 
 ## 🛠️ Tech Stack
 
-Frontend: HTML5, CSS3, JavaScript
-Backend: PHP
-Database: MySQL
-Server: Apache
-Icons: Font Awesome
-Fonts: Google Fonts
-Version Control: Git
+- **Frontend:** HTML5, CSS3, JavaScript
+- **Backend:** PHP
+- **Database:** MySQL
+- **Server:** Apache
+- **Icons:** Font Awesome
+- **Fonts:** Google Fonts
+- **Version Control:** Git
 
 ---
 
@@ -243,25 +243,6 @@ IslandShield/
 - **1 active service** (Professional CCTV Package)
 - **Sample motion-detection alerts** included
 
----
-
-## ✅ Testing
-
-Use `TESTING_CHECKLIST.md` for the full manual testing plan.
-
-**Manual checks include:**
-
-- Responsive verification across breakpoints
-- Registration and login flows
-- Form validation (client & server)
-- Dashboard interactions (camera list, alerts)
-- Cross-browser compatibility
-- Performance & lighthouse checks
-
-**Test utilities:**
-
-- `check_db.php` — verifies DB connection & basic queries
-- `test_registration.php` — simulates registration & basic validation
 
 ---
 
