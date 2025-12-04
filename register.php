@@ -35,8 +35,14 @@ if (isset($_SESSION['user'])) {
           <p>Join IslandShield Security and manage your security services online</p>
         </header>
 
+        <?php if (isset($_SESSION['error_message'])): ?>
+          <div class="alert alert-error" style="background: rgba(255,68,68,0.2); border: 1px solid #ff4444; color: #ff4444; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+            <?php echo htmlspecialchars($_SESSION['error_message']); unset($_SESSION['error_message']); ?>
+          </div>
+        <?php endif; ?>
+
         <!-- Registration Form -->
-        <form id="registerForm" class="auth-form" aria-label="Registration Form">
+        <form id="registerForm" class="auth-form" method="POST" action="registration_handler.php" aria-label="Registration Form">
           <div class="form-row">
             <div class="form-group">
               <label for="firstName">First Name *</label>

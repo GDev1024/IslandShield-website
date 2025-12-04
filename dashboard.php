@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 session_start();
 require_once 'includes/config.php';
 
@@ -13,11 +16,35 @@ $userId = $_SESSION['user_id'];
 $userName = $_SESSION['user_name'];
 $userEmail = $_SESSION['user_email'];
 
-// Get dashboard data
-$stmt = mysqli_prepare($connection, "SELECT * FROM user_dashboard_summary WHERE user_id = ?");
-mysqli_stmt_bind_param($stmt, "i", $userId);
-mysqli_stmt_execute($stmt);
-$dashboardData = mysqli_fetch_assoc(mysqli_stmt_get_result($stmt));
+// Get dashboard data - simplified without view
+$dashboardData = [
+    'active_services' => 0,
+    'total_cameras' => 0,
+    'cameras_online' => 0,
+    'unread_alerts' => 0
+];
+
+// Count active services
+$result = mysqli_query($connection, "SELECT COUNT(*) as count FROM services WHERE user_id = $userId AND status = 'active'");
+if ($result) {
+    $row = mysqli_fetch_assoc($result);
+    $dashboardData['active_services'] = $row['count'];
+}
+
+// Count cameras
+$result = mysqli_query($connection, "SELECT COUNT(*) as total, SUM(status = 'online') as online FROM cameras WHERE user_id = $userId");
+if ($result) {
+    $row = mysqli_fetch_assoc($result);
+    $dashboardData['total_cameras'] = $row['total'] ?? 0;
+    $dashboardData['cameras_online'] = $row['online'] ?? 0;
+}
+
+// Count unread alerts today
+$result = mysqli_query($connection, "SELECT COUNT(*) as count FROM alerts WHERE user_id = $userId AND DATE(created_at) = CURDATE() AND is_read = 0");
+if ($result) {
+    $row = mysqli_fetch_assoc($result);
+    $dashboardData['unread_alerts'] = $row['count'];
+}
 
 // Get cameras
 $stmt = mysqli_prepare($connection, "SELECT * FROM cameras WHERE user_id = ? ORDER BY camera_id LIMIT 4");

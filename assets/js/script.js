@@ -171,9 +171,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  handleFormSubmit('registerForm', 'includes/registration_handler.php', true);
-  handleFormSubmit('loginForm', 'includes/login_handler.php', true);
-  handleFormSubmit('contactForm', 'includes/contact_form_handler.php');
+  // Disabled AJAX for register/login - using traditional form submission for InfinityFree compatibility
+  // handleFormSubmit('registerForm', 'registration_handler.php', true);
+  // handleFormSubmit('loginForm', 'login_handler.php', true);
+  handleFormSubmit('contactForm', 'contact_form_handler.php');
 
   // Logout functionality
   document.querySelectorAll('.btn-logout, [href*="logout"]').forEach(btn => {

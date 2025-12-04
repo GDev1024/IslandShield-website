@@ -18,10 +18,24 @@ define("BASE_URL", getenv('APP_URL') ?: $protocol . $host . '/');
 define("DEBUG_MODE", getenv('APP_DEBUG') === 'true' || ($env['APP_DEBUG'] ?? false));
 
 // Database Settings - Use environment variables with fallbacks
-define("DB_HOST", getenv('DB_HOST') ?: ($env['DB_HOST'] ?? 'localhost'));
-define("DB_USER", getenv('DB_USER') ?: ($env['DB_USER'] ?? 'root'));
-define("DB_PASS", getenv('DB_PASSWORD') ?: ($env['DB_PASSWORD'] ?? ''));
-define("DB_NAME", getenv('DB_NAME') ?: ($env['DB_NAME'] ?? 'islandshield_db'));
+// For InfinityFree, check if we're on production server
+$isProduction = (strpos($_SERVER['HTTP_HOST'], 'infinityfreeapp.com') !== false || 
+                 strpos($_SERVER['HTTP_HOST'], 'rf.gd') !== false ||
+                 strpos($_SERVER['HTTP_HOST'], 'page.gd') !== false);
+
+if ($isProduction) {
+    // InfinityFree Production Settings
+    define("DB_HOST", 'sql107.infinityfree.com');
+    define("DB_USER", 'if0_40582246');
+    define("DB_PASS", 'ld5qWTEX1Fop');
+    define("DB_NAME", 'if0_40582246_islandshield_db');
+} else {
+    // Local Development Settings
+    define("DB_HOST", getenv('DB_HOST') ?: ($env['DB_HOST'] ?? 'localhost'));
+    define("DB_USER", getenv('DB_USER') ?: ($env['DB_USER'] ?? 'root'));
+    define("DB_PASS", getenv('DB_PASSWORD') ?: ($env['DB_PASSWORD'] ?? ''));
+    define("DB_NAME", getenv('DB_NAME') ?: ($env['DB_NAME'] ?? 'islandshield_db'));
+}
 
 // MySQL connection using MySQLi
 $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);

@@ -27,8 +27,20 @@
           <p>Log in to access your security dashboard</p>
         </header>
 
+        <?php if (isset($_SESSION['success_message'])): ?>
+          <div class="alert alert-success" style="background: rgba(0,255,0,0.2); border: 1px solid #00ff00; color: #00ff00; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+            <?php echo htmlspecialchars($_SESSION['success_message']); unset($_SESSION['success_message']); ?>
+          </div>
+        <?php endif; ?>
+        
+        <?php if (isset($_SESSION['error_message'])): ?>
+          <div class="alert alert-error" style="background: rgba(255,68,68,0.2); border: 1px solid #ff4444; color: #ff4444; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+            <?php echo htmlspecialchars($_SESSION['error_message']); unset($_SESSION['error_message']); ?>
+          </div>
+        <?php endif; ?>
+
         <!-- Login Form -->
-        <form id="loginForm" class="auth-form" method="POST" action="includes/login_handler.php" aria-label="Login Form">
+        <form id="loginForm" class="auth-form" method="POST" action="login_handler.php" aria-label="Login Form">
           <div class="form-group">
             <label for="email">Email Address *</label>
             <input type="email" id="email" name="email" placeholder="your@email.com" required>
