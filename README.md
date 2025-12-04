@@ -140,7 +140,7 @@ IslandShield/
 │   └── LICENSE                   # Apache 2.0 License
 │
 └── Configuration
-    └── .env                      # Environment variables (not committed)
+    └── .env                      # Environment variables
 ```
 
 ---
