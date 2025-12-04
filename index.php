@@ -127,5 +127,7 @@
   </div>
 </section>
 
+<script src="/assets/js/script.js"></script>
+
 <!-- Footer section -->
 <?php include "includes/footer.php"; ?>

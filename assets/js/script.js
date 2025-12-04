@@ -23,7 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const clearErrors = () => {
     document.querySelectorAll('.error-message, .alert-message').forEach(el => el.remove());
-    document.querySelectorAll('input, textarea, select').forEach(input => input.style.borderColor='');
+    document.querySelectorAll('input, textarea, select').forEach(input => {
+      input.style.borderColor = '';
+    });
   };
 
   const showInputError = (input, message) => {
@@ -36,6 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const isValidEmail = email => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  
+  const isValidPhone = phone => /^\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$/.test(phone);
 
   // Mobile navigation menu toggle
   const hamburger = document.getElementById('hamburger');
@@ -103,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
           });
           
-          // Open/close this dropdown
+          // Toggle this dropdown
           parent.classList.toggle('show-dropdown');
         }
       });
@@ -125,8 +129,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', e => {
+      const href = anchor.getAttribute('href');
+      if (href === '#' || href === '#!') return;
+      
       e.preventDefault();
-      const target = document.querySelector(anchor.getAttribute('href'));
+      const target = document.querySelector(href);
       if(target){
         target.scrollIntoView({ behavior:'smooth', block:'start' });
         navMenu?.classList.remove('open');
@@ -135,92 +142,267 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Form submission handlers
-  const handleFormSubmit = (formId, handlerUrl, successRedirect=null) => {
-    const form = document.getElementById(formId);
-    if(!form) return;
-
-    form.addEventListener('submit', async e => {
+  // FIXED: Registration Form Handler
+  const registerForm = document.getElementById('registerForm');
+  if (registerForm) {
+    registerForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       clearErrors();
-      const submitBtn = form.querySelector('button[type="submit"]');
+      
+      // Get form data
+      const formData = new FormData(registerForm);
+      const firstName = formData.get('firstName')?.trim();
+      const lastName = formData.get('lastName')?.trim();
+      const email = formData.get('email')?.trim();
+      const phone = formData.get('phone')?.trim();
+      const password = formData.get('password');
+      const confirmPassword = formData.get('confirmPassword');
+      const terms = formData.get('terms');
+      
+      // Client-side validation
+      let hasError = false;
+      
+      if (!firstName || firstName.length < 2) {
+        showInputError(registerForm.querySelector('#firstName'), 'First name must be at least 2 characters');
+        hasError = true;
+      }
+      
+      if (!lastName || lastName.length < 2) {
+        showInputError(registerForm.querySelector('#lastName'), 'Last name must be at least 2 characters');
+        hasError = true;
+      }
+      
+      if (!isValidEmail(email)) {
+        showInputError(registerForm.querySelector('#email'), 'Please enter a valid email address');
+        hasError = true;
+      }
+      
+      if (!isValidPhone(phone)) {
+        showInputError(registerForm.querySelector('#phone'), 'Please enter a valid phone number');
+        hasError = true;
+      }
+      
+      if (password.length < 8) {
+        showInputError(registerForm.querySelector('#password'), 'Password must be at least 8 characters');
+        hasError = true;
+      }
+      
+      if (password !== confirmPassword) {
+        showInputError(registerForm.querySelector('#confirmPassword'), 'Passwords do not match');
+        hasError = true;
+      }
+      
+      if (!terms) {
+        showMessage(registerForm, 'You must agree to the Terms of Service');
+        hasError = true;
+      }
+      
+      if (hasError) return;
+      
+      // Submit form
+      const submitBtn = registerForm.querySelector('button[type="submit"]');
       const originalText = submitBtn.textContent;
-      submitBtn.textContent = formId==='registerForm' ? 'Creating Account...' : formId==='loginForm' ? 'Logging In...' : 'Sending...';
+      submitBtn.textContent = 'Creating Account...';
       submitBtn.disabled = true;
 
       try {
-        const res = await fetch(handlerUrl, { method:'POST', body: new FormData(form) });
-        const data = await res.json();
-
-        if(data.success){
-          showMessage(form, data.message, 'success');
-          if(formId==='contactForm') form.reset();
-          if(successRedirect) setTimeout(()=>window.location.href=data.redirect, 1500);
-          else setTimeout(()=>{ submitBtn.textContent = originalText; submitBtn.disabled=false; }, 2000);
+        const response = await fetch('includes/registration_handler.php', { 
+          method: 'POST', 
+          body: formData 
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+          showMessage(registerForm, data.message, 'success');
+          registerForm.reset();
+          
+          // Redirect to login after 2 seconds
+          setTimeout(() => {
+            window.location.href = data.redirect || 'login.php';
+          }, 2000);
         } else {
-          if(data.errors?.length) data.errors.forEach(err => showMessage(form, err));
-          else showMessage(form, data.message);
+          if (data.errors && Array.isArray(data.errors)) {
+            data.errors.forEach(err => showMessage(registerForm, err));
+          } else {
+            showMessage(registerForm, data.message || 'Registration failed. Please try again.');
+          }
           submitBtn.textContent = originalText;
           submitBtn.disabled = false;
         }
-      } catch {
-        showMessage(form, 'Network error. Please try again.');
+      } catch (error) {
+        console.error('Registration error:', error);
+        showMessage(registerForm, 'Network error. Please check your connection and try again.');
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
       }
     });
-  };
+  }
 
-  handleFormSubmit('registerForm', 'includes/registration_handler.php', true);
-  handleFormSubmit('loginForm', 'includes/login_handler.php', true);
-  handleFormSubmit('contactForm', 'includes/contact_form_handler.php');
+  // Login Form Handler
+  const loginForm = document.getElementById('loginForm');
+  if (loginForm) {
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      clearErrors();
+      
+      const formData = new FormData(loginForm);
+      const email = formData.get('email')?.trim();
+      const password = formData.get('password');
+      
+      // Validation
+      let hasError = false;
+      
+      if (!isValidEmail(email)) {
+        showInputError(loginForm.querySelector('#email'), 'Please enter a valid email address');
+        hasError = true;
+      }
+      
+      if (!password || password.length < 1) {
+        showInputError(loginForm.querySelector('#password'), 'Please enter your password');
+        hasError = true;
+      }
+      
+      if (hasError) return;
+      
+      const submitBtn = loginForm.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Logging In...';
+      submitBtn.disabled = true;
+
+      try {
+        const response = await fetch('includes/login_handler.php', {
+          method: 'POST',
+          body: formData
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+          showMessage(loginForm, data.message, 'success');
+          setTimeout(() => {
+            window.location.href = data.redirect || 'dashboard.php';
+          }, 1000);
+        } else {
+          showMessage(loginForm, data.message || 'Login failed. Please try again.');
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        }
+      } catch (error) {
+        console.error('Login error:', error);
+        showMessage(loginForm, 'Network error. Please try again.');
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }
+    });
+  }
+
+  // Contact Form Handler
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      clearErrors();
+      
+      const formData = new FormData(contactForm);
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+
+      try {
+        const response = await fetch('includes/contact_form_handler.php', {
+          method: 'POST',
+          body: formData
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+          showMessage(contactForm, data.message, 'success');
+          contactForm.reset();
+        } else {
+          if (data.errors) {
+            data.errors.forEach(err => showMessage(contactForm, err));
+          } else {
+            showMessage(contactForm, data.message);
+          }
+        }
+      } catch (error) {
+        console.error('Contact form error:', error);
+        showMessage(contactForm, 'Network error. Please try again.');
+      } finally {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }
+    });
+  }
 
   // Logout functionality
   document.querySelectorAll('.btn-logout, [href*="logout"]').forEach(btn => {
-    btn.addEventListener('click', async e => {
+    btn.addEventListener('click', async (e) => {
       e.preventDefault();
-      try{ await fetch('includes/logout_handler.php'); sessionStorage.clear(); window.location.href='index.php'; }
-      catch{ window.location.href='index.php'; }
+      try { 
+        await fetch('includes/logout_handler.php'); 
+        sessionStorage.clear(); 
+        window.location.href = 'index.php'; 
+      } catch { 
+        window.location.href = 'index.php'; 
+      }
     });
   });
 
   // FAQ accordion toggle
   document.querySelectorAll('.faq-item').forEach(item => {
-    const q = item.querySelector('.faq-question');
-    q?.addEventListener('click', () => {
-      const isActive = item.classList.contains('active');
-      document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('active'));
-      if(!isActive) item.classList.add('active');
-    });
+    const question = item.querySelector('.faq-question');
+    if (question) {
+      question.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        
+        // Close all items
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        
+        // Open clicked item if it was closed
+        if (!isOpen) {
+          item.classList.add('open');
+        }
+      });
+    }
   });
 
   // Back to top button
   const scrollBtn = document.createElement('button');
   scrollBtn.textContent = '↑';
-  scrollBtn.className='scroll-to-top';
-  scrollBtn.style.cssText=`
-    position: fixed; bottom:30px; right:30px; width:50px; height:50px;
-    border-radius:50%; background:#ffcc00; color:#0b1e3d;
-    border:none; font-size:24px; cursor:pointer; opacity:0;
-    transition: all 0.3s ease; z-index:999; box-shadow:0 5px 15px rgba(0,0,0,0.3);
+  scrollBtn.className = 'scroll-to-top';
+  scrollBtn.setAttribute('aria-label', 'Scroll to top');
+  scrollBtn.style.cssText = `
+    position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px;
+    border-radius: 50%; background: #ffcc00; color: #0b1e3d;
+    border: none; font-size: 24px; cursor: pointer; opacity: 0;
+    transition: all 0.3s ease; z-index: 999; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    pointer-events: none;
   `;
   document.body.appendChild(scrollBtn);
 
-  window.addEventListener('scroll', ()=> {
-    scrollBtn.style.opacity = window.scrollY>300 ? '1':'0';
-    scrollBtn.style.pointerEvents = window.scrollY>300 ? 'auto':'none';
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      scrollBtn.style.opacity = '1';
+      scrollBtn.style.pointerEvents = 'auto';
+    } else {
+      scrollBtn.style.opacity = '0';
+      scrollBtn.style.pointerEvents = 'none';
+    }
   });
 
-  scrollBtn.addEventListener('click', ()=> window.scrollTo({ top:0, behavior:'smooth' }));
-  scrollBtn.addEventListener('mouseenter', ()=> scrollBtn.style.transform='scale(1.1)');
-  scrollBtn.addEventListener('mouseleave', ()=> scrollBtn.style.transform='scale(1)');
+  scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  scrollBtn.addEventListener('mouseenter', () => scrollBtn.style.transform = 'scale(1.1)');
+  scrollBtn.addEventListener('mouseleave', () => scrollBtn.style.transform = 'scale(1)');
 
-  // Animated number counters for stats
+  // FIXED: Animated number counters for stats
   const animateCounters = () => {
     const counters = document.querySelectorAll('.stat-number[data-target]');
     
     if (counters.length === 0) {
-      console.log('No stat counters found');
       return;
     }
 
@@ -228,14 +410,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = parseInt(counter.getAttribute('data-target'));
       
       if (isNaN(target) || target === 0) {
-        console.log('Invalid target:', target);
         return;
       }
 
-      let current = 0;
-      const increment = target / 100; // 100 steps
       const duration = 2000; // 2 seconds
-      const stepTime = duration / 100;
+      const steps = 60; // 60 frames
+      const increment = target / steps;
+      const stepTime = duration / steps;
+      
+      let current = 0;
 
       const timer = setInterval(() => {
         current += increment;
@@ -252,12 +435,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // Start counting when stats section comes into view
   const statsSection = document.querySelector('.stats');
   if (statsSection) {
-    // Use IntersectionObserver to detect when visible
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            console.log('Stats section visible, animating...');
             animateCounters();
             observer.unobserve(entry.target);
           }
@@ -266,11 +447,9 @@ document.addEventListener('DOMContentLoaded', () => {
       
       observer.observe(statsSection);
     } else {
-      // Backup for older browsers
+      // Fallback for older browsers
       animateCounters();
     }
-  } else {
-    console.log('Stats section not found');
   }
 
   // Fun console message
