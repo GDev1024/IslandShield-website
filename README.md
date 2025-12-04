@@ -1,17 +1,12 @@
 # 🛡️ IslandShield Security
 
-Professional security solutions website for IslandShield Security — Grenada's trusted security provider.
-
-**Project:** Web Design Final Project  
-**Institution:** T.A. Marryshow Community College  
-**Academic Year:** 2024–2025  
-**Status:** ✅ Complete
+Professional security solutions website for IslandShield Security — Grenada's *FICTONAL* trusted security provider.
 
 ---
 
 ## 📋 Project Overview
 
-IslandShield Security is a fully functional, production-ready website for a professional security company. Built with a mobile-first approach, it features user authentication, dynamic content management, and a comprehensive client dashboard.
+IslandShield Security is a fully functional, production-ready website for a professional security company. Built with a mobile-first approach, it features user authentication, dynamic content management and a comprehensive client dashboard.
 
 ### Key Highlights
 
@@ -82,15 +77,13 @@ IslandShield Security is a fully functional, production-ready website for a prof
 
 ## 🛠️ Tech Stack
 
-| Category | Technology | Purpose |
-|----------|-----------|---------|
-| **Frontend** | ![HTML5](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg) ![CSS3](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg) ![JS](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg) | UI and interactions |
-| **Backend** | ![PHP](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg) | Server-side processing |
-| **Database** | ![MySQL](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg) | Data persistence |
-| **Server** | ![Apache](https://upload.wikimedia.org/wikipedia/commons/7/7e/Apache_HTTP_Server_logo_%282017%29.svg) | Web server (XAMPP/WAMP/MAMP compatible) |
-| **Icons** | ![Font Awesome](https://upload.wikimedia.org/wikipedia/commons/0/02/Font_Awesome_5_logo.svg) | Iconography |
-| **Fonts** | ![Google Fonts](https://upload.wikimedia.org/wikipedia/commons/3/3f/Google_Fonts_logo.svg) | Typography |
-| **Version Control** | ![Git](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg) | Source control |
+Frontend: HTML5, CSS3, JavaScript
+Backend: PHP
+Database: MySQL
+Server: Apache
+Icons: Font Awesome
+Fonts: Google Fonts
+Version Control: Git
 
 ---
 
